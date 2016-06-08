@@ -9,9 +9,12 @@
 <html>
 <head>
     <title>Help Desk</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 <body>
-<h1>You are welcome</h1>
+<div class="block">
+    <h1>You are welcome</h1>
+</div>
 <h2>${hello}</h2>
 </body>
 </html>
