@@ -1,0 +1,94 @@
+body {
+    font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+    background-color: #EEE;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    font-size: 13px;
+    height: 100%;
+}
+
+ul, ol, dl {
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin-top: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+a img {
+    border: none;
+}
+
+a:link {
+    color: #414958;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #4E5869;
+    text-decoration: underline;
+}
+
+a:hover, a:active, a:focus {
+    text-decoration: none;
+}
+
+.container {
+    width: 1000px;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #FFFFFF;
+    height: 200px;
+}
+
+.logo {
+    text-align: left;
+    padding: 10px;
+    float: left;
+}
+
+.descr {
+    float: left;
+    width: 400px;
+    text-align: left;
+    padding-top: 50px;
+}
+
+.welcome {
+    text-align: right;
+    padding-top: 50px;
+    padding-right: 10px;
+    font-weight: normal;
+    float: right;
+}
+
+.footer {
+    color: #757575;
+    text-align: center;
+    margin: 5px;
+    height: 50px;
+    float: left;
+    width: 100%;
+}
+
+.left_menu {
+    float: left;
+    width: 200px;
+    min-height: 400px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    display: block;
+}
+
+.content {
+    padding: 20px;
+    width: 800px;
+    min-height: 400px;
+}

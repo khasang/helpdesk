@@ -8,8 +8,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AppContoller {
 
     @RequestMapping("/")
-    public String hello(Model model){
-        model.addAttribute("hello", "Welcome to Help Desk program!");
-        return "hello";
+    public String index(Model model) {
+        model.addAttribute("title", "Helpdesk in action:)");
+        return "index";
+    }
+
+    @RequestMapping("/admin")
+    public String admin(Model model) {
+        return "admin";
+    }
+
+    @RequestMapping("/desk")
+    public String desk(Model model) {
+        return "desk";
+    }
+
+    @RequestMapping("/news")
+    public String news(Model model) {
+        return "news";
+    }
+
+    @RequestMapping("/maps")
+    public String maps(Model model) {
+        return "maps";
     }
 }
