@@ -17,6 +17,19 @@ http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd http://www.springfr
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <bean name="index" class="io.khasang.helpdesk.model.Index"/>
+
+    <bean name="desk" class="io.khasang.helpdesk.model.MainPage">
+    </bean>
+
+    <bean name="admin" class="io.khasang.helpdesk.model.Admin">
+        <property name="title" value=""/>
+        <!--<property name="user" value=""/>-->
+        <!--<property name="testUser" value=""/>-->
+    </bean>
+
+    <bean name="task" class="io.khasang.helpdesk.model.Task"/>
+
     <!-- This tag allows for mapping the dispatcher-servlet to "/" -->
     <mvc:default-servlet-handler/>
 
