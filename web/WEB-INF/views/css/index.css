@@ -1,9 +1,12 @@
 body
 {
-    background-color: #fcfcfc;
+    /*background-color: #fcfcfc;*/
+
 }
 .center-div-welcome
 {
+    background #ccc url(image/ico.png);
+    /*background-position: top center;*/
     position: absolute;
     margin: auto;
     top: 0;
@@ -12,8 +15,7 @@ body
     left: 0;
     width: 180px;
     height: 120px;
-    background-color: #ccc;
-    background-im;
+    /*background-color: #ccc;*/
     border-radius: 10px;
 
 }

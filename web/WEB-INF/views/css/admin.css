@@ -6,7 +6,7 @@ body {
 
 .nav ul {
     list-style: none;
-    background-color: #444;
+    background-color: #005f7f;
     text-align: center;
     padding: 0;
     margin: 0;
@@ -14,9 +14,10 @@ body {
 .nav li {
     font-family: 'Oswald', sans-serif;
     font-size: 1em;
-    line-height: 30px;
+    line-height: 20px;
     height: 20px;
-    border-bottom: 1px solid #888;
+    display: inline-block;
+    width: 120px;
 }
 
 .nav a {
@@ -27,7 +28,8 @@ body {
 }
 
 .nav a:hover {
-    background-color: #005f5f;
+    background-color: #005f6f;
+    font-size: 1.01em;
 }
 
 .nav a.active {
@@ -36,17 +38,29 @@ body {
     cursor: default;
 }
 
-@media screen and (min-width: 200px) {
-    .nav li {
-        width: 120px;
-        border-bottom: none;
-        height: 30px;
-        line-height: 30px;
-        font-size: 1em;
-    }
+.admin {
+    list-style: none;
+    margin-top: 20;
+    margin-left: 10;
+    border-width: thin;
+    border-style: solid;
+    border-color: #005f7f;
+    width: 160px;
+    height: 120px;
+    line-height: 1.8em;
+    border-radius: 10px;
+    text-align: center;
 
-    /* Option 1 - Display Inline */
-    .nav li {
-        display: inline-block;
-        margin-right: -4px;
-    }
+}
+.admin h4 {
+    border-radius: 10px;
+    margin: 0;
+    background-color: 005f7f;
+    color: white;
+}
+
+.admin#logs {
+    float: right;
+    margin-top: 20;
+    margin-left: 100;
+}
