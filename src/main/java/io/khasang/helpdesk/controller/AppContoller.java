@@ -1,35 +1,31 @@
 package io.khasang.helpdesk.controller;
 
+import io.khasang.helpdesk.model.Example;
+import io.khasang.helpdesk.model.Hello;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class AppContoller {
+    @Autowired
+    Example example;
+
+    @Autowired
+    Hello hello;
 
     @RequestMapping("/")
-    public String index(Model model) {
-        model.addAttribute("title", "Helpdesk in action:)");
-        return "index";
+    public String hello(Model model){
+        Example example = new Example();
+        model.addAttribute("hello", example.getMessage());
+        return "hello";
     }
 
-    @RequestMapping("/admin")
-    public String admin(Model model) {
-        return "admin";
+    @RequestMapping("/example")
+    public String example(Model model){
+        model.addAttribute("tail", hello.getNum());
+        return "example";
     }
 
-    @RequestMapping("/desk")
-    public String desk(Model model) {
-        return "desk";
-    }
-
-    @RequestMapping("/news")
-    public String news(Model model) {
-        return "news";
-    }
-
-    @RequestMapping("/maps")
-    public String maps(Model model) {
-        return "maps";
-    }
 }
