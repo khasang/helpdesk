@@ -1,0 +1,13 @@
+body {
+    font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+    background-color: #EEE;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    font-size: 13px;
+    height: 100%;
+}
+
+#container{
+    min-height: 400px;
+}
