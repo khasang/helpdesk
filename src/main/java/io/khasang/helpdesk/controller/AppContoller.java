@@ -19,7 +19,6 @@ public class AppContoller {
     @Autowired
     Message message;
 
-
     //4to to sdelal
     @RequestMapping("/")
     public String hello(Model model){
