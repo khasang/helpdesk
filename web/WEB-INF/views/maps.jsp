@@ -3,8 +3,8 @@
 <html>
 <head>
     <title>News</title>
-    <link rel="stylesheet" href='<c:url value="/resources/css/main.css" />' type="text/css"/>
-    <link rel="stylesheet" href='<c:url value="/resources/css/yandex.css"/>' type="text/css"/>
+    <link rel="stylesheet" href='<c:url value="/WEB-INF/views/css/main.css" />' type="text/css"/>
+    <link rel="stylesheet" href='<c:url value="/WEB-INF/views/css/yandex.css"/>' type="text/css"/>
 </head>
 
 <body>
@@ -14,7 +14,7 @@
 
     <div class="header">
         <div class="logo">
-            <a href="/"><img src="<c:url value="/resources/images/logo.png"/>" alt="logo"></a>
+            <a href="/"><img src="<c:url value="/WEB-INF/views/images/logo.png"/>" alt="logo"></a>
         </div>
         <div class="descr"><h1>Help Desk MAP</h1></div>
         <div class="welcome">
