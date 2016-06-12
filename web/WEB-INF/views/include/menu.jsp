@@ -4,4 +4,4 @@
     <a href="/desk">Desk</a><br/>
     <a href="/news">News</a><br/>
     <a href="/maps">Maps</a><br/>
-</div>
+    <hr/>
