@@ -7,15 +7,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class AdminController {
 
-    public static final String ADMIN = "admin";
-    public static final String SAVE_USER = "saveUser";
+    private static final String ADMIN = "admin";
+    private static final String SAVE_USER = "saveUser";
 
     @RequestMapping("/admin")
     public String adminPage(Model model) {
         model.addAttribute("admin", "That's admin page");
         return ADMIN;
     }
-
 
     @RequestMapping("/admin/saveUser")
     public String addUser(Model model) {

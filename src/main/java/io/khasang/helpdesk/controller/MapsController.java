@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MapsController {
 
-    public static final String MAPS = "maps";
+    private static final String MAPS = "maps";
 
     @RequestMapping("/maps")
     public String viewMaps(Model model) {
