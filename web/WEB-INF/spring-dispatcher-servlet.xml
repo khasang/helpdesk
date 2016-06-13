@@ -17,6 +17,11 @@ http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd http://www.springfr
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <bean name="example" class="io.khasang.helpdesk.model.Example">
+        <property name="message" value="Welcome to helpdesk program"/>
+        <constructor-arg value="21"></constructor-arg>
+    </bean>
+
     <!-- This tag allows for mapping the dispatcher-servlet to "/" -->
     <mvc:default-servlet-handler/>
 

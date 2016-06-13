@@ -9,6 +9,8 @@
 <html>
 <head>
     <title>admin</title>
+    <meta charset=’UTF-8’>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 <body>
 <a href="/">Go to Index</a>

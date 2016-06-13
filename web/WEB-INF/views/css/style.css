@@ -8,6 +8,19 @@ body {
     height: 100%;
 }
 
-#container{
+#container {
     min-height: 400px;
+}
+
+.block {
+
+}
+
+.links {
+    position: absolute;
+    left: auto;
+    top: auto;
+    width: 96px;
+    height: 25px;
+    z-index: 2;
 }
