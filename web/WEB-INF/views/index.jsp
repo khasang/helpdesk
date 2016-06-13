@@ -8,7 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta charset=’UTF-8’>
     <title>index</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <BODY BACKGROUND="http://www.widewallpapers.ru/mod/nature/forest/1920x1080/forest-wallpaper-1920x1080-003.jpg">
 </BODY>
 </head>
