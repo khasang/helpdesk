@@ -2,7 +2,7 @@
 <html>
 <head>
     <title></title>
-    <jsp:include page="tags/background.jsp"/>
+    <jsp:include page="css/background.jsp"/>
 </head>
 <body>
 <div class="container">

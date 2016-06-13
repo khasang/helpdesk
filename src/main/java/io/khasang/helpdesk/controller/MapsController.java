@@ -10,7 +10,7 @@ public class MapsController {
     public static final String MAPS = "maps";
 
     @RequestMapping("/maps")
-    public String viewMaps(Model model){
+    public String viewMaps(Model model) {
         model.addAttribute("maps");
         return MAPS;
     }

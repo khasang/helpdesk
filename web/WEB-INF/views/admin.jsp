@@ -2,10 +2,10 @@
 <html>
 <head>
     <title>Admin Page</title>
-    <jsp:include page="tags/background.jsp"/>
+    <jsp:include page="css/background.jsp"/>
 </head>
 <div class="page-header">
-    <img src="/resources/images/helpDesk.png" class="center-pill">
+    <img src="images/helpDesk.png" class="center-pill">
 </div>
 <body>
 <h1>Admin Page</h1>

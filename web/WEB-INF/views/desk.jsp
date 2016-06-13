@@ -11,12 +11,12 @@
         </div>
 
     </form>
-    <jsp:include page="tags/background.jsp"/>
+    <jsp:include page="css/background.jsp"/>
 </head>
 <body>
 
 <div class="page-header">
-    <img src="/resources/images/helpDesk.png" class="center-pill">
+    <img src="images/helpDesk.png" class="center-pill">
 </div>
 <div class="btn-group-vertical">
     <a class="btn btn-primary btn-lg" href="/" role="button">Home Page</a>

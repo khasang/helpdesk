@@ -6,11 +6,11 @@
     <p align="right"><a class="btn btn-info btn-xs" href="/signIn" role="button">Sign In</a>
         <a class="btn btn-info btn-xs" href="/registration" role="button">Registration</a></p>
 
-<jsp:include page="tags/background.jsp"/>
+    <jsp:include page="css/background.jsp"/>
 </head>
 <body>
 <div class="page-header">
-    <img src="/resources/images/helpDesk.png" class="center-pill">
+    <img src="images/helpDesk.png" class="center-pill">
 </div>
 
 <h1><p class="text-center"> Welcome to the Help Desk Web Site</p></h1>

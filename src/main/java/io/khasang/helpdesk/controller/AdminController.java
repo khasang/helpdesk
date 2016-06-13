@@ -11,14 +11,14 @@ public class AdminController {
     public static final String SAVE_USER = "saveUser";
 
     @RequestMapping("/admin")
-    public String adminPage(Model model){
+    public String adminPage(Model model) {
         model.addAttribute("admin", "That's admin page");
         return ADMIN;
     }
 
 
     @RequestMapping("/admin/saveUser")
-    public String addUser(Model model){
+    public String addUser(Model model) {
         model.addAttribute("saveUser", "save");
         return SAVE_USER;
     }

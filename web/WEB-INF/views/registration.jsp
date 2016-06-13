@@ -2,11 +2,11 @@
 <html>
 <head>
     <title></title>
-    <jsp:include page="tags/background.jsp"/>
+    <jsp:include page="css/background.jsp"/>
 </head>
 <body>
 <div class="page-header">
-    <img src="/resources/images/helpDesk.png" class="center-pill">
+    <img src="images/helpDesk.png" class="center-pill">
 </div>
 <form class="form-horizontal" role="form">
 
