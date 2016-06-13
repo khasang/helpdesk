@@ -38,7 +38,11 @@ body {
     cursor: default;
 }
 
-.admin {
+.container {
+    width: 1000px;
+}
+
+#admin {
     list-style: none;
     margin-top: 20;
     margin-left: 10;
@@ -50,17 +54,43 @@ body {
     line-height: 1.8em;
     border-radius: 10px;
     text-align: center;
-
 }
-.admin h4 {
+
+#bckup {
+    list-style: none;
+    margin-top: 20;
+    margin-left: 10;
+    border-width: thin;
+    border-style: solid;
+    border-color: #005f7f;
+    width: 160px;
+    height: 120px;
+    line-height: 1.8em;
+    border-radius: 10px;
+    text-align: center;
+}
+h4 {
     border-radius: 10px;
     margin: 0;
     background-color: 005f7f;
     color: white;
 }
 
-.admin#logs {
+#leftSubContainer {
+    float: left;
+}
+
+#logs {
     float: right;
+    list-style: none;
     margin-top: 20;
-    margin-left: 100;
+    margin-left: 10;
+    border-width: thin;
+    border-style: solid;
+    border-color: #005f7f;
+    width: 800px;
+    height: 400px;
+    line-height: 1.8em;
+    border-radius: 10px;
+    text-align: center;
 }

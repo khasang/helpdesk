@@ -38,31 +38,59 @@ body {
     cursor: default;
 }
 
-.task {
-    list-style: none;
-    margin-top: 20px;
-    margin-left: 10px;
-    border-width: thin;
-    border-style: solid;
-    border-color: #005f7f;
-    width: 400px;
-    height: 120px;
-    line-height: 1.8em;
-    border-radius: 10px;
-    text-align: center;
-
+.container{
+    position: relative;
+    width: 1030px;
 }
-.task h4 {
+
+h4 {
     border-radius: 10px;
     margin: 0;
     background-color: 005f7f;
     color: white;
 }
 
-.task #myTasks {
+#myTasks {
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+    border-width: thin;
+    border-style: solid;
+    border-color: #005f7f;
+    width: 500px;
+    height: 240px;
+    line-height: 1.8em;
+    border-radius: 10px;
+    text-align: center;
 
 }
 
-.task #allTasks{
+#allTasks{
     float: right;
+    margin-top: 20px;
+    margin-left: 10px;
+    border-width: thin;
+    border-style: solid;
+    border-color: #005f7f;
+    width: 500px;
+    height: 500px;
+    line-height: 1.8em;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+#unassignedTasks{
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+    border-width: thin;
+    border-style: solid;
+    border-color: #005f7f;
+    width: 500px;
+    height: 240px;
+    line-height: 1.8em;
+    border-radius: 10px;
+    text-align: center;
+
 }
