@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-    width: 1020px;
+    width: 1220px;
 }
 
 #admin {
@@ -40,6 +40,7 @@ h4 {
     margin: 0;
     background-color: 005f7f;
     color: white;
+    text-align: center;
 }
 
 #leftSubContainer {
@@ -54,9 +55,20 @@ h4 {
     border-width: thin;
     border-style: solid;
     border-color: #005f7f;
-    width: 800px;
+    width: 400px;
     height: 400px;
     line-height: 1.8em;
     border-radius: 10px;
-    text-align: center;
+}
+
+#createUserContainer {
+    margin-top: 20;
+    margin-left: 200;
+    border-width: thin;
+    border-style: solid;
+    border-color: #005f7f;
+    width: 800px;
+    height: 500px;
+    line-height: 1.8em;
+    border-radius: 10px;
 }

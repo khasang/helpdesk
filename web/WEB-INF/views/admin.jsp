@@ -1,38 +1,16 @@
-<!--
-Comment for now, convert to plain html
-<%--
-  Created by IntelliJ IDEA.
-  User: Igort
-  Date: 09.06.2016
-  Time: 15:40
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
--->
+<jsp:include page="topTags.jsp"/>
 <html>
 <head>
   <title>Admin page</title>
   <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
-<div class="nav">
-  <ul>
-    <li><a href="desk.html">Desk</a></li>
-    <li><a href="#">Issues</a></li>
-    <li><a href="#">Profile</a></li>
-    <li><a href="admin.html">Admin</a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#">Logout</a></li>
-  </ul>
-</div>
-
 <div class="container">
   <div id="leftSubContainer">
     <div id="admin">
       <h4>Users Administration</h4>
-      <li><a href="#">Create User</a></li>
+      <li><a href="/createUser">Create User</a></li>
       <li><a href="#">Delete User</a></li>
       <li><a href="#">Edit User</a></li>
     </div>
