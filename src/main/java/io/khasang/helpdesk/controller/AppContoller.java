@@ -1,6 +1,8 @@
 package io.khasang.helpdesk.controller;
 
 import io.khasang.helpdesk.model.Example;
+import io.khasang.helpdesk.model.Hello;
+import io.khasang.helpdesk.model.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,9 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class AppContoller {
-
     @Autowired
     Example example;
+
+    @Autowired
+    Hello hello;
+
+    @Autowired
+    Message message;
 
     @RequestMapping("/")
     public String hello(Model model) {
@@ -36,9 +43,9 @@ public class AppContoller {
         return "task";
     }
 
-    @RequestMapping("/solution")
-    public String number(Model model){
-        model.addAttribute("number", example.getNumber());
-        return "solution";
+    @RequestMapping("/hello21")
+    public String example(Model model){
+        model.addAttribute("String", "Hello my secure page!!");
+        return "securePage";
     }
 }

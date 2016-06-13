@@ -8,23 +8,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class Example {
 
-    Example(){
-    }
-
-    Example(int num){
-        this.number = num;
-    }
-
     private String message;
 
-    private int number;
-
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
+    public Example() {
     }
 
     public String getMessage() {
