@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #ccc;
+}
+
+.nav ul {
+    list-style: none;
+    background-color: #005f7f;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.nav li {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1em;
+    line-height: 20px;
+    height: 20px;
+    display: inline-block;
+    width: 120px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: .3s background-color;
+}
+
+.nav a:hover {
+    background-color: #005f6f;
+    font-size: 1.01em;
+}
+
+.nav a.active {
+    background-color: #fff;
+    color: #444;
+    cursor: default;
+}
+
+.container{
+    position: relative;
+    width: 1030px;
+}
+
+h4 {
+    border-radius: 10px;
+    margin: 0;
+    background-color: 005f7f;
+    color: white;
+}
+
+#myTasks {
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+    border-width: thin;
+    border-style: solid;
+    border-color: #005f7f;
+    width: 500px;
+    height: 240px;
+    line-height: 1.8em;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+#allTasks{
+    float: right;
+    margin-top: 20px;
+    margin-left: 10px;
+    border-width: thin;
+    border-style: solid;
+    border-color: #005f7f;
+    width: 500px;
+    height: 500px;
+    line-height: 1.8em;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+#unassignedTasks{
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+    border-width: thin;
+    border-style: solid;
+    border-color: #005f7f;
+    width: 500px;
+    height: 240px;
+    line-height: 1.8em;
+    border-radius: 10px;
+    text-align: center;
+
+}
