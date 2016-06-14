@@ -47,7 +47,7 @@ h4 {
     float: left;
 }
 
-#createUserContainer {
+#deleteUserContainer {
     margin-top: 20;
     margin-left: 200;
     border-width: thin;
@@ -57,4 +57,19 @@ h4 {
     height: 500px;
     line-height: 1.8em;
     border-radius: 10px;
+}
+
+#delete {
+    float: right;
+    list-style: none;
+    margin-top: 20;
+    margin-left: 10;
+    border-width: thin;
+    border-style: solid;
+    border-color: #005f7f;
+    width: 850px;
+    height: 400px;
+    line-height: 1.8em;
+    border-radius: 10px;
+    text-align: center;
 }

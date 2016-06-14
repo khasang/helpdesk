@@ -15,4 +15,9 @@ public class AdminController {
     public String createUser(){
         return "createUser";
     }
+
+    @RequestMapping("/deleteUser")
+    public String deleteUser() {
+        return "deleteUser";
+    }
 }
