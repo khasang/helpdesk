@@ -12,7 +12,7 @@
       <h4>Users Administration</h4>
       <li><a href="/createUser">Create User</a></li>
       <li><a href="/deleteUser">Delete User</a></li>
-      <li><a href="#">Edit User</a></li>
+      <li><a href="/editUser">Edit User</a></li>
     </div>
     <div id="bckup">
       <h4>Backup</h4>

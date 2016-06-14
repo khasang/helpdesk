@@ -2,8 +2,8 @@
 <jsp:include page="topTags.jsp"/>
 <html>
 <head>
-    <title>Delete User</title>
-    <link rel="stylesheet" href="css/deleteUser.css">
+    <title>Apply Backup</title>
+    <link rel="stylesheet" href="css/applyBackup.css">
 </head>
 <body>
 <div class="container">
@@ -21,8 +21,8 @@
             <li><a href="/applyBackup">Apply Backup</a></li>
         </div>
     </div>
-    <div id="delete">
-        <h4>Delete User</h4>
+    <div id="apply">
+        <h4>Apply Backup</h4>
     </div>
 </div>
 

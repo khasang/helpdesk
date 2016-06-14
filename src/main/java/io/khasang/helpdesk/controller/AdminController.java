@@ -20,4 +20,24 @@ public class AdminController {
     public String deleteUser() {
         return "deleteUser";
     }
+
+    @RequestMapping("/editUser")
+    public String editUser() {
+        return "editUser";
+    }
+
+    @RequestMapping("/createBackup")
+    public String createBackup() {
+        return "createBackup";
+    }
+
+    @RequestMapping("/deleteBackup")
+    public String deleteBackup() {
+        return "deleteBackup";
+    }
+
+    @RequestMapping("/applyBackup")
+    public String applyBackup() {
+        return "applyBackup";
+    }
 }

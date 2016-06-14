@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Delete User</title>
-    <link rel="stylesheet" href="css/deleteUser.css">
+    <link rel="stylesheet" href="css/editUser.css">
 </head>
 <body>
 <div class="container">
@@ -21,8 +21,8 @@
             <li><a href="/applyBackup">Apply Backup</a></li>
         </div>
     </div>
-    <div id="delete">
-        <h4>Delete User</h4>
+    <div id="edit">
+        <h4>Edit User</h4>
     </div>
 </div>
 
