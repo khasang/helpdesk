@@ -1,0 +1,57 @@
+/*.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover{*/
+    /*background: #ccc;*/
+/*}*/
+
+/*.menu-item{*/
+    /*background: white;*/
+    /*border: solid black 1px;*/
+/*}*/
+
+/*.navbar-inverse .navbar-nav > li > a:hover{*/
+    /*color: #000;*/
+/*}*/
+
+#container{
+    min-height: 400px;
+}
+
+.block{
+    clear: both;
+    background-color: green;
+}
+
+.news{
+    border: solid black 1px;
+    padding: 25px 15px;
+    margin: 25px 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .7);
+}
+
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+    .news{
+        padding: 15px 10px;
+        margin: 10px 5px;
+    }
+}
+
+@media only screen and (min-width : 993px) {
+
+}
