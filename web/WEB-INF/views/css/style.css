@@ -16,6 +16,22 @@ body {
 
 }
 
+.left_menu {
+    float: left;
+    width: 1000px;
+    min-height: 400px;
+    padding: 20px;
+    display: block;
+}
+
+.right_menu {
+    float: right;
+    width: 100px;
+    min-height: 400px;
+    padding: 20px;
+    display: block;
+}
+
 .links {
     position: absolute;
     left: auto;
@@ -23,4 +39,10 @@ body {
     width: 96px;
     height: 25px;
     z-index: 2;
+}
+
+.content {
+    padding: 20px;
+    width: 800px;
+    min-height: 400px;
 }

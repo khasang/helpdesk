@@ -11,29 +11,42 @@
     <title>admin</title>
     <meta charset=’UTF-8’>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <style>
+    body {
+      background: url("https://i.vimeocdn.com/video/518346687.jpg?mw=1920&mh=1080&q=70");
+      }
+    </style>
 </head>
 <body>
-<a href="/">Go to Index</a>
+<div class="left_menu">
+<left>
+<form action="/">
+  <input type="submit" id="Button1" name="" value="Go to Index">
+</form>
+</left>
 
-<br>
-<br>
+<br/>
+<br/>
+<br/>
+<h1><b>Admin menu:</b></h1>
+<form action="#">
+  <input type="submit" id="Button2" name="" value="Users"><br/>
+  <input type="submit" id="Button3" name="" value="Moderators"><br/>
+  <input type="submit" id="Button4" name="" value="Activity"><br/>
+  <input type="submit" id="Button5" name="" value="Questions"><br/>
+  <input type="submit" id="Button6" name="" value="Settings"><br/>
+  <input type="submit" id="Button7" name="" value="Buckup"><br/>
+</form>
 
-<table border="1">
-  <tr>
-    <td>строка1 ячейка1</td>
-    <td>строка1 ячейка2</td>
-    <td>строка1 ячейка3</td>
-  </tr>
-  <tr>
-    <td>строка2 ячейка1</td>
-    <td>строка2 ячейка2</td>
-    <td>строка2 ячейка3</td>
-  </tr>
-  <tr>
-    <td>строка3 ячейка1</td>
-    <td>строка3 ячейка2</td>
-    <td>строка3 ячейка3</td>
-  </tr>
-</table>
+<div class="content">
+  <h1><b>User edit</b></h1>
+  <form>
+    <b>Login: </b><input type="text" value=""/><br/>
+    <b>Password: </b><input type="text" value=""><br/>
+    <b>Email: </b><input type="text" value=""><br/>
+    <input type="submit" value="Edit">
+  </form>
+</div>
+  </div>
 </body>
 </html>

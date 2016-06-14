@@ -25,27 +25,15 @@ public class AppContoller {
         return "index";
     }
 
-    @RequestMapping("/admin")
-    public String admin(Model model) {
-        model.addAttribute("hello", "Admin page!");
-        return "admin";
+    @RequestMapping("/signIn")
+    public String signIn(Model model) {
+        model.addAttribute("signIn", message.getInfoMess());
+        return "signIn";
     }
 
-    @RequestMapping("/desk")
-    public String desk(Model model) {
-        model.addAttribute("hello", "Desk page!");
-        return "desk";
-    }
-
-    @RequestMapping("/desk/task")
-    public String task(Model model) {
-        model.addAttribute("hello", "Task page!");
-        return "task";
-    }
-
-    @RequestMapping("/hello21")
-    public String example(Model model){
-        model.addAttribute("String", "Hello my secure page!!");
-        return "securePage";
+    @RequestMapping("/registration")
+    public String registration(Model model) {
+        model.addAttribute("registration", "Hiii");
+        return "registration";
     }
 }
