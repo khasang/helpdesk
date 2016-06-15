@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #ccc;
+}
+
+.container {
+    width: 1070px;
+}
+
+#admin {
+    list-style: none;
+    margin-top: 20;
+    margin-left: 10;
+    border-width: thin;
+    border-style: solid;
+    border-color: #005f7f;
+    width: 160px;
+    height: 120px;
+    line-height: 1.8em;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#bckup {
+    list-style: none;
+    margin-top: 20;
+    margin-left: 10;
+    border-width: thin;
+    border-style: solid;
+    border-color: #005f7f;
+    width: 160px;
+    height: 120px;
+    line-height: 1.8em;
+    border-radius: 10px;
+    text-align: center;
+}
+h4 {
+    border-radius: 10px;
+    margin: 0;
+    background-color: 005f7f;
+    color: white;
+    text-align: center;
+}
+
+#leftSubContainer {
+    float: left;
+}
