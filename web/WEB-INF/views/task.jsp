@@ -9,8 +9,13 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 <body>
+<div class="block">
+    <h1>You are welcome</h1>
+</div>
+<h2>${hello}</h2>
 
 </body>
 <footer>
