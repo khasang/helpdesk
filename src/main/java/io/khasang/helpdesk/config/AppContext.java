@@ -1,6 +1,7 @@
 package io.khasang.helpdesk.config;
 
 import io.khasang.helpdesk.model.Message;
+import io.khasang.helpdesk.model.Temp;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,4 +13,8 @@ public class AppContext {
         return new Message();
     }
 
+    @Bean
+    public Temp temp(){
+        return new Temp();
+    }
 }
