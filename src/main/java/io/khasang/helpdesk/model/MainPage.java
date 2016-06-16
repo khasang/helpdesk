@@ -6,4 +6,12 @@ public class MainPage {
 
     public MainPage() {
     }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
 }

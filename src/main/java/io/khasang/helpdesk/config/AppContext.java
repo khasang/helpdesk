@@ -1,8 +1,9 @@
 package io.khasang.helpdesk.config;
 
-import io.khasang.helpdesk.model.Example;
-import io.khasang.helpdesk.model.Hello;
-import io.khasang.helpdesk.model.Message;
+import io.khasang.helpdesk.model.Admin;
+import io.khasang.helpdesk.model.Index;
+import io.khasang.helpdesk.model.MainPage;
+import io.khasang.helpdesk.model.Task;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,17 +11,22 @@ import org.springframework.context.annotation.Configuration;
 public class AppContext {
 
     @Bean
-    public Message message() {
-        return new Message();
+    public Admin admin() {
+        return new Admin();
     }
 
     @Bean
-    public Example example() {
-        return new Example();
+    public MainPage mainPage() {
+        return new MainPage();
     }
 
     @Bean
-    public Hello hello() {
-        return new Hello();
+    public Index index(){
+        return new Index();
+    }
+
+    @Bean
+    public Task task(){
+        return new Task();
     }
 }

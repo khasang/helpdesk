@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>You are welcome</h1>
-<h2>${index}</h2>
+<h2><a href="${link}">Show task</a></h2>
 </body>
 <footer>
     <div class="links">

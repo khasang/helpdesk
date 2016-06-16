@@ -20,9 +20,10 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/map/rest/hello/**").access("hasRole('ROLE_ADMIN')")
+                .antMatchers("/map/rest/admin/**").access("hasRole('ROLE_ADMIN')")
                 .antMatchers("/confidential/**").access("hasRole('ROLE_SUPERADMIN')")
-                .antMatchers("/hello/**").access("hasRole('ROLE_USER')")
+                .antMatchers("/admin/**").access("hasRole('ROLE_USER')")
+                .antMatchers("/**").access("hasRole('ROLE_USER')")
                 .and().formLogin().defaultSuccessUrl("/", false);
     }
 }
