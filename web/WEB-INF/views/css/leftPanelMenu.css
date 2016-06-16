@@ -46,3 +46,15 @@ h4 {
 #leftSubContainer {
     float: left;
 }
+
+#centralWindow {
+    margin-top: 20;
+    margin-left: 200;
+    border-width: thin;
+    border-style: solid;
+    border-color: #005f7f;
+    width: 800px;
+    height: 500px;
+    line-height: 1.8em;
+    border-radius: 10px;
+}

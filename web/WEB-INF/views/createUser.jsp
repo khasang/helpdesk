@@ -8,7 +8,7 @@
 <body>
 <div class="container">
     <jsp:include page="leftPanelMenu.jsp"/>
-    <div id="createUserContainer">
+    <div id="centralWindow">
         <h4>Create User</h4>
         <form class="form-horizontal" role="form">
             <div class="form-group">

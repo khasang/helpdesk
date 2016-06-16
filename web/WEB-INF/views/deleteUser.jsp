@@ -3,12 +3,11 @@
 <html>
 <head>
     <title>Delete User</title>
-    <link rel="stylesheet" href="css/deleteUser.css">
 </head>
 <body>
 <div class="container">
     <jsp:include page="leftPanelMenu.jsp"/>
-    <div id="delete">
+    <div id="centralWindow">
         <h4>Delete User</h4>
     </div>
 </div>

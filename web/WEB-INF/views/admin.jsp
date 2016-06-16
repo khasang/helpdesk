@@ -3,13 +3,11 @@
 <html>
 <head>
   <title>Admin page</title>
-  <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
 <div class="container">
-  <div id="leftSubContainer">
     <jsp:include page="leftPanelMenu.jsp"/>
-  <div class="admin" id="logs">
+  <div id="centralWindow">
     <h4>Logs</h4>
   </div>
 </div>
