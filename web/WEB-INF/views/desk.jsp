@@ -36,33 +36,34 @@
     </form>
 </div>
 
-<center>
     <p><h1>Таблица выполнения заданий</h1></p>
     <table border="1" width="640" height="480">
         <tr height="25%">
-            <td width="15%">Фамилия</td>
-            <td width="25%">Проект принят в разработку</td>
-            <td width="25%">Проект сдан</td>
+            <td width="15%">artist name</td>
+            <td width="15%">project name</td>
+            <td width="15%">Adopted development</td>
+            <td width="15%">project finish</td>
         </tr>
         <tr height="25%">
             <td>Борисов</td>
+            <td>Create a new technology</td>
             <td>01.01.2016</td>
             <td>01.03.2016</td>
         </tr>
         <tr height="25%">
             <td>Иванов</td>
+            <td>Create a new database</td>
             <td>01.01.2016</td>
             <td>01.02.2016</td>
         </tr>
     </table>
-</center>
-
-<div class="content">
+<form action="#">
+    <input type="submit" id="Button4" name="" value="Create a task">
+</form>
     <form>
         <b>Search: </b><input type="text" value=""/><br/>
         <input type="submit" value="Edit">
     </form>
-</div>
 
 </body>
 </html>
