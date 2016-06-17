@@ -11,12 +11,25 @@
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <meta charset=’UTF-8’>
     <title>task</title>
+    <style>
+        body {
+            background: url("https://i.vimeocdn.com/video/518346687.jpg?mw=1920&mh=1080&q=70");
+        }
+    </style>
 </head>
 <body>
-<footer>
-  <div class="links">
-    <a href="/desk">back to desk page</a>
-  </div>
-</footer>
+
+<div class="left_menu">
+    <form action="/desk">
+        <input type="submit" id="Button1" name="" value="Desk page">
+    </form>
+</div>
+
+<div class="right_menu">
+    <form action="#">
+        <input type="submit" id="Button3" name="" value="Logout">
+    </form>
+</div>
+
 </body>
 </html>

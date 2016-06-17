@@ -23,6 +23,9 @@
 <form action="/">
   <input type="submit" id="Button1" name="" value="Go to Index">
 </form>
+    <form action="#">
+        <input type="submit" id="Button8" name="" value="Logout">
+    </form>
 </left>
 
 <br/>

@@ -9,6 +9,11 @@
 <html>
 <head>
     <title>News</title>
+    <style>
+        body {
+            background: url("https://i.vimeocdn.com/video/518346687.jpg?mw=1920&mh=1080&q=70");
+        }
+    </style>
 </head>
 <body>
 <form action="/">

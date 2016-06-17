@@ -11,6 +11,7 @@
     <meta charset=’UTF-8’>
     <title>index</title>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script type="text/javascript" src="js/welcome.js"></script>
     <style>
         body {
             background: url("https://i.vimeocdn.com/video/518346687.jpg?mw=1920&mh=1080&q=70");
@@ -32,7 +33,6 @@
 
     <span><h2>Welcome to our site! Helpdesk</h2></span>
 
-    <iframe id="YouTube1" src="https://www.youtube.com/embed/MwAXiL74l1A?rel=1&amp;autoplay=1&amp;autohide=0"></iframe>
 </div>
 
 <div class="left_menu">
@@ -47,6 +47,9 @@
     </form>
     <form action="/maps">
         <input type="submit" id="Button6" name="" value="Maps page">
+    </form>
+    <form action="/JIRAmovie">
+        <input type="submit" id="Button7" name="" value="Intro to JIRA portfolio">
     </form>
 </div>
 
