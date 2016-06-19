@@ -5,11 +5,19 @@
 </head>
 <body>
 <h1>${title}</h1>
-<br>
-<a href="/">Go to Index</a>
-<%--<input type="text" value="${user}">--%>
-<br>
-<%--<h3>${testUser}</h3>--%>
+    <input type="submit" value="add user">
+    <br>
+    <input type="submit" value="delete user">
+    <br>
+    <input type="submit" value="show logs">
+    <br>
+    <input type="submit" value="back up DataBase">
 </body>
-<footer></footer>
+<footer>
+    <br>
+    <a href="/">Go to Index</a>
+    <a href="/desk">Main page</a>
+    <a href="/map">Map</a>
+    <br>
+</footer>
 </html>

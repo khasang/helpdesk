@@ -16,7 +16,24 @@
     <h1>You in task page</h1>
 </div>
 <h2>${taskId}</h2>
-
+<p>Task description</p>
+<textarea cols="70" rows="20"></textarea>
+<br>
+<input type="submit" value="confirm task">
+<input type="submit" value="close task">
+<input type="submit" value="redirect task">
+<br>
+<textarea cols="70" rows="10"></textarea>
+<br>
+<input type="submit" value="leave comment">
+<p>status</p>
+       <form>
+           <select>
+               <option value="new">new</option>
+               <option value="in work">in work</option>
+               <option value="closed">closed</option>
+           </select>
+        </form>
 </body>
 <footer>
     <div class="links">

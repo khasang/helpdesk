@@ -2,17 +2,19 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
-    <h1>You are welcome</h1>
-    <h2>${index}</h2>
-
-
+<body class="index">
+    <div id="welcomText">
+        <h1>You are welcome</h1>
+        <h2>${index}</h2>
+    </div>
 </body>
     <footer>
         <div class="links">
             <a href="/admin">Admin page</a>
             <a href="/desk">Main page</a>
+            <a href="/map">Map</a>
         </div>
     </footer>
 </html>

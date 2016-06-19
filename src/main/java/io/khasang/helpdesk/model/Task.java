@@ -13,4 +13,8 @@ public class Task {
     public void setTaskId(int taskId) {
         this.taskId = taskId;
     }
+
+    public void addTask(){
+
+    }
 }

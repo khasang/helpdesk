@@ -1,9 +1,6 @@
 package io.khasang.helpdesk.config;
 
-import io.khasang.helpdesk.model.Admin;
-import io.khasang.helpdesk.model.Index;
-import io.khasang.helpdesk.model.MainPage;
-import io.khasang.helpdesk.model.Task;
+import io.khasang.helpdesk.model.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -26,7 +23,8 @@ public class AppContext {
     }
 
     @Bean
-    public Task task(){
-        return new Task();
-    }
+    public Task task(){return new Task();}
+
+    @Bean
+    public Map map(){return new Map();}
 }
