@@ -12,44 +12,42 @@
     <meta charset=’UTF-8’>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <style>
-    body {
-      background: url("https://i.vimeocdn.com/video/518346687.jpg?mw=1920&mh=1080&q=70");
-      }
+        body {
+            background: url("https://i.vimeocdn.com/video/518346687.jpg?mw=1920&mh=1080&q=70");
+        }
     </style>
 </head>
 <body>
 <div class="left_menu">
-<left>
-<form action="/">
-  <input type="submit" id="Button1" name="" value="Go to Index">
-</form>
+    <left>
+        <form action="/">
+            <input type="submit" id="Button1" name="" value="Go to Index">
+        </form>
+        <form action="#">
+            <input type="submit" id="Button8" name="" value="Logout">
+        </form>
+    </left>
+
+    <br/>
+    <br/>
+    <br/>
+    <h1><b>Admin menu:</b></h1>
     <form action="#">
-        <input type="submit" id="Button8" name="" value="Logout">
+        <input type="submit" id="Button2" name="" value="Users"><br/>
+        <input type="submit" id="Button3" name="" value="Moderators"><br/>
+        <input type="submit" id="Button4" name="" value="Activity"><br/>
+        <input type="submit" id="Button5" name="" value="Questions"><br/>
+        <input type="submit" id="Button6" name="" value="Settings"><br/>
+        <input type="submit" id="Button7" name="" value="Buckup"><br/>
     </form>
-</left>
 
-<br/>
-<br/>
-<br/>
-<h1><b>Admin menu:</b></h1>
-<form action="#">
-  <input type="submit" id="Button2" name="" value="Users"><br/>
-  <input type="submit" id="Button3" name="" value="Moderators"><br/>
-  <input type="submit" id="Button4" name="" value="Activity"><br/>
-  <input type="submit" id="Button5" name="" value="Questions"><br/>
-  <input type="submit" id="Button6" name="" value="Settings"><br/>
-  <input type="submit" id="Button7" name="" value="Buckup"><br/>
-</form>
-
-<div class="content">
-  <h1><b>User edit</b></h1>
-  <form>
-    <b>Login: </b><input type="text" value=""/><br/>
-    <b>Password: </b><input type="text" value=""><br/>
-    <b>Email: </b><input type="text" value=""><br/>
-    <input type="submit" value="Edit">
-  </form>
+    <h1><b>User edit</b></h1>
+    <form>
+        <b>Login: </b><input type="text" value=""/><br/>
+        <b>Password: </b><input type="text" value=""><br/>
+        <b>Email: </b><input type="text" value=""><br/>
+        <input type="submit" value="Edit">
+    </form>
 </div>
-  </div>
 </body>
 </html>

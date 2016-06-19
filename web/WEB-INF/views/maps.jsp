@@ -11,7 +11,7 @@
   <title>Maps</title>
   <style>
     body {
-      background: url("https://i.vimeocdn.com/video/518346687.jpg?mw=1920&mh=1080&q=70");
+      background: url("http://www.beliefnet.com/columnists/everydayspirituality/files/2014/02/orange_sunset_1920x1080.jpg");
     }
   </style>
 </head>

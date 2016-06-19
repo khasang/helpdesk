@@ -17,11 +17,22 @@ body {
 }
 
 .left_menu {
-    float: left;
-    width: 1000px;
-    min-height: 400px;
-    padding: 20px;
-    display: block;
+    position:absolute;
+    left:110px;
+    top:387px;
+    width:148px;
+    height:25px;
+    z-index:1;
+}
+
+.left_menu_desk{
+    color: aqua;
+    position:absolute;
+    left:110px;
+    top:20px;
+    width:200px;
+    height:25px;
+    z-index:1;
 }
 
 .right_menu {
@@ -47,6 +58,44 @@ body {
     min-height: 400px;
 }
 
-.lower_column {
+.Created_by{
+    position:absolute;
+    left:900px;
+    top:900px;
+    width:500px;
+    height:16px;
+    text-align:left;
+    color: white;
+    font-size:13px;
+}
 
+.summury {
+    position:absolute;
+    left:800px;
+    top:200px;
+    width:500px;
+    height:100px;
+    text-align: left;
+    color:red;
+    font-size:16px;
+}
+
+.text_black{
+    color: black;
+    font-size:13px;
+}
+
+.text_white{
+    color: white;
+    font-size:13px;
+}
+
+.welcome {
+    position:absolute;
+    left:850px;
+    top:20px;
+    width:500px;
+    height:30px;
+    z-index:3;
+    text-align:left;
 }

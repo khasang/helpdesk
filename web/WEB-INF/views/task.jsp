@@ -13,7 +13,7 @@
     <title>task</title>
     <style>
         body {
-            background: url("https://i.vimeocdn.com/video/518346687.jpg?mw=1920&mh=1080&q=70");
+            background: url("http://www.beliefnet.com/columnists/everydayspirituality/files/2014/02/orange_sunset_1920x1080.jpg");
         }
     </style>
 </head>
@@ -23,9 +23,6 @@
     <form action="/desk">
         <input type="submit" id="Button1" name="" value="Desk page">
     </form>
-</div>
-
-<div class="right_menu">
     <form action="#">
         <input type="submit" id="Button3" name="" value="Logout">
     </form>
