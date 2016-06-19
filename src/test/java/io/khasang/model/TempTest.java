@@ -23,8 +23,6 @@ public class TempTest {
     @Autowired
     Temp temp;
 
-    int[] array = { 90, 100, 105};
-
     @Before
     public void dataSourceConnect(){
         System.out.println("Получить подключение к базе");
@@ -41,11 +39,5 @@ public class TempTest {
         assertEquals("Это очень плохо, что тест не прошел!", 3 , temp.example("green"));
         assertEquals("Это очень плохо, что тест не прошел!", 0 , temp.example("yellow"));
         assertEquals("Это очень плохо, что тест не прошел!", 0 , temp.example("white"));
-    }
-
-    @Test
-    public void testExamplemassiv(){
-        assertEquals("Ошибка с ссылками на массивы", array, temp.examplemassiv(array));
-        //assertArrayEquals("Ошибка с содержанием массивов", array, temp.examplemassiv(array));
     }
 }
