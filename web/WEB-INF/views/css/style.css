@@ -16,10 +16,10 @@ body {
 
 }
 
-.left_menu {
+.left_up_menu {
     position:absolute;
     left:110px;
-    top:387px;
+    top:100px;
     width:148px;
     height:25px;
     z-index:1;
@@ -35,7 +35,7 @@ body {
     z-index:1;
 }
 
-.right_menu {
+.right_up_menu {
     float: right;
     width: 100px;
     min-height: 400px;

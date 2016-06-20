@@ -11,7 +11,6 @@
     <meta charset=’UTF-8’>
     <title>index</title>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <script type="text/javascript" src="js/welcome.js"></script>
     <style>
         body {
             background: grey;
@@ -20,7 +19,7 @@
 </head>
 
 <body>
-<div class="right_menu">
+<div class="right_up_menu">
     <form action="#">
         <input type="submit" id="Button1" name="" value="Login">
     </form>
@@ -30,13 +29,12 @@
 </div>
 
 <div class="welcome">
-    <span><h2>Welcome to Helpdesk</h2></span>
+    <h1>Welcome to Helpdesk</h1>
 </div>
 
-<div class="left_menu">
-    <form action="/admin">
-        <input type="submit" id="Button3" name="" value="Admin page">
-    </form>
+<div class="left_up_menu">
+    <li><a href="/admin/">Admin</a></li>
+
     <form action="/desk">
         <input type="submit" id="Button4" name="" value="Desk page">
     </form>
