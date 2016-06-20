@@ -24,7 +24,7 @@ import static org.junit.Assert.assertNotEquals;
                 AppSecurityConfig.class,
                 TestDataSourceContext.class})
 
-public class TempTest {
+public class ArrayTest {
     @Autowired
     ArrayBean arrayBean;
 
