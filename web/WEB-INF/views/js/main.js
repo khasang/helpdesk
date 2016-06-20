@@ -1,5 +1,10 @@
-$(function(){
-	$('.globe').on('click', function(){
-		$('.icons').slideToggle();
-	});
+$(document).ready(function(){
+ $(function() {
+    $( ".modul" ).draggable();
+     $( ".module-news" ).draggable();
+  });
+
 });
+
+
+

@@ -3,6 +3,7 @@ package io.khasang.helpdesk.controller;
 import io.khasang.helpdesk.model.Example;
 import io.khasang.helpdesk.model.Hello;
 import io.khasang.helpdesk.model.Message;
+import io.khasang.helpdesk.model.MyTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,18 +15,27 @@ public class AppContoller {
     @Autowired
     Message message;
 
+    @Autowired
+    MyTest test;
+
     @RequestMapping("/")
-    public String hello(Model model){
-        Example example = new Example();
-        model.addAttribute("hello", example.getMessage());
-        return "hello";
+    public String index(Model model){
+
+        return "index";
     }
 
-    @RequestMapping("/hello")
-    public String by(Model model){
+    @RequestMapping("/admin")
+    public String admin(Model model){
 
-        model.addAttribute("hello", message.getInfoMess());
-        return "by";
+
+        return "admin";
+    }
+
+    @RequestMapping("/desk")
+    public String desk(Model model){
+
+
+        return "desk";
     }
 
 }
