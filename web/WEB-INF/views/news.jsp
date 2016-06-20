@@ -2,8 +2,6 @@
 <jsp:include page="include/header.jsp"/>
 
 <jsp:include page="include/menu.jsp"/>
-</div>
-
 
 <div class="content">
     <script src="//news.yandex.ru/common.js"></script>

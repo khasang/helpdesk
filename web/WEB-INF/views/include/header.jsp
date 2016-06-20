@@ -33,10 +33,12 @@
 
                     <c:choose>
                         <c:when test="${pageContext.request.isUserInRole('ADMIN')}">
-                            ADMIN
+                            ADMIN<br/>
+                            <a href="/admin">Admin panel</a>
                         </c:when>
                         <c:when test="${pageContext.request.isUserInRole('USER')}">
-                            USER
+                            USER<br/>
+                            <a href="/desk">User panel</a>
                         </c:when>
                     </c:choose>
 

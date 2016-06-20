@@ -3,12 +3,9 @@
 
 <jsp:include page="../include/menu.jsp"/>
 
-Admin menu:<br/>
-<a href="/admin/users">Users</a><br/>
-</div>
 <div class="content">
     <h3>Users:</h3>
-    <table border="1px">
+    <table style="font-size: 12px;">
         <tr>
             <td>id</td>
             <td>login</td>
@@ -24,6 +21,12 @@ Admin menu:<br/>
             </tr>
         </c:forEach>
     </table>
+</div>
+
+<div class="left_menu">
+    <hr/>
+    <h5>Admin menu</h5>
+    <a href="/admin/users">Users</a><br/>
 </div>
 
 <jsp:include page="../include/footer.jsp"/>

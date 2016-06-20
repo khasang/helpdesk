@@ -1,8 +1,6 @@
 <jsp:include page="include/header.jsp"/>
 
 <jsp:include page="include/menu.jsp"/>
-</div>
-
 
 <div class="content">
     Lorem Ipsum is simply dummy text of the printing and typesetting industry.

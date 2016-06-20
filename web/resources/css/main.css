@@ -41,6 +41,7 @@ a:hover, a:active, a:focus {
     width: 1000px;
     background-color: #FFFFFF;
     margin: 0 auto;
+    min-height: 800px;
 }
 
 .header {
@@ -56,7 +57,6 @@ a:hover, a:active, a:focus {
 
 .descr {
     float: left;
-    width: 400px;
     text-align: left;
     padding-top: 50px;
 }
@@ -67,6 +67,7 @@ a:hover, a:active, a:focus {
     padding-right: 10px;
     font-weight: normal;
     float: right;
+    display: block;
 }
 
 .footer {
@@ -80,15 +81,24 @@ a:hover, a:active, a:focus {
 
 .left_menu {
     float: left;
-    width: 200px;
-    min-height: 400px;
-    padding: 20px;
+    width: 170px;
     background-color: #FFFFFF;
     display: block;
+    padding: 15px;
 }
 
 .content {
-    padding: 20px;
-    width: 800px;
-    min-height: 400px;
+    width: 770px;
+    float: right;
+    background-color: white;
+    padding: 15px;
+}
+
+.map {
+    height: 400px;
+    width: 770px;
+    display: block;
+    float: right;
+    background-color: white;
+    padding: 15px;
 }

@@ -3,8 +3,8 @@ package io.khasang.model;
 
 import io.khasang.config.TestDataSourceContext;
 import io.khasang.helpdesk.config.AppContext;
-import io.khasang.helpdesk.config.AppSecurityConfig;
-import io.khasang.helpdesk.config.WebConfig;
+import io.khasang.helpdesk.config.security.AppSecurityConfig;
+import io.khasang.helpdesk.config.web.WebConfig;
 import io.khasang.helpdesk.model.ArrayBean;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package io.khasang.helpdesk.config;
+package io.khasang.helpdesk.config.web;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
