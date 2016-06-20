@@ -1,38 +1,22 @@
 package io.khasang.helpdesk.controller;
 
-import io.khasang.helpdesk.model.Page;
+import io.khasang.helpdesk.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class AppContoller {
-    @Autowired
-    @Qualifier("index")
-    Page indexPage;
 
     @Autowired
-    @Qualifier("admin")
-    Page adminPage;
+    UserService test;
 
     @RequestMapping("/")
     public String index(Model model) {
-        model.addAttribute("page", indexPage);
+        model.addAttribute("title", "Main page");
+        model.addAttribute("test", test);
         return "index";
-    }
-
-    @RequestMapping("/admin")
-    public String admin(Model model) {
-        model.addAttribute("title", "Admin page");
-        return "admin";
-    }
-
-    @RequestMapping("/desk")
-    public String desk(Model model) {
-        model.addAttribute("title", "Main desk page");
-        return "desk";
     }
 
     @RequestMapping("/maps")

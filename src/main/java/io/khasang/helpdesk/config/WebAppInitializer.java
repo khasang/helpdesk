@@ -1,6 +1,5 @@
 package io.khasang.helpdesk.config;
 
-import io.khasang.helpdesk.config.application.WebConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {

@@ -7,7 +7,7 @@
 </div>
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 
-<script src="<c:url value="/resources/js/map.js"/>" type="text/javascript" ></script>
+<script src="<c:url value="/resources/js/map.js"/>" type="text/javascript"></script>
 
 <div id="map" style="height: 400px"></div>
 </div>
