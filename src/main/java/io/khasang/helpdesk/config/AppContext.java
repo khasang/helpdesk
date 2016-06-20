@@ -1,5 +1,6 @@
 package io.khasang.helpdesk.config;
 
+import io.khasang.helpdesk.model.CreateTable;
 import io.khasang.helpdesk.model.Message;
 import io.khasang.helpdesk.model.Temp;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,11 @@ public class AppContext {
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
         jdbcTemplate.setDataSource(dataSource());
         return jdbcTemplate;
+    }
+
+    @Bean
+    public CreateTable createTable(){
+        return new CreateTable(jdbcTemplate());
     }
 
     @Bean
