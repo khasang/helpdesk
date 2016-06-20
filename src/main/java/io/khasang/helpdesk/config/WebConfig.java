@@ -1,4 +1,4 @@
-package io.khasang.helpdesk.config.application;
+package io.khasang.helpdesk.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,7 +11,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan({"io.khasang.helpdesk.config", "io.khasang.helpdesk.controller"})
+@ComponentScan({"io.khasang.helpdesk.config", "io.khasang.helpdesk.controller", "io.khasang.helpdesk.model", "io.khasang.helpdesk.service"})
 public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public InternalResourceViewResolver viewResolver() {
