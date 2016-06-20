@@ -10,7 +10,7 @@
 <head>
     <meta charset=’UTF-8’>
     <title>index</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
     <style>
         body {
             background: grey;
@@ -19,32 +19,16 @@
 </head>
 
 <body>
-<div class="right_up_menu">
-    <form action="#">
-        <input type="submit" id="Button1" name="" value="Login">
-    </form>
-    <form action="#">
-        <input type="submit" id="Button2" name="" value="Registration">
-    </form>
+
+<div class="list-inline">
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="/desk">Desk</a></li>
+    <li><a href="/news">News</a></li>
+    <li><a href="/maps">Maps</a></li>
+    <li><a href="/login">Login</a></li>
+    <li><a href="/registration">Registration</a></li>
 </div>
 
-<div class="welcome">
-    <h1>Welcome to Helpdesk</h1>
-</div>
-
-<div class="left_up_menu">
-    <li><a href="/admin/">Admin</a></li>
-
-    <form action="/desk">
-        <input type="submit" id="Button4" name="" value="Desk page">
-    </form>
-    <form action="/news">
-        <input type="submit" id="Button5" name="" value="News page">
-    </form>
-    <form action="/maps">
-        <input type="submit" id="Button6" name="" value="Maps page">
-    </form>
-</div>
-
+<script src="js/bootstrap.js"></script>
 </body>
 </html>
