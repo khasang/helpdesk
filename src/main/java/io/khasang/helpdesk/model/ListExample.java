@@ -1,7 +1,10 @@
 package io.khasang.helpdesk.model;
 
 
-public class ListExemple {
+public class ListExample {
+
+    public ListExample() {
+    }
 
     public String[] list = { "canada", "austria", "usa"};
     public String[] listing = {"russia"};

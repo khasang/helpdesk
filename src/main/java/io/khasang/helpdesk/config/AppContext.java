@@ -54,7 +54,7 @@ public class AppContext {
     }
 
     @Bean
-    public ListExemple listExemple(){
-        return new ListExemple();
+    public ListExample listExample(){
+        return new ListExample();
     }
 }
