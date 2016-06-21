@@ -1,31 +1,38 @@
 package io.khasang.helpdesk.service;
 
+import io.khasang.helpdesk.db.interfaces.UserDAO;
 import io.khasang.helpdesk.model.User;
-import io.khasang.helpdesk.model.UserRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import javax.sql.DataSource;
 import java.util.List;
 
-@Component
+@Component("UserService")
 public class UserService {
     @Autowired
-    DataSource dataSource;
+    UserDAO userDAO;
 
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    PasswordEncoder passwordEncoder;
 
-    @Autowired
-    UserRowMapper userRowMapper;
-
-    @SuppressWarnings("unchecked")
     public List<User> getUsersAsList() {
-        String query = "select * from users";
-        List<User> users = jdbcTemplate.query(query,
-                new BeanPropertyRowMapper(User.class));
-        return users;
+        return userDAO.getAllUserList();
+    }
+
+    public void addUser(User user) {
+        final String password = passwordEncoder.encode(user.getPassword());
+        user.setPassword(password);
+        userDAO.addUser(user);
+    }
+
+    public void updateUser(User user) {
+        final String password = passwordEncoder.encode(user.getPassword());
+        user.setPassword(password);
+        userDAO.updateUser(user);
+    }
+
+    public void deleteUser(User user) {
+        userDAO.deleteUser(user);
     }
 }

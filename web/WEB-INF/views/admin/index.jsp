@@ -6,11 +6,9 @@
 <div class="content">
     <h3>Admin content here</h3>
     <a href="/admin/users">Check all users</a>
+    <a href="/admin/backup">Work with backups</a>
 </div>
 
-<div class="left_menu">
-    <hr/>
-    <h5>Admin menu</h5>
-    <a href="/admin/users">Users</a><br/>
-</div>
+<jsp:include page="../include/admin_menu.jsp"/>
+
 <jsp:include page="../include/footer.jsp"/>
