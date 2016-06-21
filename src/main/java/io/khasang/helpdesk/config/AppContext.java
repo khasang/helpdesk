@@ -1,5 +1,6 @@
 package io.khasang.helpdesk.config;
 
+import io.khasang.helpdesk.model.CreateTable;
 import io.khasang.helpdesk.model.Message;
 import io.khasang.helpdesk.model.MyTest;
 import io.khasang.helpdesk.model.Temp;
@@ -36,6 +37,10 @@ public class AppContext {
     }
 
     @Bean
+    public CreateTable createTable(){ return new CreateTable(jdbcTemplate());}
+
+
+    @Bean
     public Message message(){
        return new Message();
     }
@@ -51,6 +56,6 @@ public class AppContext {
         return new Temp();
     }
 
-    @Bean
+
 
 }

@@ -1,9 +1,6 @@
 package io.khasang.helpdesk.controller;
 
-import io.khasang.helpdesk.model.Example;
-import io.khasang.helpdesk.model.Hello;
-import io.khasang.helpdesk.model.Message;
-import io.khasang.helpdesk.model.MyTest;
+import io.khasang.helpdesk.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +14,9 @@ public class AppContoller {
 
     @Autowired
     MyTest test;
+
+    @Autowired
+    CreateTable createTable;
 
     @RequestMapping("/")
     public String index(Model model){
@@ -38,4 +38,10 @@ public class AppContoller {
         return "desk";
     }
 
+    @RequestMapping("/create")
+    public String create(Model model) {
+
+        model.addAttribute("create", createTable.result());
+        return "create";
+    }
 }
