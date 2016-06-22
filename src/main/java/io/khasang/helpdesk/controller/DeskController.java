@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class DeskController {
 
-    public static final String ACTIVE_TASKS = "activeTasks";
-    public static final String DESK = "desk";
-    public static final String SOLVED_TASKS = "solvedTasks";
-    public static final String ANSWER_TASK = "answerTask";
+    private static final String ACTIVE_TASKS = "activeTasks";
+    private static final String DESK = "desk";
+    private static final String SOLVED_TASKS = "solvedTasks";
+    private static final String ANSWER_TASK = "answerTask";
 
     @RequestMapping("/desk")
     public String deskPage(Model model) {
