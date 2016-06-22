@@ -42,15 +42,15 @@ public class UserTest {
     private UserDAO userDAO;
     @Autowired
     private JdbcTemplate jdbcTemplate;
-    private User testuser;
+    private User testUser;
 
     @Before
     public void backup() {
         backup = backupService.getBackup();
-        testuser = new User();
-        testuser.setLogin("test");
-        testuser.setPassword("test");
-        testuser.setRole(Role.ROLE_ADMIN.toString());
+        testUser = new User();
+        testUser.setLogin("test");
+        testUser.setPassword("test");
+        testUser.setRole(Role.ROLE_ADMIN.toString());
     }
 
     @Test(expected = EmptyResultDataAccessException.class)
@@ -60,42 +60,42 @@ public class UserTest {
 
     @Test
     public void testUserInsert() {
-        userService.addUser(testuser);
-        User user = userService.getUserByLogin(testuser.getLogin());
-        assertEquals(testuser.getLogin(), user.getLogin());
-        assertEquals(testuser.getPassword(), user.getPassword());
-        assertEquals(testuser.getRole(), user.getRole());
+        userService.addUser(testUser);
+        User user = userService.getUserByLogin(testUser.getLogin());
+        assertEquals(testUser.getLogin(), user.getLogin());
+        assertEquals(testUser.getPassword(), user.getPassword());
+        assertEquals(testUser.getRole(), user.getRole());
     }
 
     @Test(expected = DuplicateKeyException.class)
     public void testInsertUniqueLogin() {
-        userDAO.addUser(testuser);
-        userDAO.addUser(testuser);
+        userDAO.addUser(testUser);
+        userDAO.addUser(testUser);
     }
 
     @Test
     public void testPasswordUpdate() {
-        userService.addUser(testuser);
-        User user = userService.getUserByLogin(testuser.getLogin());
+        userService.addUser(testUser);
+        User user = userService.getUserByLogin(testUser.getLogin());
         String password = user.getPassword();
         user.setPassword("newUniquePassword");
         userService.updateUser(user);
 
-        user = userService.getUserByLogin(testuser.getLogin());
+        user = userService.getUserByLogin(testUser.getLogin());
         assertNotEquals(password, user.getPassword());
     }
 
     @Test
     public void testChangeUserLogin() {
-        userService.addUser(testuser);
+        userService.addUser(testUser);
 
-        User user = userService.getUserByLogin(testuser.getLogin());
+        User user = userService.getUserByLogin(testUser.getLogin());
         final String newLogin = "newLogin";
         user.setLogin(newLogin);
         userService.updateUser(user);
 
         try {
-            userService.getUserByLogin(testuser.getLogin());
+            userService.getUserByLogin(testUser.getLogin());
             fail("Still have user with old login in DB.");
         } catch (EmptyResultDataAccessException e) {
         }
@@ -106,7 +106,7 @@ public class UserTest {
 
     @Test
     public void testDeleteAllUsers() {
-        userService.addUser(testuser);
+        userService.addUser(testUser);
 
         String sql = "select count(*) from users";
         final int count = jdbcTemplate.queryForObject(sql, Integer.class);
@@ -123,14 +123,14 @@ public class UserTest {
         final List<User> userList1 = userService.getUsersAsList();
         assertTrue(userList1.size() == 0);
 
-        userService.addUser(testuser);
+        userService.addUser(testUser);
         final List<User> userList2 = userService.getUsersAsList();
         assertTrue(userList2.size() == 1);
 
         User user = userList2.get(0);
-        assertEquals(testuser.getLogin(), user.getLogin());
-        assertEquals(testuser.getPassword(), user.getPassword());
-        assertEquals(testuser.getRole(), user.getRole());
+        assertEquals(testUser.getLogin(), user.getLogin());
+        assertEquals(testUser.getPassword(), user.getPassword());
+        assertEquals(testUser.getRole(), user.getRole());
     }
 
     @After

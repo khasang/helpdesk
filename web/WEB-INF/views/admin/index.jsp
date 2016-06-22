@@ -5,7 +5,7 @@
 
 <div class="content">
     <h3>Admin content here</h3>
-    <a href="/admin/users">Check all users</a><br/>
+    <a href="/admin/users">Work with users</a><br/>
     <a href="/admin/backup">Work with backups</a>
 </div>
 
