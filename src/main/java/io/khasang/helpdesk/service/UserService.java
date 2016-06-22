@@ -1,6 +1,6 @@
 package io.khasang.helpdesk.service;
 
-import io.khasang.helpdesk.db.interfaces.UserDAO;
+import io.khasang.helpdesk.db.UserDAO;
 import io.khasang.helpdesk.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -21,18 +21,28 @@ public class UserService {
     }
 
     public void addUser(User user) {
-        final String password = passwordEncoder.encode(user.getPassword());
-        user.setPassword(password);
+        encryptPassword(user);
         userDAO.addUser(user);
     }
 
     public void updateUser(User user) {
-        final String password = passwordEncoder.encode(user.getPassword());
-        user.setPassword(password);
+        encryptPassword(user);
         userDAO.updateUser(user);
     }
 
     public void deleteUser(User user) {
         userDAO.deleteUser(user);
+    }
+
+    private void encryptPassword(User user) {
+        if (user.getPassword() == null || user.getPassword().isEmpty()) {
+            throw new IllegalArgumentException("Please, enter password!");
+        }
+        final String password = passwordEncoder.encode(user.getPassword());
+        user.setPassword(password);
+    }
+
+    public void deleteAllUsers() {
+        userDAO.deleteAllUsers();
     }
 }

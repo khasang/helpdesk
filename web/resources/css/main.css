@@ -126,3 +126,7 @@ input {
 .inputfile + label * {
     pointer-events: none;
 }
+
+.message {
+    color: red;
+}

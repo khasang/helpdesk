@@ -8,38 +8,59 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import java.util.Map;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
+@RequestMapping("/admin/users")
 public class UserController {
     @Autowired
     UserService userService;
 
-    @RequestMapping("/admin/users")
+    @RequestMapping
     public String users(Model model) {
         model.addAttribute("users", userService.getUsersAsList());
         return "admin/users";
     }
 
-    @RequestMapping(value = "/admin/registerUser", method = RequestMethod.POST)
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String registerUser(@ModelAttribute("registerUser") User user,
-                               Map<String, Object> model) {
-        userService.addUser(user);
+                               RedirectAttributes redirectAttributes) {
+        String message;
+        try {
+            userService.addUser(user);
+            message = "User " + user.getLogin() + " successfully registered.";
+        } catch (Exception e) {
+            message = "Registration error " + e.getMessage();
+        }
+        redirectAttributes.addFlashAttribute("message", message);
         return "redirect:/admin/users";
     }
 
-    @RequestMapping(value = "/admin/changeUser", method = RequestMethod.POST)
+    @RequestMapping(value = "/change", method = RequestMethod.POST)
     public String updateUser(@ModelAttribute("changeUser") User user,
-                             Map<String, Object> model) {
-        userService.updateUser(user);
+                             RedirectAttributes redirectAttributes) {
+        String message;
+        try {
+            userService.updateUser(user);
+            message = "User " + user.getLogin() + " successfully updated.";
+        } catch (Exception e) {
+            message = "Error!" + e.getMessage();
+        }
+        redirectAttributes.addFlashAttribute("message", message);
         return "redirect:/admin/users";
     }
 
-    @RequestMapping(value = "/admin/deleteUser", method = RequestMethod.POST)
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public String deleteUser(@ModelAttribute("deleteUser") User user,
-                             Map<String, Object> model) {
-        userService.deleteUser(user);
+                             RedirectAttributes redirectAttributes) {
+        String message;
+        try {
+            userService.deleteUser(user);
+            message = "User successfully deleted.";
+        } catch (Exception e) {
+            message = "Error!" + e.getMessage();
+        }
+        redirectAttributes.addFlashAttribute("message", message);
         return "redirect:/admin/users";
     }
 }

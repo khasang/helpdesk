@@ -14,8 +14,6 @@ public class AppContoller {
 
     @RequestMapping("/")
     public String index(Model model) {
-        model.addAttribute("title", "Main page");
-        model.addAttribute("test", test);
         return "index";
     }
 

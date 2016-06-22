@@ -5,14 +5,15 @@
 
 <div class="content">
     <h3>Backup page</h3>
-    <a href="/admin/doBackup">Get backup!</a>
+    <a href="/admin/backup/create">Get backup!</a>
     <hr/>
-    <form method="POST" enctype="multipart/form-data" action="/admin/restore?${_csrf.parameterName}=${_csrf.token}">
+    <form method="POST" enctype="multipart/form-data"
+          action="/admin/backup/restore?${_csrf.parameterName}=${_csrf.token}">
         <label for="file">Click to choose sql file...</label>
         <input type="file" name="file" id="file" class="inputfile">
         <input type="submit" value="Restore">
     </form>
-    <div style="color: red"><c:out value="${message}"/></div>
+    <div class="message"><c:out value="${message}"/></div>
 </div>
 
 <jsp:include page="../include/admin_menu.jsp"/>

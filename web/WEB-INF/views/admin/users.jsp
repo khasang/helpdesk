@@ -18,7 +18,7 @@
         <c:forEach items="${users}" var="user">
             <tr>
                     <%--UPDATE USER FORM--%>
-                <form:form action="/admin/changeUser" method="post" commandName="changeUser">
+                <form:form action="/admin/users/change" method="post" commandName="changeUser">
                     <td><input type="text" name="id" value="${user.id}" readonly></td>
                     <td><input type="text" name="login" value="${user.login}"></td>
                     <td><input type="text" name="password" value=""></td>
@@ -39,7 +39,7 @@
 
                     <%--DELETE USER FORM--%>
                 <td>
-                    <form:form action="/admin/deleteUser" method="post" commandName="deleteUser">
+                    <form:form action="/admin/users/delete" method="post" commandName="deleteUser">
                         <input type="hidden" name="id" value="${user.id}">
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                         <input type="submit" value="Delete">
@@ -51,7 +51,7 @@
     <hr/>
     <h3>Add user:</h3>
     <%--NEW USER FORM--%>
-    <form:form action="/admin/registerUser" method="post" commandName="registerUser">
+    <form:form action="/admin/users/register" method="post" commandName="registerUser">
         <label for="login">Login:</label><input type="text" id="login" name="login">
         <label for="password">Password:</label><input type="text" id="password" name="password">
         <label for="role">Role:</label>
@@ -62,6 +62,8 @@
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         <input type="submit" value="Add user">
     </form:form>
+
+    <div class="message"><c:out value="${message}"/></div>
 </div>
 
 

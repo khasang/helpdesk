@@ -1,6 +1,8 @@
 package io.khasang.helpdesk.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +12,11 @@ import java.io.InputStreamReader;
 import java.io.UncheckedIOException;
 
 @Service
+@PropertySource("classpath:db.properties")
 public class BackupService {
+    @Autowired
+    Environment environment;
+
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
@@ -18,11 +24,11 @@ public class BackupService {
         String backupOutput = "";
         try {
             ProcessBuilder processBuilder = new ProcessBuilder(
-                    "pg_dump",
-                    "--host", "localhost",
-                    "--port", "5432",
-                    "--username", "postgres",
-                    "--dbname", "helpdesk",
+                    environment.getProperty("backup.pg_dump.path"),
+                    "--host", environment.getProperty("jdbc.postgresql.host"),
+                    "--port", environment.getProperty("jdbc.postgresql.port"),
+                    "--username", environment.getProperty("jdbc.postgresql.backup.username"),
+                    "--dbname", environment.getProperty("jdbc.postgresql.dbname"),
                     "--no-password",
                     "--clean",
                     "--blobs",

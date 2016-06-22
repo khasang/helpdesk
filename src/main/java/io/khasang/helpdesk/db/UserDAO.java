@@ -1,4 +1,4 @@
-package io.khasang.helpdesk.db.interfaces;
+package io.khasang.helpdesk.db;
 
 import io.khasang.helpdesk.model.User;
 
@@ -10,6 +10,8 @@ public interface UserDAO {
     void updateUser(User user);
 
     void deleteUser(User user);
+
+    void deleteAllUsers();
 
     User getUserById(int id);
 

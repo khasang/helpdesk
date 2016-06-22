@@ -16,16 +16,17 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @Controller
+@RequestMapping("/admin/backup")
 public class BackupController {
     @Autowired
     BackupService backupService;
 
-    @RequestMapping("/admin/backup")
+    @RequestMapping
     public String backup(Model model) {
         return "admin/backup";
     }
 
-    @RequestMapping("/admin/doBackup")
+    @RequestMapping("/create")
     public void doBackup(HttpServletRequest request,
                          HttpServletResponse response) throws IOException {
 
@@ -41,7 +42,7 @@ public class BackupController {
     }
 
 
-    @RequestMapping(value = "/admin/restore", method = RequestMethod.POST)
+    @RequestMapping(value = "/restore", method = RequestMethod.POST)
     public String handleFileUpload(@RequestParam("file") MultipartFile file,
                                    RedirectAttributes redirectAttributes) {
         if (!file.isEmpty()) {

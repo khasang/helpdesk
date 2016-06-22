@@ -1,6 +1,6 @@
 package io.khasang.helpdesk.db.impl;
 
-import io.khasang.helpdesk.db.interfaces.UserDAO;
+import io.khasang.helpdesk.db.UserDAO;
 import io.khasang.helpdesk.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -52,6 +52,12 @@ public class JdbcUserDAO implements UserDAO {
     public void deleteUser(User user) {
         String sql = "delete from users where id = ?";
         jdbcTemplate.update(sql, user.getId());
+    }
+
+    @Override
+    public void deleteAllUsers() {
+        String sql = "TRUNCATE TABLE users";
+        jdbcTemplate.execute(sql);
     }
 
     @Override
