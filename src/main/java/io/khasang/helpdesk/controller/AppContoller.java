@@ -23,4 +23,9 @@ public class AppContoller {
         model.addAttribute("hello", message.getInfoMess());
         return "by";
     }
+
+    @RequestMapping("/maps")
+    public String hello2(Model model){
+        return "maps";
+    }
 }

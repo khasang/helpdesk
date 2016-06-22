@@ -20,13 +20,15 @@
 
 <body>
 
-<div class="list-inline">
+<div id="menu">
+    <ul>
     <li><a href="/admin">Admin</a></li>
     <li><a href="/desk">Desk</a></li>
     <li><a href="/news">News</a></li>
     <li><a href="/maps">Maps</a></li>
     <li><a href="/login">Login</a></li>
     <li><a href="/registration">Registration</a></li>
+    </ul>
 </div>
 
 <script src="js/bootstrap.js"></script>
