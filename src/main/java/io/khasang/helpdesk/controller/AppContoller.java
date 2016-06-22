@@ -1,5 +1,6 @@
 package io.khasang.helpdesk.controller;
 
+import io.khasang.helpdesk.model.CreateTable;
 import io.khasang.helpdesk.model.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AppContoller {
     @Autowired
     Message message;
+
+    @Autowired
+    CreateTable createTable;
 
     //4to to sdelal
     @RequestMapping("/")
@@ -27,5 +31,11 @@ public class AppContoller {
     @RequestMapping("/maps")
     public String hello2(Model model){
         return "maps";
+    }
+
+    @RequestMapping("/create")
+    public String create(Model model){
+        model.addAttribute("create", createTable.result());
+        return "create";
     }
 }
