@@ -5,6 +5,7 @@ import io.khasang.helpdesk.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
@@ -12,6 +13,8 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -62,12 +65,22 @@ public class JdbcUserDAO implements UserDAO {
 
     @Override
     public User getUserById(int id) {
-        return null;
+        String sql = "select * from users where id = ?";
+        User user = jdbcTemplate.queryForObject(
+                sql,
+                new Object[]{id},
+                new UserRowMapper());
+        return user;
     }
 
     @Override
     public User getUserByLogin(String login) {
-        return null;
+        String sql = "select * from users where login = ?";
+        User user = jdbcTemplate.queryForObject(
+                sql,
+                new Object[]{login},
+                new UserRowMapper());
+        return user;
     }
 
     @Override
@@ -76,5 +89,17 @@ public class JdbcUserDAO implements UserDAO {
         List<User> users = jdbcTemplate.query(query,
                 new BeanPropertyRowMapper(User.class));
         return users;
+    }
+
+    private static final class UserRowMapper implements RowMapper<User> {
+        @Override
+        public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+            User user = new User();
+            user.setId(rs.getInt("id"));
+            user.setLogin(rs.getString("login"));
+            user.setPassword(rs.getString("password"));
+            user.setRole(rs.getString("role"));
+            return user;
+        }
     }
 }

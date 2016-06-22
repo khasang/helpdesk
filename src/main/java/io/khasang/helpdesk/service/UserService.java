@@ -45,4 +45,12 @@ public class UserService {
     public void deleteAllUsers() {
         userDAO.deleteAllUsers();
     }
+
+    public User getUserById(int id) {
+        return userDAO.getUserById(id);
+    }
+
+    public User getUserByLogin(String login) {
+        return userDAO.getUserByLogin(login);
+    }
 }

@@ -24,13 +24,12 @@ import static org.junit.Assert.assertNotEquals;
                 WebConfig.class,
                 AppSecurityConfig.class,
                 TestDataSourceContext.class})
-
 public class BackupTest {
     @Autowired
-    BackupService backupService;
+    private BackupService backupService;
 
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @Test
     public void testBackupIsConsistent() {

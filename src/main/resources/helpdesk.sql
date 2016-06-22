@@ -15,10 +15,9 @@ SET row_security = OFF;
 
 SET search_path = public, pg_catalog;
 
+DROP INDEX public.users_login_uindex;
 ALTER TABLE ONLY public.users
   DROP CONSTRAINT users_pkey;
-ALTER TABLE ONLY public.users
-  DROP CONSTRAINT users_login_key;
 ALTER TABLE public.users
   ALTER COLUMN id DROP DEFAULT;
 DROP SEQUENCE public.users_id_seq;
@@ -111,21 +110,14 @@ INSERT INTO users VALUES (1, 'aaa', '$2a$04$/ZZ8RQhadM.D5F7SkYnws.DJpWxj7gCaMdGs
 INSERT INTO users VALUES (20, 'admin', '$2a$10$7E4f.tChYRg7GzFmKrB6zehVlgX5feN7GoQoWvWPblul6DEy8.KnK', 'ROLE_ADMIN');
 INSERT INTO users VALUES (21, 'root', '$2a$10$8W8cCCT5mbkIPOcxIfZx6O04Tvxo0U/M4tG6kxhWWlebqSA/4h45.', 'ROLE_ADMIN');
 INSERT INTO users VALUES (22, 'user', '$2a$10$RTQsmUi.vRHrSbkhoOrMoOAFwTYF4ZCkQjqs4mlRIzp8pe/xfSzoW', 'ROLE_USER');
-INSERT INTO users VALUES (32, 'john', '$2a$10$6JbrVodOkA7aZHeMWRdzxedGDjFTSzxDFGXBAA9ck08yOr4qTpGb6', 'ROLE_USER');
-INSERT INTO users VALUES (33, 'sandro', '$2a$10$hbS/qa5oXSXcZqyGJBMJiuIcuyDNV7O4ubCnVt888aiqAiZnZ0WFu', 'ROLE_USER');
+INSERT INTO users VALUES (23, 'john', '$2a$10$HUAbYhYlbh2eDHu85EGIVuev4XIjaAd3udMDwuDXe6EojHA/wKSX.', 'ROLE_USER');
+INSERT INTO users VALUES (25, 'sandro', '$2a$10$DwADUSdyfMKu4cT0aQUjpugB59t/6iwkLPY9Q3ynCM9QREV5vUdCW', 'ROLE_USER');
 
 --
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
 --
 
-SELECT pg_catalog.setval('users_id_seq', 33, TRUE);
-
---
--- Name: users_login_key; Type: CONSTRAINT; Schema: public; Owner: root
---
-
-ALTER TABLE ONLY users
-  ADD CONSTRAINT users_login_key UNIQUE (login);
+SELECT pg_catalog.setval('users_id_seq', 27, TRUE);
 
 --
 -- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: root
@@ -133,6 +125,12 @@ ALTER TABLE ONLY users
 
 ALTER TABLE ONLY users
   ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+--
+-- Name: users_login_uindex; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE UNIQUE INDEX users_login_uindex ON users USING BTREE (login);
 
 --
 -- Name: public; Type: ACL; Schema: -; Owner: postgres
