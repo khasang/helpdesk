@@ -1,6 +1,5 @@
 package io.khasang.helpdesk.config;
 
-import io.khasang.helpdesk.model.CreateTable;
 import io.khasang.helpdesk.model.Message;
 import io.khasang.helpdesk.model.MyTest;
 import io.khasang.helpdesk.model.Temp;
@@ -19,6 +18,7 @@ public class AppContext {
     @Autowired
     Environment environment;
 
+
     @Bean
     public JdbcTemplate jdbcTemplate() {
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
@@ -28,16 +28,19 @@ public class AppContext {
 
     @Bean
     public DriverManagerDataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(environment.getProperty("jdbc.postgresql.driverClass"));
-        dataSource.setUrl(environment.getProperty("jdbc.postgresql.url"));
-        dataSource.setUsername(environment.getProperty("jdbc.postgresql.username"));
-        dataSource.setPassword(environment.getProperty("jdbc.postgresql.password"));
-        return dataSource;
+            DriverManagerDataSource dataSource = new DriverManagerDataSource();
+            dataSource.setDriverClassName(environment.getProperty("jdbc.postgresql.driverClass"));
+            dataSource.setUrl(environment.getProperty("jdbc.postgresql.url"));
+            dataSource.setUsername(environment.getProperty("jdbc.postgresql.username"));
+            dataSource.setPassword(environment.getProperty("jdbc.postgresql.password"));
+
+            return dataSource;
     }
 
-    @Bean
-    public CreateTable createTable(){ return new CreateTable(jdbcTemplate());}
+
+
+  //  @Bean
+   // public CreateTable createTable(){ return new CreateTable(jdbcTemplate());}
 
 
     @Bean

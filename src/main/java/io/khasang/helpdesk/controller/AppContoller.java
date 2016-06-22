@@ -15,8 +15,8 @@ public class AppContoller {
     @Autowired
     MyTest test;
 
-    @Autowired
-    CreateTable createTable;
+   // @Autowired
+   // CreateTable createTable;
 
     @RequestMapping("/")
     public String index(Model model){
@@ -38,10 +38,5 @@ public class AppContoller {
         return "desk";
     }
 
-    @RequestMapping("/create")
-    public String create(Model model) {
 
-        model.addAttribute("create", createTable.result());
-        return "create";
-    }
 }
