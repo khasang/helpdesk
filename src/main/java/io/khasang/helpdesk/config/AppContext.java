@@ -57,4 +57,9 @@ public class AppContext {
     public ListExample listExample(){
         return new ListExample();
     }
+
+    @Bean
+    public CreateTable createTable(){
+        return new CreateTable(jdbcTemplate());
+    }
 }
