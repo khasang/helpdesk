@@ -1,11 +1,9 @@
+<<<<<<< HEAD
 body {
-    font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
-    background-color: #EEE;
-    margin: 0;
-    padding: 0;
-    color: #000;
-    font-size: 17px;
-    height: 100%;
+    background-color: #F5F5F5;
+    padding: 0px;
+    margin: 0px;
+    color: #045757;
 }
 
 #container {
@@ -22,3 +20,26 @@ body {
 #menu ul li {float:left; width:130px;text-align:center;height:50px}
 #menu ul {list-style:none;}
 #menu ul li:hover{background:blue;color:white;}
+=======
+
+p {
+    font-family: Calibri;
+    color: darkblue;
+    font-size: 14px;
+}
+
+button {
+    color: gray;
+    font-size:14px;
+    font-family:Calibri;
+}
+
+h1 {
+    padding: 0px;
+    margin: 0px;
+    font-size: 24px;
+    border-bottom: 2px solid #045757;
+    margin-bottom: 15px;
+    text-align: center;
+}
+>>>>>>> origin/development

@@ -22,8 +22,7 @@ public class CreateTable {
 
     public String result() {
         try {
-            /*jdbcTemplate.execute("CREATE TABLE TASKS (ID INT PRIMARY KEY NOT NULL)");*/
-            jdbcTemplate.execute("DELETE FROM TASKS WHERE name = 'Andrey'");
+            jdbcTemplate.execute("CREATE TABLE TASKS (ID INT PRIMARY KEY NOT NULL)");
             return "success";
         } catch (Exception e) {
             e.printStackTrace();

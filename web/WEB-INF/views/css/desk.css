@@ -1,0 +1,72 @@
+body {
+/*    background-color: lightskyblue;*/
+background-color: cadetblue;
+    /*background-image: url('/images/sun.gif');*/
+    /*    background-repeat: repeat;
+        background-attachment: fixed;*/
+    background-position: top center;
+}
+
+.welcomeText {
+    text-align: center; font-size: 22px;
+    color:  coral; margin-top: 24px;
+}
+.welcomeBlock {
+    text-align: center; font-size: 12px;
+    color: #444; margin-top: 24px;
+}
+
+/*table tr {
+    text-align: center; font-size: 12px;
+    color: #555; margin-top: 24px;
+}
+
+td {
+    border: solid; border-width: 1px; border-color: brown; 
+    text-align: center; font-size: 12px;
+    vertical-align: bottom;
+    color: #666; margin-top: 24px;
+}*/
+
+table {
+    position: relative;
+/*    border: solid; border-width: 2px; border-color: lightslategray; */
+border: solid; border-width: 2px; border-color: coral; 
+    float: left;
+    margin: 10px;
+    width: 30%;
+    color: #333; 
+}
+
+th {
+    border: solid; border-width: 1px; border-color: lightslategray; 
+    text-align: center; font-size: 15px;
+    vertical-align: central;
+    color: #333;
+}
+
+tr td {
+    border: solid; border-width: 1px; border-color: lightslategray; 
+/*border: solid; border-width: 1px; border-color: coral;*/ 
+    text-align: center; font-size: 13px;
+    vertical-align: central;
+    color: #222;
+}
+
+.input {
+    border: none;
+/*    background: lightgray; */
+background: darkcyan; 
+    text-align: center; font-size: 14px;
+}
+
+select {
+    width: 80px;
+}
+
+.tablePage {
+    position: relative;
+    border: none;
+    width: 30%;
+    vertical-align: top;
+}

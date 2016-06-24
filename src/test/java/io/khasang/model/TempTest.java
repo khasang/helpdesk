@@ -17,14 +17,11 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration(classes = {AppContext.class,
-         WebConfig.class, AppSecurityConfig.class})
-
+@ContextConfiguration(classes = {AppContext.class, WebConfig.class, AppSecurityConfig.class})
 public class TempTest {
+    private static int count;
     @Autowired
     Temp temp;
-
-    private static int count;
 
     @Before
     public void dataSourceConnect() {
