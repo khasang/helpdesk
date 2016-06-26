@@ -1,6 +1,5 @@
 package io.khasang.model;
 
-
 import io.khasang.helpdesk.config.AppContext;
 import io.khasang.helpdesk.config.AppSecurityConfig;
 import io.khasang.helpdesk.config.application.WebConfig;
@@ -43,3 +42,34 @@ import static org.junit.Assert.assertEquals;
         }
 
     }
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@WebAppConfiguration
+@ContextConfiguration(classes = {AppContext.class, WebConfig.class, AppSecurityConfig.class})
+public class TempTest {
+    private static int count;
+    @Autowired
+    Temp temp;
+
+    @Before
+    public void dataSourceConnect() {
+        count++;
+        System.out.println("получить подключение к базе");
+    }
+
+    @After
+    public void dataSourceClose() {
+        System.out.println("закрыть подключение к базе");
+    }
+
+    @Test
+    public void testExample() {
+        assertEquals("Это очень плохо, что тест не прошел!", 2, temp.example("red"));
+        assertEquals("Это очень плохо, что тест не прошел!", 3, temp.example("green"));
+        assertEquals("Это очень плохо, что тест не прошел!", 0, temp.example("yellow"));
+        assertEquals("Это очень плохо, что тест не прошел!", 0, temp.example("white"));
+    }
+
+    //@Test
+    //еще один тест
+}
