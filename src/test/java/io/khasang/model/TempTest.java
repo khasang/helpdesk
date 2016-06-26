@@ -14,6 +14,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import static com.sun.xml.internal.ws.dump.LoggingDumpTube.Position.After;
+import static com.sun.xml.internal.ws.dump.LoggingDumpTube.Position.Before;
 import static org.junit.Assert.assertArrayEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)

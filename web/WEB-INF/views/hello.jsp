@@ -14,6 +14,7 @@
 </div>
 
 <h1><p class="text-center"> Welcome to the Help Desk Web Site</p></h1>
+<p>${crypt}</p>
 
 <div class="btn-group-vertical">
     <a class="btn btn-primary btn-lg" href="/" role="button">Home Page</a>

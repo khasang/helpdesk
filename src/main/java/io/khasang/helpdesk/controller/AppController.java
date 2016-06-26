@@ -3,9 +3,13 @@ package io.khasang.helpdesk.controller;
 import io.khasang.helpdesk.model.CreateTable;
 import io.khasang.helpdesk.model.Message;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class AppController {
@@ -40,9 +44,17 @@ public class AppController {
         return "create";
     }
 
-    @RequestMapping("/insert")
-    public String insert(Model model){
-        model.addAttribute("insert", createTable.insert());
-        return "insert";
+    @RequestMapping("/confidential/secure")
+    public String secure(Model model){
+        model.addAttribute("secure", "secure page with access encrypted");
+        return "secure";
+    }
+
+    @RequestMapping(value = {"/hello/{name}"}, method = RequestMethod.GET)
+    public ModelAndView hello(@PathVariable("name") String name) {
+        ModelAndView model = new ModelAndView();
+        model.setViewName("hello");
+        model.addObject("crypt", new BCryptPasswordEncoder().encode(name));
+        return model;
     }
 }
