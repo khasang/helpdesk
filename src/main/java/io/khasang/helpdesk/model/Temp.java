@@ -1,13 +1,13 @@
 package io.khasang.helpdesk.model;
 
-public class Temp {
-
-    public Temp() {
-
 import org.springframework.stereotype.Component;
 
 @Component
 public class Temp {
+
+    public Temp() {
+    }
+
     public int example(String color) {
         switch (color) {
             case "red":

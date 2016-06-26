@@ -27,22 +27,21 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-//    @Autowired
-//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.inMemoryAuthentication().withUser("user").password("user").roles("USER");
-//        auth.inMemoryAuthentication().withUser("admin").password("admin").roles("ADMIN");
-//        auth.inMemoryAuthentication().withUser("superadmin").password("superadmin").roles("SUPERADMIN");
-//    }
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        auth.inMemoryAuthentication().withUser("user").password("user").roles("USER");
+        auth.inMemoryAuthentication().withUser("admin").password("admin").roles("ADMIN");
+        auth.inMemoryAuthentication().withUser("superadmin").password("superadmin").roles("SUPERADMIN");
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/map/rest/admin/**").access("hasRole('ROLE_ADMIN')")
                 .antMatchers("/confidential/**").access("hasRole('ROLE_SUPERADMIN')")
-                .antMatchers("/admin/**").access("hasRole('ROLE_USER')")
-                .antMatchers("/**").access("hasRole('ROLE_USER')")
+//                .antMatchers("/admin/**").access("hasRole('ROLE_SUPERADMIN')")
+//                .antMatchers("/**").access("hasRole('ROLE_SUPERADMIN')")
 //                .antMatchers("/hello/**").access("hasRole('ROLE_USER')")
->>>>>>> development
                 .and().formLogin().defaultSuccessUrl("/", false);
 //                .disable().csrf();
     }

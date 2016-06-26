@@ -4,8 +4,7 @@ package io.khasang.helpdesk.controller;
 import io.khasang.helpdesk.model.User;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import io.khasang.helpdesk.model.CreateTable;
-import io.khasang.helpdesk.model.Message;
->>>>>>> development
+//import io.khasang.helpdesk.model.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -18,8 +17,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class AppContoller {
 
-    @Autowired
-    Message message;
+//    @Autowired
+//    Message message;
+
     @Autowired
     CreateTable createTable;
 
