@@ -1,5 +1,6 @@
 package io.khasang.helpdesk.config;
 
+import io.khasang.helpdesk.dao.UserDAOImpl;
 import io.khasang.helpdesk.model.CreateTable;
 import io.khasang.helpdesk.model.Message;
 import io.khasang.helpdesk.model.Temp;
@@ -38,6 +39,11 @@ public class AppContext {
     @Bean
     public CreateTable createTable(){
         return new CreateTable(jdbcTemplate());
+    }
+
+    @Bean
+    public UserDAOImpl userDAOImpl(){
+        return new UserDAOImpl(dataSource())
     }
 
     @Bean

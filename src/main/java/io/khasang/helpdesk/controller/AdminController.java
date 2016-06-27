@@ -1,10 +1,21 @@
 package io.khasang.helpdesk.controller;
 
+import io.khasang.helpdesk.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.sql.DataSource;
+import java.util.List;
+
 @Controller
 public class AdminController {
+    @Autowired
+    DataSource dataSource;
+    @Autowired
+    JdbcTemplate jdbcTemplate;
+
 
     @RequestMapping("/admin")
     public String admin(){
@@ -15,6 +26,12 @@ public class AdminController {
     public String createUser(){
         return "createUser";
     }
+
+    @RequestMapping("/displayUser")
+    public String displayUser() {
+//        jdbcTemplate = new JdbcTemplate(dataSource);
+        List<User> list = jdbcTemplate.queryForList("SELECT * FROM users");
+        return "displayUser";}
 
     @RequestMapping("/deleteUser")
     public String deleteUser() {
