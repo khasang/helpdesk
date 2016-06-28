@@ -1,6 +1,5 @@
 package io.khasang.helpdesk.controller;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import io.khasang.helpdesk.model.CreateTable;
 import io.khasang.helpdesk.model.Message;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class AppContoller {
     @Autowired
     Message message;
-    @Autowired
-    CreateTable createTable;
-
     @Autowired
     CreateTable createTable;
 
