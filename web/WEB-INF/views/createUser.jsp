@@ -10,30 +10,30 @@
     <jsp:include page="leftPanelMenu.jsp"/>
     <div id="centralWindow">
         <h4>Create User</h4>
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal" role="form" action="createUser" method="post" modelAttribute="user">
             <div class="form-group">
-                <label for="firstName" class="col-sm-2 control-label">First Name</label>
+                <label for="name" class="col-sm-2 control-label">First Name</label>
                 <div class="col-sm-5">
-                    <input type="text" class="form-control" id="firstName" placeholder="Enter First Name">
+                    <input type="text" class="form-control" id="name" placeholder="Enter Name">
                 </div>
             </div>
             <div class="form-group">
-                <label for="secondName" class="col-sm-2 control-label">Last Name</label>
+                <label for="role_id" class="col-sm-2 control-label">Role ID</label>
                 <div class="col-sm-5">
-                    <input type="text" class="form-control" id="secondName" placeholder="Enter Last Name">
+                    <input type="text" class="form-control" id="role_id" placeholder="Enter Role_ID">
                 </div>
             </div>
             <div class="form-group">
-                <label for="role" class="col-sm-2 control-label">Role</label>
+                <label for="password" class="col-sm-2 control-label">Password</label>
                 <div class="col-sm-5">
-                    <input type="text" class="form-control" id="role" placeholder="Enter User Role">
+                    <input type="text" class="form-control" id="password" placeholder="Enter Password">
                 </div>
             </div>
             <div class="form-group">
-                <label for="email" class="col-sm-2 control-label">Email Address</label>
+                <label for="login" class="col-sm-2 control-label">Logins</label>
 
                 <div class="col-sm-5">
-                    <input type="text" class="form-control" id="email" placeholder="Enter Email Address">
+                    <input type="text" class="form-control" id="login" placeholder="Enter Login">
                 </div>
             </div>
             <div class="form-group">

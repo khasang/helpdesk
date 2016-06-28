@@ -5,7 +5,9 @@ import io.khasang.helpdesk.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.sql.DataSource;
@@ -26,9 +28,18 @@ public class AdminController {
         return "admin";
     }
 
-    @RequestMapping("/createUser")
-    public String createUser(){
-        return "createUser";
+    @RequestMapping(value = "/createUser", method = RequestMethod.GET)
+    public ModelAndView createUser(ModelAndView model){
+        User user = new User();
+        model.addObject("user", user);
+        model.setViewName("createUser");
+        return model;
+    }
+
+    @RequestMapping(value = "/createUser", method = RequestMethod.POST)
+    public ModelAndView createUser(@ModelAttribute User user){
+        userDAO.saveOrUpdate(user);
+        return new ModelAndView("redirect:createUser");
     }
 
     @RequestMapping("/displayUsers")

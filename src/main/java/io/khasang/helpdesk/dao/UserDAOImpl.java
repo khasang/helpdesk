@@ -18,7 +18,15 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public void saveOrUpdate(User user){
-        System.out.println("@");
+        if (user.getId() > 0) {
+            String sql = "UPDATE users SET name=?, role_id=?, password=?, login=? WHERE id=?";
+            jdbcTemplate.update(sql, user.getName(), user.getRole_id(), user.getPassword(),
+                    user.getLogin(), user.getId());
+        } else {
+            String sql = "INSERT INTO users (name, role_id, password, login"
+                        + "VALUES(?,?,?,?)";
+            jdbcTemplate.update(sql, user.getName(), user.getRole_id(), user.getPassword(), user.getLogin());
+        }
     }
 
     @Override
