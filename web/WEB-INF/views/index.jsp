@@ -11,11 +11,6 @@
     <meta charset=’UTF-8’>
     <title>index</title>
     <link rel="stylesheet" href="css/style.css"/>
-    <style>
-        body {
-            background: grey;
-        }
-    </style>
 </head>
 
 <body>

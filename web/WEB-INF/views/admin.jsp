@@ -9,8 +9,14 @@
 <html>
 <head>
     <title>Admin</title>
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 <h1>Admin Page</h1>
+<button>Add User</button>
+<button>Delete User</button>
+<button>View Log</button>
+<button>Make Backup DataBase</button>
+<button>Logout</button>
 </body>
 </html>

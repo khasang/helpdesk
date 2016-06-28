@@ -10,6 +10,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Карты</title>
+    <link rel="stylesheet" href="css/style.css"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script type="text/javascript">
@@ -34,7 +35,7 @@
 </head>
 
 <body>
-<div id="map" style="width: 600px; height: 400px"></div>
+<div id="map" style="width: 1700px; height: 900px"></div>
 </body>
 
 </html>
