@@ -1,12 +1,17 @@
 package io.khasang.helpdesk.controller;
 
+import io.khasang.helpdesk.dao.UserDAO;
 import io.khasang.helpdesk.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.sql.DataSource;
+import java.sql.SQLException;
 import java.util.List;
 
 @Controller
@@ -15,6 +20,8 @@ public class AdminController {
     DataSource dataSource;
     @Autowired
     JdbcTemplate jdbcTemplate;
+    @Autowired
+    private UserDAO userDAO;
 
 
     @RequestMapping("/admin")
@@ -28,10 +35,11 @@ public class AdminController {
     }
 
     @RequestMapping("/displayUser")
-    public String displayUser() {
-//        jdbcTemplate = new JdbcTemplate(dataSource);
-        List<User> list = jdbcTemplate.queryForList("SELECT * FROM users");
-        return "displayUser";}
+    public ModelAndView displayUser(ModelAndView model) {
+        List<User> users = userDAO.list();
+        model.addObject("listContact", users);
+        model.setViewName("displayUser");
+        return model;}
 
     @RequestMapping("/deleteUser")
     public String deleteUser() {

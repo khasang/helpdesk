@@ -1,5 +1,7 @@
 package io.khasang.helpdesk.config.application;
 
+import io.khasang.helpdesk.dao.UserDAO;
+import io.khasang.helpdesk.dao.UserDAOImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -28,4 +30,5 @@ public class WebConfig extends WebMvcConfigurerAdapter {
             registry.addResourceHandler("/jpg/**").addResourceLocations("/WEB-INF/views/images/");
             registry.addResourceHandler("/bootstrap/**").addResourceLocations("/WEB-INF/views/Content/");
     }
+
 }

@@ -1,6 +1,6 @@
 package io.khasang.helpdesk.config;
 
-import io.khasang.helpdesk.dao.UserDAOImpl;
+import io.khasang.helpdesk.dao.*;
 import io.khasang.helpdesk.model.CreateTable;
 import io.khasang.helpdesk.model.Message;
 import io.khasang.helpdesk.model.Temp;
@@ -42,8 +42,8 @@ public class AppContext {
     }
 
     @Bean
-    public UserDAOImpl userDAOImpl(){
-        return new UserDAOImpl(dataSource())
+    public UserDAO getUserDAO(){
+        return new UserDAOImpl(dataSource());
     }
 
     @Bean
