@@ -84,7 +84,7 @@ public class JdbcUserDAO implements UserDAO {
     }
 
     @Override
-    public List<User> getAllUserList() {
+    public List<User> getUserList() {
         String query = "select * from users";
         List<User> users = jdbcTemplate.query(query,
                 new BeanPropertyRowMapper(User.class));

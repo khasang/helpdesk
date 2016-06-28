@@ -17,7 +17,7 @@ public class UserService {
     PasswordEncoder passwordEncoder;
 
     public List<User> getUsersAsList() {
-        return userDAO.getAllUserList();
+        return userDAO.getUserList();
     }
 
     public void addUser(User user) {
