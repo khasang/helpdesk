@@ -10,7 +10,7 @@
     <jsp:include page="leftPanelMenu.jsp"/>
     <div id="centralWindow">
         <h4>Display User</h4>
-        <table border = 1>
+        <table border = 0>
             <th>id</th>
             <th>Name</th>
             <th>role_id</th>

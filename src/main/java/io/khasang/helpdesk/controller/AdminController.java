@@ -4,14 +4,11 @@ import io.khasang.helpdesk.dao.UserDAO;
 import io.khasang.helpdesk.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.sql.DataSource;
-import java.sql.SQLException;
 import java.util.List;
 
 @Controller
@@ -34,11 +31,11 @@ public class AdminController {
         return "createUser";
     }
 
-    @RequestMapping("/displayUser")
+    @RequestMapping("/displayUsers")
     public ModelAndView displayUser(ModelAndView model) {
         List<User> users = userDAO.list();
-        model.addObject("listContact", users);
-        model.setViewName("displayUser");
+        model.addObject("users", users);
+        model.setViewName("displayUsers");
         return model;}
 
     @RequestMapping("/deleteUser")
