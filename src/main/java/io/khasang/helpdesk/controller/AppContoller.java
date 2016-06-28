@@ -22,7 +22,7 @@ public class AppContoller {
     @RequestMapping("/")
     public String hello(Model model){
         model.addAttribute("hello", "Welcome to Help Desk program!");
-        return "hello";
+        return "index";
     }
 
     @RequestMapping("/hello")
