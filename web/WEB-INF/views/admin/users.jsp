@@ -7,7 +7,7 @@
 <div class="content">
     <h3>Users:</h3>
     <table style="font-size: 12px;">
-        <tr>
+        <tr class="table-header">
             <td>id</td>
             <td>login</td>
             <td>password</td>
@@ -38,13 +38,15 @@
                 </form:form>
 
                     <%--DELETE USER FORM--%>
-                <td>
-                    <form:form action="/admin/users/delete" method="post" commandName="deleteUser">
+                <form:form action="/admin/users/delete" method="post" commandName="deleteUser">
+                    <td>
+
                         <input type="hidden" name="id" value="${user.id}">
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                         <input type="submit" value="Delete">
-                    </form:form>
-                </td>
+
+                    </td>
+                </form:form>
             </tr>
         </c:forEach>
     </table>
