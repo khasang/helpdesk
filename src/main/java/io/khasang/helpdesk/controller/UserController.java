@@ -1,6 +1,6 @@
 package io.khasang.helpdesk.controller;
 
-import io.khasang.helpdesk.model.User;
+import io.khasang.helpdesk.entities.User;
 import io.khasang.helpdesk.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

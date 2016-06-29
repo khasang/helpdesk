@@ -1,7 +1,8 @@
 package io.khasang.helpdesk.db.impl;
 
 import io.khasang.helpdesk.db.UserDAO;
-import io.khasang.helpdesk.model.User;
+import io.khasang.helpdesk.entities.User;
+import io.khasang.helpdesk.enums.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -10,7 +11,6 @@ import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
-import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;
@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Repository
+//@Repository
 public class JdbcUserDAO implements UserDAO {
 
     private JdbcTemplate jdbcTemplate;
@@ -98,7 +98,7 @@ public class JdbcUserDAO implements UserDAO {
             user.setId(rs.getInt("id"));
             user.setLogin(rs.getString("login"));
             user.setPassword(rs.getString("password"));
-            user.setRole(rs.getString("role"));
+            user.setRole(Role.valueOf(rs.getString("role")));
             return user;
         }
     }

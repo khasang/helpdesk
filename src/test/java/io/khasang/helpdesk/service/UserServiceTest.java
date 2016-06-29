@@ -1,23 +1,18 @@
-package io.khasang.service;
+package io.khasang.helpdesk.service;
 
-import io.khasang.config.TestDataSourceContext;
 import io.khasang.helpdesk.config.AppContext;
+import io.khasang.helpdesk.config.TestDataSourceContext;
+import io.khasang.helpdesk.config.db.HibernateConfig;
 import io.khasang.helpdesk.config.security.AppSecurityConfig;
 import io.khasang.helpdesk.config.web.WebConfig;
-import io.khasang.helpdesk.db.UserDAO;
+import io.khasang.helpdesk.entities.User;
 import io.khasang.helpdesk.enums.Role;
-import io.khasang.helpdesk.model.User;
-import io.khasang.helpdesk.service.BackupService;
-import io.khasang.helpdesk.service.UserService;
-import org.junit.After;
-import org.junit.Before;
+import org.hibernate.SessionFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DuplicateKeyException;
-import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
@@ -31,35 +26,23 @@ import static org.junit.Assert.*;
         {AppContext.class,
                 WebConfig.class,
                 AppSecurityConfig.class,
-                TestDataSourceContext.class})
-public class UserTest {
-    private static String backup;
+                TestDataSourceContext.class,
+                HibernateConfig.class})
+public class UserServiceTest extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
-    private BackupService backupService;
+    SessionFactory sessionFactory;
     @Autowired
     private UserService userService;
-    @Autowired
-    private UserDAO userDAO;
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
-    private User testUser;
 
-    @Before
-    public void backup() {
-        backup = backupService.getBackup();
-        testUser = new User();
-        testUser.setLogin("test");
-        testUser.setPassword("test");
-        testUser.setRole(Role.ROLE_ADMIN.toString());
-    }
-
-    @Test(expected = EmptyResultDataAccessException.class)
+    @Test
     public void testNotExistingUser() {
         User user = userService.getUserByLogin("NonExistingLogin");
+        assertNull(user);
     }
 
     @Test
     public void testUserInsert() {
+        User testUser = generateTestUser();
         userService.addUser(testUser);
         User user = userService.getUserByLogin(testUser.getLogin());
         assertEquals(testUser.getLogin(), user.getLogin());
@@ -67,53 +50,49 @@ public class UserTest {
         assertEquals(testUser.getRole(), user.getRole());
     }
 
-    @Test(expected = DuplicateKeyException.class)
+    @Test(expected = org.hibernate.exception.ConstraintViolationException.class)
     public void testInsertUniqueLogin() {
-        userDAO.addUser(testUser);
-        userDAO.addUser(testUser);
+        userService.addUser(generateTestUser());
+        userService.addUser(generateTestUser());
+        sessionFactory.getCurrentSession().flush();
     }
 
     @Test
     public void testPasswordUpdate() {
+        User testUser = generateTestUser();
         userService.addUser(testUser);
-        User user = userService.getUserByLogin(testUser.getLogin());
-        String password = user.getPassword();
-        user.setPassword("newUniquePassword");
-        userService.updateUser(user);
 
-        user = userService.getUserByLogin(testUser.getLogin());
-        assertNotEquals(password, user.getPassword());
+        testUser.setPassword("newUniquePassword");
+        userService.updateUser(testUser);
+
+        User user2 = userService.getUserById(testUser.getId());
+        assertEquals(testUser.getPassword(), user2.getPassword());
     }
 
     @Test
     public void testChangeUserLogin() {
+        User testUser = generateTestUser();
         userService.addUser(testUser);
 
-        User user = userService.getUserByLogin(testUser.getLogin());
+
         final String newLogin = "newLogin";
-        user.setLogin(newLogin);
-        userService.updateUser(user);
+        testUser.setLogin(newLogin);
+        userService.updateUser(testUser);
 
-        try {
-            userService.getUserByLogin(testUser.getLogin());
-            fail("Still have user with old login in DB.");
-        } catch (EmptyResultDataAccessException e) {
-        }
-
-        user = userService.getUserByLogin(newLogin);
-        assertEquals(newLogin, user.getLogin());
+        assertNull("Still have user with old login in DB.", userService.getUserByLogin(generateTestUser().getLogin()));
+        User user2 = userService.getUserByLogin(newLogin);
+        assertEquals(testUser.getId(), user2.getId());
     }
 
     @Test
     public void testDeleteAllUsers() {
-        userService.addUser(testUser);
+        userService.addUser(generateTestUser());
 
-        String sql = "select count(*) from users";
-        final int count = jdbcTemplate.queryForObject(sql, Integer.class);
+        final int count = countRowsInTable("users");
         assertTrue(count > 0);
 
         userService.deleteAllUsers();
-        final int count2 = jdbcTemplate.queryForObject(sql, Integer.class);
+        final int count2 = countRowsInTable("users");
         assertTrue(count2 == 0);
     }
 
@@ -123,6 +102,7 @@ public class UserTest {
         final List<User> userList1 = userService.getUsersAsList();
         assertTrue(userList1.size() == 0);
 
+        User testUser = generateTestUser();
         userService.addUser(testUser);
         final List<User> userList2 = userService.getUsersAsList();
         assertTrue(userList2.size() == 1);
@@ -133,9 +113,12 @@ public class UserTest {
         assertEquals(testUser.getRole(), user.getRole());
     }
 
-    @After
-    public void restore() {
-        backupService.restoreFromBackup(backup);
+    private User generateTestUser() {
+        User testUser = new User();
+        testUser.setLogin("test");
+        testUser.setPassword("test");
+        testUser.setRole(Role.ROLE_ADMIN);
+        return testUser;
     }
 
 }

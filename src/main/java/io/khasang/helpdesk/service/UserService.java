@@ -1,14 +1,16 @@
 package io.khasang.helpdesk.service;
 
 import io.khasang.helpdesk.db.UserDAO;
-import io.khasang.helpdesk.model.User;
+import io.khasang.helpdesk.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Component("UserService")
+@Transactional
 public class UserService {
     @Autowired
     UserDAO userDAO;

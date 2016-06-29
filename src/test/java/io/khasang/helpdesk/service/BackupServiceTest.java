@@ -1,12 +1,10 @@
-package io.khasang.service;
+package io.khasang.helpdesk.service;
 
 
-import io.khasang.config.TestDataSourceContext;
 import io.khasang.helpdesk.config.AppContext;
+import io.khasang.helpdesk.config.TestDataSourceContext;
 import io.khasang.helpdesk.config.security.AppSecurityConfig;
 import io.khasang.helpdesk.config.web.WebConfig;
-import io.khasang.helpdesk.service.BackupService;
-import io.khasang.helpdesk.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +22,7 @@ import static org.junit.Assert.assertNotEquals;
                 WebConfig.class,
                 AppSecurityConfig.class,
                 TestDataSourceContext.class})
-public class BackupTest {
+public class BackupServiceTest {
     @Autowired
     private BackupService backupService;
 

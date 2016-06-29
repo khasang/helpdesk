@@ -1,6 +1,6 @@
 package io.khasang.helpdesk.db;
 
-import io.khasang.helpdesk.model.User;
+import io.khasang.helpdesk.entities.User;
 
 import java.util.List;
 

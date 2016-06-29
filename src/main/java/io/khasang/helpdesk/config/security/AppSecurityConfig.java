@@ -1,5 +1,6 @@
 package io.khasang.helpdesk.config.security;
 
+import io.khasang.helpdesk.enums.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,6 +16,9 @@ import javax.sql.DataSource;
 @Configuration
 @EnableWebSecurity
 public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
+    private final String admin = Role.ROLE_ADMIN.withoutPrefix();
+    private final String user = Role.ROLE_USER.withoutPrefix();
+
     @Autowired
     DataSource dataSource;
 
@@ -31,8 +35,8 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .authorizeRequests().antMatchers("/admin/**").access("hasRole('ADMIN')")
-                .and().authorizeRequests().antMatchers("/desk/**").access("hasAnyRole('ADMIN','USER')")
+                .authorizeRequests().antMatchers("/admin/**").access("hasRole('" + admin + "')")
+                .and().authorizeRequests().antMatchers("/desk/**").access("hasAnyRole('" + admin + "','" + user + "')")
                 .and()
                 .formLogin().loginPage("/")
                 .usernameParameter("login").passwordParameter("password")

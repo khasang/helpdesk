@@ -1,10 +1,26 @@
-package io.khasang.helpdesk.model;
+package io.khasang.helpdesk.entities;
 
+import io.khasang.helpdesk.enums.Role;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "users")
 public class User {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @Column(name = "login", unique = true)
     private String login;
+
+    @Column(name = "password", unique = true)
     private String password;
-    private String role;
+
+    @Column(name = "role")
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     public User() {
     }
@@ -33,13 +49,11 @@ public class User {
         this.password = password;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(Role role) {
         this.role = role;
     }
-
-
 }
