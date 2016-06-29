@@ -30,6 +30,7 @@ public class CreateTable {
             jdbcTemplate.execute("update tasks set name = 'second' where id = 1;");
             jdbcTemplate.execute("insert into tasks (id, name, description, date, user_id ) values (2, 'second', 'second commit', '2016-06-25', 22)");
             jdbcTemplate.execute("Delete from tasks where id = 2");
+            jdbcTemplate.execute("select * from tasks where id in (select id from users where name = 'user')");
             return "success";
         } catch (Exception e) {
             e.printStackTrace();
