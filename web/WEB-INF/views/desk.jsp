@@ -1,11 +1,19 @@
-<jsp:include page="include/header.jsp"/>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<jsp:include page="include/menu.jsp"/>
+<jsp:include page="inc/header.jsp"/>
 
-<div class="content">
-    <div style="display: block">
+<jsp:include page="inc/menu.jsp"/>
+
+<div class="panel panel-default content">
+    <div class="panel-heading">
+        <spring:message code="pages.main.title"/>
+    </div>
+    <div class="panel-body">
         <h3>Moderator content here</h3>
     </div>
 </div>
 
-<jsp:include page="include/footer.jsp"/>
+
+<jsp:include page="inc/footer.jsp"/>

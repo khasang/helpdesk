@@ -1,13 +1,20 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="include/header.jsp"/>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<jsp:include page="include/menu.jsp"/>
+<jsp:include page="inc/header.jsp"/>
 
-<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<jsp:include page="inc/menu.jsp"/>
 
-<script src="<c:url value="/resources/js/map.js"/>" type="text/javascript"></script>
-
-<div id="map" class="map"></div>
+<div class="panel panel-default content">
+    <div class="panel-heading">
+        <spring:message code="pages.maps.title"/>
+    </div>
+    <div class="panel-body">
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+        <script src="<c:url value="/resources/js/map.js"/>" type="text/javascript"></script>
+        <div id="map" class="map"></div>
+    </div>
 </div>
 
-<jsp:include page="include/footer.jsp"/>
+<jsp:include page="inc/footer.jsp"/>

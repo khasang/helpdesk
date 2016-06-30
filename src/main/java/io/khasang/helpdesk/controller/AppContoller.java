@@ -19,13 +19,13 @@ public class AppContoller {
 
     @RequestMapping("/maps")
     public String maps(Model model) {
-        model.addAttribute("title", "Helpdesk maps");
+        model.addAttribute("pages.title", "Helpdesk maps");
         return "maps";
     }
 
     @RequestMapping("/news")
     public String news(Model model) {
-        model.addAttribute("title", "Helpdesk news");
+        model.addAttribute("pages.title", "Helpdesk news");
         return "news";
     }
 }

@@ -1,14 +1,18 @@
-<%@ taglib prefix="h" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="../include/header.jsp"/>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<jsp:include page="../include/menu.jsp"/>
+<jsp:include page="../inc/header.jsp"/>
 
-<div class="content">
-    <h3>Admin content here</h3>
-    <a href="/admin/users">Work with users</a><br/>
-    <a href="/admin/backup">Work with backups</a>
+<jsp:include page="../inc/menu.jsp"/>
+
+<div class="panel panel-default content">
+    <div class="panel-heading">
+        <spring:message code="pages.admin.index.title"/>
+    </div>
+    <div class="panel-body">
+        <h3>Admin content here</h3>
+    </div>
 </div>
 
-<jsp:include page="../include/admin_menu.jsp"/>
-
-<jsp:include page="../include/footer.jsp"/>
+<jsp:include page="../inc/footer.jsp"/>

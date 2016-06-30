@@ -9,7 +9,7 @@ public class DeskController {
 
     @RequestMapping("/desk")
     public String desk(Model model) {
-        model.addAttribute("title", "Main desk page");
+        model.addAttribute("pages.title", "Main desk page");
         return "desk";
     }
 }

@@ -9,7 +9,7 @@ public class AdminController {
 
     @RequestMapping("/admin")
     public String admin(Model model) {
-        model.addAttribute("title", "Admin page");
+        model.addAttribute("pages.title", "Admin page");
         return "admin/index";
     }
 
