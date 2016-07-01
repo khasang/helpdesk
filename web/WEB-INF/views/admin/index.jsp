@@ -4,7 +4,7 @@
 
 <jsp:include page="../inc/header.jsp"/>
 
-<jsp:include page="../inc/menu.jsp"/>
+<jsp:include page="../inc/admin_menu.jsp"/>
 
 <div class="panel panel-default content">
     <div class="panel-heading">

@@ -4,7 +4,7 @@
 
 <jsp:include page="../inc/header.jsp"/>
 
-<jsp:include page="../inc/menu.jsp"/>
+<jsp:include page="../inc/admin_menu.jsp"/>
 <div class="row">
     <div class="col-md-4">
         <div class="panel panel-default" style="min-height: 200px;">

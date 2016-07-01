@@ -18,7 +18,7 @@
     <div class="row header">
         <div class="col-md-3">
             <%--logo--%>
-            <a href="${contextPath}/">
+            <a href="<c:url value="/"/>">
                 <img class="img-responsive img-rounded" src="<c:url value="/resources/images/logo.jpg"/>">
             </a>
         </div>

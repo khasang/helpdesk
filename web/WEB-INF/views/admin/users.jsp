@@ -5,7 +5,7 @@
 
 <jsp:include page="../inc/header.jsp"/>
 
-<jsp:include page="../inc/menu.jsp"/>
+<jsp:include page="../inc/admin_menu.jsp"/>
 
 
 <div style="color: red;"><c:out value="${message}"/></div>

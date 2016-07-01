@@ -6,6 +6,11 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
+                <a class="navbar-brand" href="<c:url value="/"/>">
+                    <spring:message code="menu.pages.index"/>
+                </a>
+            </div>
+            <div class="navbar-header">
                 <a class="navbar-brand" href="<c:url value="/admin"/>">
                     <spring:message code="menu.pages.admin.index"/>
                 </a>
