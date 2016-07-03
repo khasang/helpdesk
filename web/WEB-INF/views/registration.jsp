@@ -1,13 +1,6 @@
-<jsp:include page="tags/topPage.jsp"/>
 <html>
-<head>
-    <title></title>
-    <jsp:include page="css/background.jsp"/>
-</head>
+<jsp:include page="tags/headerPage.jsp"></jsp:include>
 <body>
-<div class="page-header">
-    <img src="images/helpDesk.png" class="center-pill">
-</div>
 <form class="form-horizontal" role="form">
 
     <div class="form-group">

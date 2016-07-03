@@ -1,28 +1,22 @@
-<jsp:include page="tags/topPage.jsp"/>
-<html>
-<head>
-    <title>Desk Page</title>
-
-    <form role="form">
-
-        <div class="form-group">
-            <label>Search</label>
-            <input type="text" class="form-control" placeholder="Text input">
+<html lang="en">
+<jsp:include page="tags/headerPage.jsp"></jsp:include>
+<div class="container-fluid text-center">
+    <div class="row content">
+        <div class="col-sm-2 sidenav">
+            <p><a href="/activeTasks" role="button">Active Tasks</a></p>
+            <p><a href="/solvedTasks" role="button">Solved Tasks</a></p>
+            <p><a href="/" role="button">Logout</a></p>
         </div>
-
-    </form>
-    <jsp:include page="css/background.jsp"/>
-</head>
-<body>
-
-<div class="page-header">
-    <img src="images/helpDesk.png" class="center-pill">
+        <div class="col-sm-8 text-left">
+            <p class="text-justify">
+                Hi!
+                This is a desk page. There you can view active an solved tasks. Also you can edit or delete any task.
+            </p>
+        </div>
+    </div>
 </div>
-<div class="btn-group-vertical">
-    <a class="btn btn-primary btn-lg" href="/" role="button">Home Page</a>
-    <a class="btn btn-default btn-lg" href="/desk/activeTasks" role="button">Active Tasks</a>
-    <a class="btn btn-default btn-lg" href="/desk/solvedTasks" role="button">Solved Tasks</a>
-    <a class="btn btn-default btn-lg" href="/desk" role="button">Logout</a>
-</div>
+<jsp:include page="tags/footerPage.jsp"></jsp:include>
 </body>
 </html>
+
+

@@ -14,7 +14,7 @@ public class UserDTO {
     }
 
     public UserDTO(long id, String firstName, String secondName, long role_id, String roles, String login,
-                String password) {
+                   String password) {
         this.id = id;
         this.firstName = firstName;
         this.secondName = secondName;

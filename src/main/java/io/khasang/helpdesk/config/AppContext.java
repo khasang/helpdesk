@@ -2,10 +2,6 @@ package io.khasang.helpdesk.config;
 
 
 import io.khasang.helpdesk.dao.UserDAOImpl;
-import io.khasang.helpdesk.model.CreateTable;
-import io.khasang.helpdesk.model.Message;
-import io.khasang.helpdesk.model.Temp;
-import io.khasang.helpdesk.services.UserService;
 import io.khasang.helpdesk.services.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -51,10 +47,6 @@ public class AppContext {
         return jdbcImpl;
     }
 
-    @Bean
-    public CreateTable createTable() {
-        return new CreateTable(jdbcTemplate());
-    }
 
     @Bean
     UserDAOImpl userDAO() {
@@ -62,15 +54,8 @@ public class AppContext {
     }
 
     @Bean
-    UserServiceImpl userService(){return new UserServiceImpl();}
-
-    @Bean
-    public Message message() {
-        return new Message();
+    UserServiceImpl userService() {
+        return new UserServiceImpl();
     }
 
-    @Bean
-    public Temp temp() {
-        return new Temp();
-    }
 }

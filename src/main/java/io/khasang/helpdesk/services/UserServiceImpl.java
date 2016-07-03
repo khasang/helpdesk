@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
     public List<UserDTO> getAll() {
         List<User> users = userDAO.getAll();
         List<UserDTO> userDTO = new ArrayList<>();
-        for(User a : users){
+        for (User a : users) {
             userDTO.add(new UserDTO(a.getId(), a.getFirstName(), a.getSecondName(), a.getRole_id(),
                     a.getRoles(), a.getLogin(), a.getPassword()));
         }

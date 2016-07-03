@@ -1,8 +1,7 @@
-<jsp:include page="tags/topPage.jsp"/>
 <html>
 <head>
     <title>Answer Task</title>
-    <jsp:include page="css/background.jsp"/>
+    <jsp:include page="tags/headerPage.jsp"/>
 </head>
 <body>
 <h3>Reply</h3>
@@ -16,5 +15,6 @@
         <a class="btn btn-default" href="/desk" role="button">cancel</a>
     </form>
 </div>
+<jsp:include page="tags/footerPage.jsp"></jsp:include>
 </body>
 </html>

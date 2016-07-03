@@ -5,9 +5,6 @@ import io.khasang.helpdesk.model.User;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -24,11 +21,11 @@ public class UserDAOImpl implements UserDAO {
 
     private JdbcTemplate jdbcTemplate;
 
-    public UserDAOImpl(JdbcTemplate jdbcTemplate){
+    public UserDAOImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public UserDAOImpl(){
+    public UserDAOImpl() {
 
     }
 
@@ -42,15 +39,15 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public User getById(long id) {
-        User user = jdbcTemplate.queryForObject(SELECT_BY_ID, new Object[] {id}, new UserRowMapper());
+        User user = jdbcTemplate.queryForObject(SELECT_BY_ID, new Object[]{id}, new UserRowMapper());
         return user;
     }
 
     @Override
     public void insert(User users) {
-      /* jdbcTemplate.update(INSERT_USER, new Object[]{users.getFirstName(),
-               users.getSecondName(), users.getRole_id(), users.getRoles(), users.getLogin(), users.getPassword()});*/
-
+        jdbcTemplate.update(INSERT_USER, new Object[]{users.getFirstName(),
+                users.getSecondName(), users.getRole_id(), users.getRoles(), users.getLogin(),
+                users.getPassword()});
 
     }
 
@@ -62,8 +59,9 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public void update(User users) {
-        jdbcTemplate.update(UPDATE_USER,  new Object[]{users.getId(), users.getId(), users.getFirstName(),
-                users.getSecondName(), users.getRole_id(), users.getRoles(), users.getLogin(), users.getPassword()});
+        jdbcTemplate.update(UPDATE_USER, new Object[]{users.getId(), users.getId(), users.getFirstName(),
+                users.getSecondName(), users.getRole_id(), users.getRoles(), users.getLogin(),
+                users.getPassword()});
     }
 
     @Override
@@ -71,7 +69,7 @@ public class UserDAOImpl implements UserDAO {
         jdbcTemplate.update(DELETE_FROM_USERS, id);
     }
 
-    public class UserRowMapper implements RowMapper<User>{
+    public class UserRowMapper implements RowMapper<User> {
 
         @Override
         public User mapRow(ResultSet resultSet, int i) throws SQLException {

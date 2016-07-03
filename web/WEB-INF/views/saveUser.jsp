@@ -1,15 +1,14 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<jsp:include page="tags/topPage.jsp"/>
 <html>
 <head>
     <title></title>
-    <jsp:include page="css/background.jsp"/>
+    <jsp:include page="tags/headerPage.jsp"/>
 </head>
 <body>
 <div class="container">
     <h1>Add User</h1>
     <form:form method="post" action="/admin/allUsers/save/user" commandName="user">
-    <input class="form-control" name="id" value="${user.id}" type="hidden">
+        <input class="form-control" name="id" value="${user.id}" type="hidden">
 
         <div class="form-group">
             <label for="firstName" class="col-sm-2 control-label">First Name</label>
@@ -74,4 +73,5 @@
     </form:form>
 </div>
 </body>
+<jsp:include page="tags/footerPage.jsp"></jsp:include>
 </html>

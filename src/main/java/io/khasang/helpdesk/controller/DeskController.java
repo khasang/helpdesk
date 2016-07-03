@@ -18,19 +18,19 @@ public class DeskController {
         return DESK;
     }
 
-    @RequestMapping("/desk/activeTasks")
+    @RequestMapping("/activeTasks")
     public String activeTasks(Model model) {
         model.addAttribute("activeTasks");
         return ACTIVE_TASKS;
     }
 
-    @RequestMapping("/desk/solvedTasks")
+    @RequestMapping("/solvedTasks")
     public String solvedTasks(Model model) {
         model.addAttribute("solvedTasks");
         return SOLVED_TASKS;
     }
 
-    @RequestMapping("/desk/answerTask")
+    @RequestMapping("/answerTask")
     public String answerTask(Model model) {
         model.addAttribute("answerTask");
         return ANSWER_TASK;
