@@ -14,7 +14,7 @@
     <script type="text/javascript" src="js/welcome.js"></script>
     <style>
         body {
-             background: url("http://yourpics.web44.net/Wallpapers/081308_fc2_sunset_1920_1080.jpg");
+             background: url("http://pic.xenomorph.ru/2012-01/1326692794_02-1920-1080.jpg");
          }
     </style>
 </head>
