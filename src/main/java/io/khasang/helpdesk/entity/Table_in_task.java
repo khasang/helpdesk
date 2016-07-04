@@ -43,13 +43,18 @@ public class Table_in_task {
     }
 
     public Table_in_task(int id, int user_id, String description, String comment,
-                         Data date, String category) {
+                         Data date, Data created, Data last_change, Data close_date, int rates_id, String state) {
         super();
         this.id = id;
         this.user_id = user_id;
         this.description = description;
         this.comment = comment;
         this.date = date;
+        this.created = created;
+        this.last_change = last_change;
+        this.close_date = close_date;
+        this.rates_id = rates_id;
+        this.state = state;
     }
 
     public int getId() {
