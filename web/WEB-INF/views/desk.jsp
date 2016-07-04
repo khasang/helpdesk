@@ -27,24 +27,28 @@
         <input type="submit" id="Button2" name="" value="Go to Task">
     </form>
     <p><h1>Table assignments</h1></p>
-    <table border="1" width="500" height="300">
-        <tr height="25%">
-            <td width="15%">artist name</td>
-            <td width="15%">project name</td>
-            <td width="15%">Adopted development</td>
-            <td width="15%">project finish</td>
-        </tr>
-        <tr height="25%">
-            <td>Borisov</td>
-            <td>Create a new technology</td>
-            <td>01.01.2016</td>
-            <td>01.03.2016</td>
-        </tr>
-        <tr height="25%">
-            <td>Ivanov</td>
-            <td>Create a new database</td>
-            <td>01.01.2016</td>
-            <td>01.02.2016</td>
+    <table border="1" width="500" height="300" class="tg">
+        <th>id</th>
+        <th>user_id</th>
+        <th>description</th>
+        <th>comment</th>
+        <th>date(now())</th>
+        <th>created</th>
+        <th>last_change</th>
+        <th>close_date</th>
+        <th>rates_id</th>
+        <th>state</th>
+        <tr>
+            <td>${item.id}</td>
+            <td>${item.user_id}</td>
+            <td>${item.description}</td>
+            <td>${item.comment}</td>
+            <td>${item.date()}</td>
+            <td>${item.created}</td>
+            <td>${item.last_change}</td>
+            <td>${item.close_date}</td>
+            <td>${item.rates_id}</td>
+            <td>${item.state}</td>
         </tr>
     </table>
     <form action="#">
