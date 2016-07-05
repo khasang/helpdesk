@@ -12,7 +12,7 @@ public class Role {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "title")
+    @Column(name = "user_id")
     private String title;
 
     @OneToMany(mappedBy = "role")

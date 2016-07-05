@@ -1,7 +1,32 @@
 package io.khasang.helpdesk.entity;
 
-/**
- * Created by Georgiy on 02.07.2016.
- */
+import javax.persistence.*;
+
+@Entity
+@Table(name = "departments")
 public class Departments {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "desc")
+    private String description;
+
+    public Departments() {
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 }

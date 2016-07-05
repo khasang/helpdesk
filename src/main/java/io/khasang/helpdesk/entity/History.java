@@ -1,7 +1,32 @@
 package io.khasang.helpdesk.entity;
 
-/**
- * Created by Georgiy on 02.07.2016.
- */
+import javax.persistence.*;
+
+@Entity
+@Table(name = "history")
 public class History {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+
+    private int tasksId;
+
+    public History() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getTasksId() {
+        return tasksId;
+    }
+
+    public void setTasksId(int tasksId) {
+        this.tasksId = tasksId;
+    }
 }
