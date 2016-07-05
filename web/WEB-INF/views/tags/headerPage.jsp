@@ -72,5 +72,5 @@
     </div>
 </nav>
 <div class="page-header">
-    <img src="images/helpDesk.png" class="center-pill">
+    <img src="images/logo.jpg" class="center-pill">
 </div>
