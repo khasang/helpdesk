@@ -11,21 +11,13 @@ public class Table_in_task {
     private int id;
 
     private int user_id;
-
     private String description;
-
     private String comment;
-
     private Date date;
-
     private Date created;
-
     private Date last_change;
-
     private Date close_date;
-
     private int rates_id;
-
     private String state;
 
     public Table_in_task() {
