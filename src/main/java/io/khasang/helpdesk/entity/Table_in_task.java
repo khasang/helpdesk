@@ -3,41 +3,29 @@ package io.khasang.helpdesk.entity;
 import javax.persistence.*;
 import java.util.Date;
 
-
 @Entity
-@Table(name = "item")
 public class Table_in_task {
 
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "user_id")
     private int user_id;
 
-    @Column(name = "descriptions")
     private String description;
 
-    @Column(name = "comment")
     private String comment;
 
-    @Column(name = "date(now())")
     private Date date;
 
-    @Column(name = "created")
     private Date created;
 
-    @Column(name = "last_change")
     private Date last_change;
 
-    @Column(name = "close_date")
     private Date close_date;
 
-    @Column(name = "rates_id")
     private int rates_id;
 
-    @Column(name = "state")
     private String state;
 
     public Table_in_task() {

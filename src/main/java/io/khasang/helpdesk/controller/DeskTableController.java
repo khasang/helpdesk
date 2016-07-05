@@ -12,7 +12,6 @@ public class DeskTableController {
     public String getItem(@PathVariable("id") int id, Model model) {
         Table_in_task item = itemService.getItem(id);
         model.addAttribute("item", item);
-        return "buy";
-    }
-    */
+        return "desk";
+    }*/
 }
