@@ -18,11 +18,21 @@ public class Users {
 
     private String password;
 
-    private int rolesId;
+    private int role_id;
 
     private int departmentId;
 
+    private String role;
+
     public Users() {
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getName() {
@@ -49,12 +59,12 @@ public class Users {
         this.password = password;
     }
 
-    public int getRolesId() {
-        return rolesId;
+    public int getRole_id() {
+        return role_id;
     }
 
-    public void setRolesId(int rolesId) {
-        this.rolesId = rolesId;
+    public void setRole_id(int role_id) {
+        this.role_id = role_id;
     }
 
     public int getDepartmentId() {

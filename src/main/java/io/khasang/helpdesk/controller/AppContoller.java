@@ -78,4 +78,5 @@ public class AppContoller {
         model.addObject("crypt", new BCryptPasswordEncoder().encode(name));
         return model;
     }
+    
 }

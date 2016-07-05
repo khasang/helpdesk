@@ -28,7 +28,7 @@ public class HibernateConfig {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan("io.khasang.helpdesk*");
+        sessionFactory.setPackagesToScan("io.khasang.helpdesk");
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }

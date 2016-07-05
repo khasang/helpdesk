@@ -19,8 +19,8 @@ public class AppSecurityConfigTest {
     @Autowired
     AppSecurityConfig appSecurityConfig;
 
-    @Test
-    public void getCurrentUser(){
-        assertEquals();
-    }
+//    @Test
+//    public void getCurrentUser(){
+//        assertEquals();
+//    }
 }

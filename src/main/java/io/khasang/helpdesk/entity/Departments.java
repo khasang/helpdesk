@@ -9,10 +9,10 @@ public class Departments {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name = "name")
+
     private String name;
 
-    @Column(name = "desc")
+
     private String description;
 
     public Departments() {
