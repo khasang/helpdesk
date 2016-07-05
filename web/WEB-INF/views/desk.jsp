@@ -26,8 +26,8 @@
     <form action="/desk/task">
         <input type="submit" id="Button2" name="" value="Go to Task">
     </form>
-    <p><h1>Table assignments</h1></p>
-    <table border="1" width="500" height="300" class="tg">
+    <p><h2>Table assignments</h2></p>
+    <table border="1" width="500" height="100" class="tg">
         <th>id</th>
         <th>user_id</th>
         <th>description</th>
