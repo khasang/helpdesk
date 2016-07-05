@@ -107,3 +107,14 @@ padding-top: 20px;
    background-color: #3d8ced;
    border: 1px solid black;
 }
+
+
+.bodyAddUser{
+    margin: 0;
+    padding: 0;
+
+    width: 400px;
+    background-color: #0072ff;
+
+    margin: 0 auto;
+}

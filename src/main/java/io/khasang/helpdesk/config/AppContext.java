@@ -1,8 +1,6 @@
 package io.khasang.helpdesk.config;
 
-import io.khasang.helpdesk.model.Message;
-import io.khasang.helpdesk.model.MyTest;
-import io.khasang.helpdesk.model.Temp;
+import io.khasang.helpdesk.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +8,8 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+import java.io.IOException;
 
 @Configuration
 @PropertySource("classpath:util.properties")
@@ -39,8 +39,17 @@ public class AppContext {
 
 
 
-  //  @Bean
-   // public CreateTable createTable(){ return new CreateTable(jdbcTemplate());}
+    @Bean
+    public CreateTable createTable(){ return new CreateTable(jdbcTemplate());}
+
+    @Bean
+    public dbUserAction userAction(){ return new dbUserAction(jdbcTemplate());}
+
+    @Bean
+    public Users user(){ return new Users();}
+
+    @Bean
+    public Backup backup() throws IOException {return new Backup(jdbcTemplate());}
 
 
     @Bean

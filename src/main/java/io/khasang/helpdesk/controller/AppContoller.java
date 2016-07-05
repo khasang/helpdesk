@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.io.IOException;
+
 @Controller
 public class AppContoller {
 
@@ -15,28 +17,51 @@ public class AppContoller {
     @Autowired
     MyTest test;
 
-   // @Autowired
-   // CreateTable createTable;
+    @Autowired
+    CreateTable createTable;
+
+
+
+    @Autowired
+    Backup backup;
+
+    @Autowired
+    Users users;
+
 
     @RequestMapping("/")
-    public String index(Model model){
+    public String index(Model model) {
 
         return "index";
     }
 
     @RequestMapping("/admin")
-    public String admin(Model model){
+    public String admin(Model model) {
 
 
         return "admin";
     }
 
     @RequestMapping("/desk")
-    public String desk(Model model){
+    public String desk(Model model) {
 
 
         return "desk";
     }
 
+    @RequestMapping("/create")
+    public String create(Model model) {
+
+        model.addAttribute("create", createTable.result());
+        return "create";
+    }
+
+    @RequestMapping("/backup")
+    public String backup(Model model) throws IOException {
+        model.addAttribute("backup", backup.result());
+        return "backup";
+    }
+
 
 }
+
