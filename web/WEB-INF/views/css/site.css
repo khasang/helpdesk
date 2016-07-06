@@ -1,0 +1,7 @@
+.block{
+    clear: both;
+}
+
+#container{
+    min-height: 600px;
+}
