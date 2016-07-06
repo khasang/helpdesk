@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class Table_in_task {
+public class Tasks {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,25 +13,23 @@ public class Table_in_task {
     private int user_id;
     private String description;
     private String comment;
-    private Date date;
-    private Date created;
+    private Date date_created;
     private Date last_change;
     private Date close_date;
     private int rates_id;
     private String state;
 
-    public Table_in_task() {
+    public Tasks() {
     }
 
-    public Table_in_task(int id, int user_id, String description, String comment,
-                         Date date, Date created, Date last_change, Date close_date, int rates_id, String state) {
+    public Tasks(int id, int user_id, String description, String comment,
+                 Date date_created, Date last_change, Date close_date, int rates_id, String state) {
         super();
         this.id = id;
         this.user_id = user_id;
         this.description = description;
         this.comment = comment;
-        this.date = date;
-        this.created = created;
+        this.date_created = date_created;
         this.last_change = last_change;
         this.close_date = close_date;
         this.rates_id = rates_id;
@@ -70,21 +68,11 @@ public class Table_in_task {
         this.comment = comment;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getDate_created() {
+        return date_created;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public Date getCreated() {
-        return created;
-    }
-
-    public void setCreated(Date created) {
-        this.created = created;
-    }
+    public void setDate_created(Date date_created) {this.date_created = date_created;}
 
     public Date getLast_change() {
         return last_change;

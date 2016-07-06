@@ -1,6 +1,8 @@
+/*
 package io.khasang.helpdesk.controller;
 
-import io.khasang.helpdesk.entity.Table_in_task;
+import io.khasang.helpdesk.entity.Tasks;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,8 +12,9 @@ public class DeskTableController {
 
     @RequestMapping(value="/getItem/{id}", method= RequestMethod.GET)
     public String getItem(@PathVariable("id") int id, Model model) {
-        Table_in_task item = itemService.getItem(id);
+        Tasks item = JdbcTemplate.getItem(id);
         model.addAttribute("item", item);
         return "desk";
     }
 }
+*/

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Alexander-PC
@@ -32,23 +33,21 @@
         <th>user_id</th>
         <th>description</th>
         <th>comment</th>
-        <th>date(now())</th>
-        <th>created</th>
+        <th>date_created</th>
         <th>last_change</th>
         <th>close_date</th>
         <th>rates_id</th>
         <th>state</th>
         <tr>
-            <td>${item.id}</td>
-            <td>${item.user_id}</td>
-            <td>${item.description}</td>
-            <td>${item.comment}</td>
-            <td>${item.date()}</td>
-            <td>${item.created}</td>
-            <td>${item.last_change}</td>
-            <td>${item.close_date}</td>
-            <td>${item.rates_id}</td>
-            <td>${item.state}</td>
+            <td>${Tasks.id}</td>
+            <td>${Tasks.user_id}</td>
+            <td>${Tasks.description}</td>
+            <td>${Tasks.comment}</td>
+            <td>${Tasks.date_created}</td>
+            <td>${Tasks.last_change}</td>
+            <td>${Tasks.close_date}</td>
+            <td>${Tasks.rates_id}</td>
+            <td>${Tasks.state}</td>
         </tr>
     </table>
     <form action="#">
