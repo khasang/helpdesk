@@ -3,7 +3,7 @@ package io.khasang.helpdesk.entity;
 
 import javax.persistence.*;
 
-//TODO разобраться с багой
+//TODO разобраться с багой что пропадает таблица
 
 @Entity
 public class Goods {
