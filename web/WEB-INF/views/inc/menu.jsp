@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="<c:url value="/"/>">

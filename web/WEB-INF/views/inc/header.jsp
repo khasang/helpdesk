@@ -12,24 +12,24 @@
 </head>
 <body>
 <%--container start--%>
-<div class="container">
+<div class="container-fluid">
 
-    <%--header start--%>
-    <div class="row header">
-        <div class="col-md-3">
-            <%--logo--%>
-            <a href="<c:url value="/"/>">
-                <img class="img-responsive img-rounded" src="<c:url value="/resources/images/logo.jpg"/>">
-            </a>
-        </div>
-        <div class="col-md-6 sile-description">
-            <%--site description--%>
-            <h3><spring:message code="header.description.title"/></h3>
-            <p><spring:message code="header.description.text"/></p>
-        </div>
-        <div class="col-md-3 login-form">
-            <%--login form--%>
-            <jsp:include page="login_form.jsp"/>
-        </div>
-    </div>
-        <%--header end--%>
+    <%--&lt;%&ndash;header start&ndash;%&gt;--%>
+    <%--<div class="row header">--%>
+        <%--<div class="col-md-3">--%>
+            <%--&lt;%&ndash;logo&ndash;%&gt;--%>
+            <%--<a href="<c:url value="/"/>">--%>
+                <%--<img class="img-responsive img-rounded" src="<c:url value="/resources/images/logo.jpg"/>">--%>
+            <%--</a>--%>
+        <%--</div>--%>
+        <%--<div class="col-md-6 sile-description">--%>
+            <%--&lt;%&ndash;site description&ndash;%&gt;--%>
+            <%--<h3><spring:message code="header.description.title"/></h3>--%>
+            <%--<p><spring:message code="header.description.text"/></p>--%>
+        <%--</div>--%>
+        <%--<div class="col-md-3 login-form">--%>
+            <%--&lt;%&ndash;login form&ndash;%&gt;--%>
+            <%--<jsp:include page="login_form.jsp"/>--%>
+        <%--</div>--%>
+    <%--</div>--%>
+        <%--&lt;%&ndash;header end&ndash;%&gt;--%>

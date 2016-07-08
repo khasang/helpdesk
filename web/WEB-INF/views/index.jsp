@@ -2,6 +2,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
+
+
+
 <jsp:include page="inc/header.jsp"/>
 
 <jsp:include page="inc/menu.jsp"/>
