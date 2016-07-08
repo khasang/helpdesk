@@ -1,28 +1,3 @@
-.header {
-    display: flex;
-    flex-direction: row;
-}
-
-.login-form {
-    display: flex;
-    align-items: flex-end;
-    font-size: small;
-}
-
-.user-welcome {
-    display: inline-block;
-    float: right;
-}
-
-.login-button {
-    display: inline-block;
-    float: right;
-}
-
-.sile-description {
-    margin-top: 30px;
-}
-
 .footer {
     text-align: center;
 }

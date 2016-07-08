@@ -2,12 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-
-
-
 <jsp:include page="inc/header.jsp"/>
-
-<jsp:include page="inc/menu.jsp"/>
 
 <div class="panel panel-default content">
     <div class="panel-heading">
@@ -18,7 +13,6 @@
         <p><spring:message code="loren_ipsum"/></p>
     </div>
 </div>
-
 
 <jsp:include page="inc/footer.jsp"/>
 
