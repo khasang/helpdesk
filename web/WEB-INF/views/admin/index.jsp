@@ -4,8 +4,6 @@
 
 <jsp:include page="../inc/header.jsp"/>
 
-<jsp:include page="../inc/admin_menu.jsp"/>
-
 <div class="panel panel-default content">
     <div class="panel-heading">
         <spring:message code="pages.admin.index.title"/>
@@ -16,3 +14,6 @@
 </div>
 
 <jsp:include page="../inc/footer.jsp"/>
+
+
+

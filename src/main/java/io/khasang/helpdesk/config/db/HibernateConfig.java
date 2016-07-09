@@ -17,7 +17,6 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-//@ComponentScan({"io.khasang.helpdesk."})
 @PropertySource(value = {"classpath:hibernate.properties"})
 public class HibernateConfig {
     @Autowired

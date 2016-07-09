@@ -37,9 +37,11 @@
             </c:if>
             <c:if test="${pageContext.request.remoteUser != null}">
                 <ul class="nav navbar-nav navbar-right">
-                    <li> <%--welcome messsage--%>
-                        <a><spring:message code="menu.user.welcome"/>
-                        <strong><c:out value="${pageContext.request.remoteUser}"/></strong></a>
+                    <li> <%--logged user--%>
+                        <a>
+                            <span class="glyphicon glyphicon-user"></span>
+                            <strong><c:out value="${pageContext.request.remoteUser}"/></strong>
+                        </a>
                     </li>
                     <li> <%--logout--%>
                         <form action="/logout" method="post" class="form-inline" role="form">
@@ -51,7 +53,18 @@
                     </li>
                 </ul>
             </c:if>
+
+            <c:if test="${pageContext.request.isUserInRole('ADMIN')}">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="<c:url value="/admin"/>">
+                        <span class="glyphicon glyphicon-cog"></span>
+                        <spring:message code="menu.pages.admin.index"/>
+                    </a>
+                    </li>
+                </ul>
+            </c:if>
         </div>
+
     </div>
 </nav>
 
