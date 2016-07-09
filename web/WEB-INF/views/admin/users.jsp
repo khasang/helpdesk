@@ -5,9 +5,6 @@
 
 <jsp:include page="../inc/header.jsp"/>
 
-<jsp:include page="../inc/admin_menu.jsp"/>
-
-
 <div style="color: red;"><c:out value="${message}"/></div>
 
 
@@ -18,12 +15,24 @@
     <div class="panel-body">
         <table class="table table-hover">
             <tr class="table-header">
-                <td class="col-xs-1">id</td>
-                <td class="col-xs-3">login</td>
-                <td class="col-xs-3">password</td>
-                <td class="col-xs-3">role</td>
-                <td class="col-xs-1">UPDATE</td>
-                <td class="col-xs-1">DELETE</td>
+                <td class="col-sm-1">id</td>
+                <td class="col-sm-1">login</td>
+                <td class="col-sm-1">password</td>
+                <td class="col-sm-1">role
+                    <form action="/admin/users/filter" method="post">
+                        <select name="filter" class="form-control" onchange='this.form.submit()'>
+                            <option value="ALL" <c:if test="${filter == 'ALL'}">selected="selected"</c:if>>all
+                            </option>
+                            <option value="ROLE_ADMIN" <c:if test="${filter == 'ROLE_ADMIN'}">selected="selected"</c:if>>admin
+                            </option>
+                            <option value="ROLE_USER" <c:if test="${filter == 'ROLE_USER'}">selected="selected"</c:if>>user
+                            </option>
+                        </select>
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    </form>
+                </td>
+                <td class="col-sm-1">UPDATE</td>
+                <td class="col-sm-7">DELETE</td>
             </tr>
             <c:forEach items="${users}" var="user">
                 <tr>
@@ -50,7 +59,6 @@
                         <%--DELETE USER FORM--%>
                     <form:form action="/admin/users/delete" method="post" commandName="deleteUser">
                         <td>
-
                             <input type="hidden" name="id" value="${user.id}">
                             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                             <input type="submit" class="btn btn-danger" value="Delete">
@@ -68,9 +76,11 @@
         <spring:message code="pages.admin.users.create"/>
     </div>
     <div class="panel-body">
-        <form:form action="/admin/users/register" method="post" commandName="registerUser" cssClass="form-inline form-group-sm">
+        <form:form action="/admin/users/register" method="post" commandName="registerUser"
+                   cssClass="form-inline form-group-sm">
             <label for="login">Login:</label><input type="text" id="login" class="form-control" name="login">
-            <label for="password">Password:</label><input type="text"  id="password" class="form-control" name="password">
+            <label for="password">Password:</label><input type="text" id="password" class="form-control"
+                                                          name="password">
             <label for="role">Role:</label>
             <select name="role" id="role" class="form-control">
                 <option value="ROLE_ADMIN">admin</option>

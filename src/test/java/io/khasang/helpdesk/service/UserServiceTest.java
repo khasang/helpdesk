@@ -113,6 +113,26 @@ public class UserServiceTest extends AbstractTransactionalJUnit4SpringContextTes
         assertEquals(testUser.getRole(), user.getRole());
     }
 
+    @Test
+    public void testGetUserByRole() {
+        User testUser = generateTestUser();
+        userService.addUser(testUser);
+        User testUser2 = generateTestUser();
+        testUser2.setLogin("test2");
+        testUser2.setRole(Role.ROLE_ADMIN);
+        userService.addUser(testUser2);
+
+        final List<User> userUsers = userService.getUsersByRole(Role.ROLE_USER);
+        for(User user:userUsers) {
+            assertEquals(user.getRole(), Role.ROLE_USER);
+        }
+
+        final List<User> adminUsers = userService.getUsersByRole(Role.ROLE_ADMIN);
+        for(User user:adminUsers) {
+            assertEquals(user.getRole(), Role.ROLE_ADMIN);
+        }
+    }
+
     private User generateTestUser() {
         User testUser = new User();
         testUser.setLogin("test");

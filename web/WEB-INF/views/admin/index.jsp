@@ -5,6 +5,7 @@
 <jsp:include page="../inc/header.jsp"/>
 
 <div class="panel panel-default content">
+
     <div class="panel-heading">
         <spring:message code="pages.admin.index.title"/>
     </div>

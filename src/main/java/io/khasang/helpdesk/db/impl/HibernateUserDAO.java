@@ -2,9 +2,11 @@ package io.khasang.helpdesk.db.impl;
 
 import io.khasang.helpdesk.db.UserDAO;
 import io.khasang.helpdesk.entities.User;
+import io.khasang.helpdesk.enums.Role;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -73,4 +75,16 @@ public class HibernateUserDAO implements UserDAO {
                 createCriteria(User.class);
         return (List<User>) criteria.list();
     }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<User> getUsersByRole(Role role) {
+        Criteria criteria = sessionFactory.
+                getCurrentSession().
+                createCriteria(User.class);
+        criteria.add(Restrictions.eq("role", role));
+        return (List<User>) criteria.list();
+    }
+
+
 }

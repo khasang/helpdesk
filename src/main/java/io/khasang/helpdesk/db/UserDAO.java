@@ -1,6 +1,7 @@
 package io.khasang.helpdesk.db;
 
 import io.khasang.helpdesk.entities.User;
+import io.khasang.helpdesk.enums.Role;
 
 import java.util.List;
 
@@ -16,6 +17,8 @@ public interface UserDAO {
     User getUserById(int id);
 
     User getUserByLogin(String login);
-
+    
     List<User> getUserList();
+
+    List<User> getUsersByRole(Role role);
 }

@@ -27,42 +27,10 @@
                     </a>
                 </li>
             </ul>
-            <c:if test="${pageContext.request.remoteUser == null}">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> <spring:message
-                            code="header.login.login"/></a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> <spring:message
-                            code="header.login.registration"/></a></li>
-                </ul>
-            </c:if>
-            <c:if test="${pageContext.request.remoteUser != null}">
-                <ul class="nav navbar-nav navbar-right">
-                    <li> <%--logged user--%>
-                        <a>
-                            <span class="glyphicon glyphicon-user"></span>
-                            <strong><c:out value="${pageContext.request.remoteUser}"/></strong>
-                        </a>
-                    </li>
-                    <li> <%--logout--%>
-                        <form action="/logout" method="post" class="form-inline" role="form">
-                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                            <button type="submit" class="btn btn-link button-logout">
-                                <span class="glyphicon glyphicon-log-out"></span> <spring:message code="menu.user.logout"/>
-                            </button>
-                        </form>
-                    </li>
-                </ul>
-            </c:if>
 
-            <c:if test="${pageContext.request.isUserInRole('ADMIN')}">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="<c:url value="/admin"/>">
-                        <span class="glyphicon glyphicon-cog"></span>
-                        <spring:message code="menu.pages.admin.index"/>
-                    </a>
-                    </li>
-                </ul>
-            </c:if>
+            <jsp:include page="menu_login.jsp"/>
+
+            <jsp:include page="admin_menu.jsp"/>
         </div>
 
     </div>

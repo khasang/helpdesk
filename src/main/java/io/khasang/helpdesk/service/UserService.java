@@ -2,6 +2,7 @@ package io.khasang.helpdesk.service;
 
 import io.khasang.helpdesk.db.UserDAO;
 import io.khasang.helpdesk.entities.User;
+import io.khasang.helpdesk.enums.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -55,4 +56,9 @@ public class UserService {
     public User getUserByLogin(String login) {
         return userDAO.getUserByLogin(login);
     }
+    
+    public List<User> getUsersByRole(Role role) {
+        return userDAO.getUsersByRole(role);
+    }
+
 }
