@@ -29,6 +29,16 @@ public class HibernateUserDAO implements UserDAO {
 
     @Override
     public void updateUser(User user) {
+        // saving old password if do not provided new
+        if (user.getPassword() == null || user.getPassword().isEmpty()) {
+            final String query = "SELECT password from users WHERE id=:id";
+            String oldPassword = (String) sessionFactory.
+                    getCurrentSession().
+                    createSQLQuery(query).
+                    setParameter("id", user.getId()).
+                    uniqueResult();
+            user.setPassword(oldPassword);
+        }
         sessionFactory.getCurrentSession().update(user);
     }
 

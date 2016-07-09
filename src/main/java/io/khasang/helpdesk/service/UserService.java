@@ -24,12 +24,17 @@ public class UserService {
     }
 
     public void addUser(User user) {
+        if (user.getPassword() == null || user.getPassword().isEmpty()) {
+            throw new IllegalArgumentException("Please, enter password!");
+        }
         encryptPassword(user);
         userDAO.addUser(user);
     }
 
     public void updateUser(User user) {
-        encryptPassword(user);
+        if (user.getPassword() != null && !user.getPassword().isEmpty()) {
+            encryptPassword(user);
+        }
         userDAO.updateUser(user);
     }
 
@@ -38,9 +43,6 @@ public class UserService {
     }
 
     private void encryptPassword(User user) {
-        if (user.getPassword() == null || user.getPassword().isEmpty()) {
-            throw new IllegalArgumentException("Please, enter password!");
-        }
         final String password = passwordEncoder.encode(user.getPassword());
         user.setPassword(password);
     }

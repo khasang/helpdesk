@@ -19,7 +19,7 @@
                 <td class="col-sm-1">login</td>
                 <td class="col-sm-1">password</td>
                 <td class="col-sm-1">role
-                    <form action="/admin/users/filter" method="post">
+                    <form action="<c:url value="/admin/users/filter"/>" method="post">
                         <select name="filter" class="form-control" onchange='this.form.submit()'>
                             <option value="ALL" <c:if test="${filter == 'ALL'}">selected="selected"</c:if>>all
                             </option>

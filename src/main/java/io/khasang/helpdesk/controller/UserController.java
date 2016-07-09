@@ -49,6 +49,7 @@ public class UserController {
             message = "User " + user.getLogin() + " successfully updated.";
         } catch (Exception e) {
             message = "Error!" + e.getMessage();
+            e.printStackTrace();
         }
         redirectAttributes.addFlashAttribute("message", message);
         return "redirect:/admin/users";
