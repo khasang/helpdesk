@@ -1,54 +1,36 @@
 package io.khasang.helpdesk.controller;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
-import io.khasang.helpdesk.model.CreateTable;
-import io.khasang.helpdesk.model.Message;
+import io.khasang.helpdesk.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class AppContoller {
-    @Autowired
-    Message message;
-    @Autowired
-    CreateTable createTable;
 
-    //4to to sdelal
+    @Autowired
+    UserService test;
+
     @RequestMapping("/")
-    public String hello(Model model){
-        model.addAttribute("hello", "Welcome to Help Desk program!");
-        return "hello";
+    public String index() {
+        return "index";
     }
 
-    @RequestMapping("/hello")
-    public String by(Model model){
-        model.addAttribute("hello", message.getInfoMess());
-        return "by";
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
     }
 
-    @RequestMapping("/create")
-    public String create(Model model){
-        model.addAttribute("create", createTable.result());
-        return "create";
+    @RequestMapping("/maps")
+    public String maps(Model model) {
+        model.addAttribute("pages.title", "Helpdesk maps");
+        return "maps";
     }
 
-    @RequestMapping("/confidential/secure")
-    public String secure(Model model){
-        model.addAttribute("secure", "secure page with access encrypted");
-        return "secure";
-    }
-
-    @RequestMapping(value = {"/hello/{name}"}, method = RequestMethod.GET)
-    public ModelAndView hello(@PathVariable("name") String name) {
-        ModelAndView model = new ModelAndView();
-        model.setViewName("helloPage");
-        model.addObject("crypt", new BCryptPasswordEncoder().encode(name));
-        return model;
+    @RequestMapping("/news")
+    public String news(Model model) {
+        model.addAttribute("pages.title", "Helpdesk news");
+        return "news";
     }
 }
