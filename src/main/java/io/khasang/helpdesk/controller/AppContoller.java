@@ -13,8 +13,13 @@ public class AppContoller {
     UserService test;
 
     @RequestMapping("/")
-    public String index(Model model) {
+    public String index() {
         return "index";
+    }
+
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
     }
 
     @RequestMapping("/maps")

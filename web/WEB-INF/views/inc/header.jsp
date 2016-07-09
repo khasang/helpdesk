@@ -15,4 +15,5 @@
 <div class="container-fluid">
 
     <jsp:include page="menu.jsp"/>
+
     <jsp:include page="logo.jsp"/>

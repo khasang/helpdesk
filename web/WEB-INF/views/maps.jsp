@@ -4,8 +4,6 @@
 
 <jsp:include page="inc/header.jsp"/>
 
-<jsp:include page="inc/menu.jsp"/>
-
 <div class="panel panel-default content">
     <div class="panel-heading">
         <spring:message code="pages.maps.title"/>

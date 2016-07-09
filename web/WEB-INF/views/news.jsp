@@ -4,8 +4,6 @@
 
 <jsp:include page="inc/header.jsp"/>
 
-<jsp:include page="inc/menu.jsp"/>
-
 <div class="panel panel-default content">
     <div class="panel-heading">
         <spring:message code="pages.news.title"/>
@@ -16,6 +14,5 @@
         <script src='<c:url value="/resources/js/ya_news.js"/>'></script>
     </div>
 </div>
-
 
 <jsp:include page="inc/footer.jsp"/>

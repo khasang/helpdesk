@@ -38,9 +38,9 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests().antMatchers("/admin/**").access("hasRole('" + admin + "')")
                 .and().authorizeRequests().antMatchers("/desk/**").access("hasAnyRole('" + admin + "','" + user + "')")
                 .and()
-                .formLogin().loginPage("/")
+                .formLogin().loginPage("/login")
                 .usernameParameter("login").passwordParameter("password")
-                .and().logout().logoutSuccessUrl("/?logout");
+                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/");
     }
 
     @Bean

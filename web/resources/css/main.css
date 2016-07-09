@@ -1,11 +1,24 @@
-.footer {
-    text-align: center;
-}
-
 .content {
     min-height: 600px;
 }
 
 .map {
     height: 550px;
+}
+
+footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+}
+
+.button-logout {
+    padding-top: 15px;
+}
+
+.login-div{
+    max-width: 350px;
+    padding: 40px 40px;
+    margin: 10px auto;
+    background-color: #F7F7F7;
 }
