@@ -1,19 +1,19 @@
 package io.khasang.helpdesk.dao;
 
 
-import io.khasang.helpdesk.model.User;
+import io.khasang.helpdesk.entity.Users;
 
 import java.util.List;
 
 public interface UserDAO {
 
-    User getById(long id);
+    Users getById(long id);
 
-    void insert(User users);
+    void insert(Users users);
 
-    List<User> getAll();
+    List<Users> getAll();
 
-    void update(User users);
+    void update(Users users);
 
     void deleteById(long id);
 }

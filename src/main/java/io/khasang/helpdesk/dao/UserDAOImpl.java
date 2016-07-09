@@ -1,88 +1,51 @@
 package io.khasang.helpdesk.dao;
 
 
-import io.khasang.helpdesk.model.User;
+import io.khasang.helpdesk.entity.Users;
+import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
+@Repository
 public class UserDAOImpl implements UserDAO {
 
-    public static final String SELECT_BY_ID = "SELECT * FROM users WHERE id = ?";
-    public static final String INSERT_USER = "INSERT INTO users (firstName, secondName, role_id, roles, login, password)" +
-            " VALUES " + "(?, ?, ?, ?, ?, ?)";
-    public static final String SELECT_FROM_USERS = "SELECT * FROM users";
-    public static final String UPDATE_USER = "UPDATE users SET firstName=?, secondName=?, role_id=?, roles=?, " +
-            "login=?, password=? WHERE id=?";
-    public static final String DELETE_FROM_USERS = "DELETE FROM users WHERE id=?";
-
-    private JdbcTemplate jdbcTemplate;
+    @Autowired
+    SessionFactory sessionFactory;
 
     public UserDAOImpl(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
     }
 
     public UserDAOImpl() {
-
-    }
-
-    public JdbcTemplate getJdbcTemplate() {
-        return jdbcTemplate;
-    }
-
-    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
     }
 
     @Override
-    public User getById(long id) {
-        User user = jdbcTemplate.queryForObject(SELECT_BY_ID, new Object[]{id}, new UserRowMapper());
-        return user;
+    public Users getById(long id) {
+        return sessionFactory.getCurrentSession().get(Users.class, id);
     }
 
     @Override
-    public void insert(User users) {
-        jdbcTemplate.update(INSERT_USER, new Object[]{users.getFirstName(),
-                users.getSecondName(), users.getRole_id(), users.getRoles(), users.getLogin(),
-                users.getPassword()});
-
+    public void insert(Users users) {
+        sessionFactory.getCurrentSession().save(users);
     }
 
     @Override
-    public List<User> getAll() {
-        List<User> users = jdbcTemplate.query(SELECT_FROM_USERS, new UserRowMapper());
-        return users;
+    public List<Users> getAll() {
+        return sessionFactory.getCurrentSession().createCriteria(Users.class).list();
     }
 
     @Override
-    public void update(User users) {
-        jdbcTemplate.update(UPDATE_USER, new Object[]{users.getId(), users.getId(), users.getFirstName(),
-                users.getSecondName(), users.getRole_id(), users.getRoles(), users.getLogin(),
-                users.getPassword()});
+    public void update(Users users) {
+        sessionFactory.getCurrentSession().update(users);
     }
 
     @Override
     public void deleteById(long id) {
-        jdbcTemplate.update(DELETE_FROM_USERS, id);
+        Users users = (Users) sessionFactory.getCurrentSession().createCriteria(Users.class).add(Restrictions.eq("id", id))
+                .uniqueResult();
+        sessionFactory.getCurrentSession().delete(users);
     }
-
-    public class UserRowMapper implements RowMapper<User> {
-
-        @Override
-        public User mapRow(ResultSet resultSet, int i) throws SQLException {
-            User user = new User();
-            user.setId(resultSet.getLong("id"));
-            user.setFirstName(resultSet.getString("firstName"));
-            user.setSecondName(resultSet.getString("secondName"));
-            user.setRole_id(resultSet.getLong("role_Id"));
-            user.setRoles(resultSet.getString("roles"));
-            user.setLogin(resultSet.getString("login"));
-            user.setPassword(resultSet.getString("password"));
-            return user;
-        }
-    }
-
 }

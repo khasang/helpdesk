@@ -10,7 +10,8 @@
         <div class="col-sm-8 text-left">
             <p class="text-justify">
                 Hi!
-                This is an admin page. There you can view all users list, edit or delete any user. Also you can make a backup.
+                This is an admin page. There you can view all users list, edit or delete any user. Also you can make a
+                backup.
             </p>
         </div>
     </div>

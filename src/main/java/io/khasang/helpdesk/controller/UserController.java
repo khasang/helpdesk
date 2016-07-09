@@ -9,8 +9,8 @@ public class UserController {
     public static final String SAVE_USER = "saveUser";
     public static final String ERROR_PAGE = "errorPage";
     public static final String ALL_USERS = "allUsers";
-    @Autowired
-    private UserServiceImpl userService;
+  /*  @Autowired
+    private UserServiceImpl userService;*/
 
     /*@RequestMapping(value = "/admin/allUsers", method = RequestMethod.GET)
     public String allUsers(ModelMap model) {

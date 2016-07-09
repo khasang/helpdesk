@@ -1,18 +1,18 @@
 package io.khasang.helpdesk.services;
 
 
-import io.khasang.helpdesk.dto.UserDTO;
+import io.khasang.helpdesk.entity.Users;
 
 import java.util.List;
 
 public interface UserService {
-    UserDTO getById(long id);
+    Users getById(long id);
 
-    void insert(UserDTO user);
+    void insert(Users users);
 
-    List<UserDTO> getAll();
+    List<Users> getAll();
 
-    void update(UserDTO user);
+    void update(Users users);
 
     void deleteById(long id);
 }

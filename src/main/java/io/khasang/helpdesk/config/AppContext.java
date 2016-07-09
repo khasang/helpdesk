@@ -53,6 +53,7 @@ public class AppContext {
         return new UserDAOImpl(jdbcTemplate());
     }
 
+
     @Bean
     UserServiceImpl userService() {
         return new UserServiceImpl();

@@ -1,6 +1,6 @@
 package io.khasang.helpdesk.controller;
 
-import io.khasang.helpdesk.dto.UserDTO;
+import io.khasang.helpdesk.entity.Users;
 import io.khasang.helpdesk.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -50,13 +50,13 @@ public class AdminController {
 
     @RequestMapping(value = "/admin/allUsers/save/user", method = RequestMethod.POST)
     public String saveUser(ModelMap model) {
-        UserDTO user = new UserDTO();
-        if (user.getId() == 0) {
-            userService.insert(new UserDTO(0, user.getFirstName(), user.getSecondName(), user.getRole_id(),
-                    user.getRoles(), user.getLogin(), user.getPassword()));
+        Users users = new Users();
+        if (users.getId() == 0) {
+            userService.insert(new Users(0, users.getFirstName(), users.getSecondName(), users.getRole_id(),
+                    users.getRoles(), users.getLogin(), users.getPassword()));
         } else {
-            userService.update(new UserDTO(user.getId(), user.getFirstName(), user.getSecondName(), user.getRole_id(),
-                    user.getRoles(), user.getLogin(), user.getPassword()));
+            userService.update(new Users(users.getId(), users.getFirstName(), users.getSecondName(), users.getRole_id(),
+                    users.getRoles(), users.getLogin(), users.getPassword()));
         }
         return allUsers(model);
     }

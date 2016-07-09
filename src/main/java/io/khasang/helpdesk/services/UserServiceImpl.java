@@ -1,49 +1,38 @@
 package io.khasang.helpdesk.services;
 
 import io.khasang.helpdesk.dao.UserDAO;
-import io.khasang.helpdesk.dto.UserDTO;
-import io.khasang.helpdesk.model.User;
+import io.khasang.helpdesk.entity.Users;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
+@Service
+@Transactional
 public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDAO userDAO;
 
     @Override
-    public UserDTO getById(long id) {
-        User user = userDAO.getById(id);
-        UserDTO userDTO = new UserDTO(user.getId(), user.getFirstName(), user.getSecondName(), user.getRole_id(),
-                user.getRoles(), user.getLogin(), user.getPassword());
-        return userDTO;
+    public Users getById(long id) {
+        return userDAO.getById(id);
     }
 
     @Override
-    public void insert(UserDTO userDTO) {
-        User user = new User(userDTO.getId(), userDTO.getFirstName(), userDTO.getSecondName(), userDTO.getRole_id(),
-                userDTO.getRoles(), userDTO.getLogin(), userDTO.getPassword());
-        userDAO.insert(user);
+    public void insert(Users users) {
+        userDAO.insert(users);
     }
 
     @Override
-    public List<UserDTO> getAll() {
-        List<User> users = userDAO.getAll();
-        List<UserDTO> userDTO = new ArrayList<>();
-        for (User a : users) {
-            userDTO.add(new UserDTO(a.getId(), a.getFirstName(), a.getSecondName(), a.getRole_id(),
-                    a.getRoles(), a.getLogin(), a.getPassword()));
-        }
-        return userDTO;
+    public List<Users> getAll() {
+        return userDAO.getAll();
     }
 
     @Override
-    public void update(UserDTO userDTO) {
-        User user = new User(userDTO.getId(), userDTO.getFirstName(), userDTO.getSecondName(), userDTO.getRole_id(),
-                userDTO.getRoles(), userDTO.getLogin(), userDTO.getPassword());
-        userDAO.update(user);
+    public void update(Users users) {
+        userDAO.update(users);
     }
 
     @Override
