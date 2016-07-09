@@ -19,7 +19,7 @@ public class UserService {
     @Autowired
     PasswordEncoder passwordEncoder;
 
-    public List<User> getUsersAsList() {
+    public List<User> getUserList() {
         return userDAO.getUserList();
     }
 
