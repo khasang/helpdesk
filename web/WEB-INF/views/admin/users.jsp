@@ -23,9 +23,11 @@
                         <select name="filter" class="form-control" onchange='this.form.submit()'>
                             <option value="ALL" <c:if test="${filter == 'ALL'}">selected="selected"</c:if>>all
                             </option>
-                            <option value="ROLE_ADMIN" <c:if test="${filter == 'ROLE_ADMIN'}">selected="selected"</c:if>>admin
+                            <option value="ROLE_ADMIN"
+                                    <c:if test="${filter == 'ROLE_ADMIN'}">selected="selected"</c:if>>admin
                             </option>
-                            <option value="ROLE_USER" <c:if test="${filter == 'ROLE_USER'}">selected="selected"</c:if>>user
+                            <option value="ROLE_USER" <c:if test="${filter == 'ROLE_USER'}">selected="selected"</c:if>>
+                                user
                             </option>
                         </select>
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>

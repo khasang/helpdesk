@@ -123,12 +123,12 @@ public class UserServiceTest extends AbstractTransactionalJUnit4SpringContextTes
         userService.addUser(testUser2);
 
         final List<User> userUsers = userService.getUsersByRole(Role.ROLE_USER);
-        for(User user:userUsers) {
+        for (User user : userUsers) {
             assertEquals(user.getRole(), Role.ROLE_USER);
         }
 
         final List<User> adminUsers = userService.getUsersByRole(Role.ROLE_ADMIN);
-        for(User user:adminUsers) {
+        for (User user : adminUsers) {
             assertEquals(user.getRole(), Role.ROLE_ADMIN);
         }
     }
