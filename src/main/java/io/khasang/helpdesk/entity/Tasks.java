@@ -1,67 +1,66 @@
 package io.khasang.helpdesk.entity;
 
-import javax.persistence.*;
-import java.sql.Date;
 
-import static java.time.LocalDateTime.now;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
-@Table(name = "tasks")
 public class Tasks {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private long id;
+    private int id;
 
-    @Column(name = "user_id")
-    private long user_id;
-
-    @Column(name = "description")
-    private String desc;
-
-    @Column(name = "comment")
+    private int user_id;
+    private String description;
     private String comment;
-
-    @Column(name = "last_change")
-    private boolean lastChange;
-
-    @Column(name = "close_date")
-    private Date closeDate;
-
-    @Column(name = "rates_id")
-    private long rates_id;
-
-    @Column(name = "state")
+    private Date date_created;
+    private Date last_change;
+    private Date close_date;
+    private int rates_id;
     private String state;
-
-    @Column(name = "data_created")
-    private Date dataCreated;
 
     public Tasks() {
     }
 
-    public long getId() {
+    public Tasks(int id, int user_id, String description, String comment,
+                 Date date_created, Date last_change, Date close_date, int rates_id, String state) {
+        super();
+        this.id = id;
+        this.user_id = user_id;
+        this.description = description;
+        this.comment = comment;
+        this.date_created = date_created;
+        this.last_change = last_change;
+        this.close_date = close_date;
+        this.rates_id = rates_id;
+        this.state = state;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public long getUser_id() {
+    public int getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(long user_id) {
+    public void setUser_id(int user_id) {
         this.user_id = user_id;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getComment() {
@@ -72,27 +71,33 @@ public class Tasks {
         this.comment = comment;
     }
 
-    public boolean isLastChange() {
-        return lastChange;
+    public Date getDate_created() {
+        return date_created;
     }
 
-    public void setLastChange(boolean lastChange) {
-        this.lastChange = lastChange;
+    public void setDate_created(Date date_created) {this.date_created = date_created;}
+
+    public Date getLast_change() {
+        return last_change;
     }
 
-    public Date getCloseDate() {
-        return closeDate;
+    public void setLast_change(Date last_change) {
+        this.last_change = last_change;
     }
 
-    public void setCloseDate(Date closeDate) {
-        this.closeDate = closeDate;
+    public Date getClose_date() {
+        return close_date;
     }
 
-    public long getRates_id() {
+    public void setClose_date(Date close_date) {
+        this.close_date = close_date;
+    }
+
+    public int getRates_id() {
         return rates_id;
     }
 
-    public void setRates_id(long rates_id) {
+    public void setRates_id(int rates_id) {
         this.rates_id = rates_id;
     }
 
@@ -103,13 +108,4 @@ public class Tasks {
     public void setState(String state) {
         this.state = state;
     }
-
-    public Date getDataCreated() {
-        return dataCreated;
-    }
-
-    public void setDataCreated(Date dataCreated) {
-        this.dataCreated = dataCreated;
-    }
 }
-

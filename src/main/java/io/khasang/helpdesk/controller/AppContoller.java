@@ -3,6 +3,7 @@ package io.khasang.helpdesk.controller;
 
 import io.khasang.helpdesk.dao.daoimpl.JdbcUserDAO;
 import io.khasang.helpdesk.model.CreateTable;
+import io.khasang.helpdesk.model.Tasks;
 import io.khasang.helpdesk.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.sql.SQLException;
+
 //import io.khasang.helpdesk.model.Message;
 
 @Controller
@@ -25,6 +28,9 @@ public class AppContoller {
 
     @Autowired
     CreateTable createTable;
+
+    @Autowired
+    Tasks tasks;
 
 //    @Autowired
 //    User user;
@@ -85,6 +91,11 @@ public class AppContoller {
         return model;
     }
 
+    @RequestMapping("/desk")
+    public String items(Model model) throws SQLException {
+        model.addAttribute("items", tasks.selectWholeTable());
+        return "desk";
+    }
 
 
 }

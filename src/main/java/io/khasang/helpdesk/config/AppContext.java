@@ -68,8 +68,8 @@ public class AppContext {
         return new Index();
     }
 
-    @Bean
-    public Task task(){return new Task();}
+//    @Bean
+//    public Task task(){return new Task();}
 
     @Bean
     public Map map(){return new Map();}
