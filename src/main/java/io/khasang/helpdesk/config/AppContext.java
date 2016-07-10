@@ -2,6 +2,7 @@ package io.khasang.helpdesk.config;
 
 import io.khasang.helpdesk.model.CreateTable;
 import io.khasang.helpdesk.model.Message;
+import io.khasang.helpdesk.model.ProductOrder;
 import io.khasang.helpdesk.model.Temp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -34,6 +35,11 @@ public class AppContext {
         jdbcImpl.setUsersByUsernameQuery("select login as principal, password as credentials, true from users where login = ?");
         jdbcImpl.setAuthoritiesByUsernameQuery("select login as principal, role from users where login = ?");
         return jdbcImpl;
+    }
+
+    @Bean
+    public ProductOrder productOrder(){
+        return  new ProductOrder(jdbcTemplate());
     }
 
     @Bean

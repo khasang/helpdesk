@@ -3,6 +3,7 @@ package io.khasang.helpdesk.controller;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import io.khasang.helpdesk.model.CreateTable;
 import io.khasang.helpdesk.model.Message;
+import io.khasang.helpdesk.model.ProductOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -12,12 +13,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.sql.SQLException;
+
 @Controller
 public class AppContoller {
     @Autowired
     Message message;
     @Autowired
     CreateTable createTable;
+    @Autowired
+    ProductOrder productOrder;
 
     //4to to sdelal
     @RequestMapping("/")
@@ -50,5 +55,11 @@ public class AppContoller {
         model.setViewName("helloPage");
         model.addObject("crypt", new BCryptPasswordEncoder().encode(name));
         return model;
+    }
+
+    @RequestMapping("/select")
+    public String items(Model model) throws SQLException {
+        model.addAttribute("items", productOrder.selectWholeTable());
+        return "select";
     }
 }
