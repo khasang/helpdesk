@@ -44,7 +44,7 @@ public class JdbcUserDAO implements Dao{
 
     @Override
     public void regUser(User user) {
-        Map<String, Object> regParam = new HashMap<>(4);
+        Map<String, Object> regParam = new HashMap<>(3);
         regParam.put("login", user.getLogin());
         regParam.put("password", user.getPassword());
         regParam.put("role", user.getRole());

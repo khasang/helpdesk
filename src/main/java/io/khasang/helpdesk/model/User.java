@@ -5,7 +5,7 @@ import java.util.List;
 
 public class User {
     private String name;
-    private ArrayList<String> username ;
+//    private ArrayList<String> username ;
     private String login;
     private String password;
     private String role;
@@ -47,18 +47,19 @@ public class User {
     public User() {
     }
 
-    public ArrayList<String> addUser(String name){
-        username = new ArrayList<>();
-        username.add(name);
-        return username;
-    }
+//    public ArrayList<String> addUser(String name){
+//        username = new ArrayList<>();
+//        username.add(name);
+//        return username;
+//    }
 
-    public String getUsername(){
-        for (String s : username) {
-            this.name = s;
-        }
-        return name;
-    }
+//    public String getUsername(){
+//        for (String s : username) {
+//            this.name = s;
+//        }
+//        return name;
+//    }
+
     public String getName() {
         return name;
     }
