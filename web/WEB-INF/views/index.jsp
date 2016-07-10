@@ -15,6 +15,7 @@
             <a href="/admin">Admin page</a>
             <a href="/desk">Main page</a>
             <a href="/map">Map</a>
+            <a href="/registration">Sign up</a>
         </div>
     </footer>
 </html>

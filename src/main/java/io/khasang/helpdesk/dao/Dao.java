@@ -12,4 +12,6 @@ public interface Dao {
 
     void createUser();
 
+    void regUser(User user);
+
 }
