@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -52,7 +53,7 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/admin/allUsers/save/user", method = RequestMethod.POST)
-    public String saveUser(ModelMap model) {
+    public String saveUser(ModelMap model, @ModelAttribute("user") Users users) {
         if (users.getId() == 0) {
             userService.insert(new Users(0, users.getFirstName(), users.getSecondName(), users.getRole_id(),
                     users.getRole(), users.getLogin(), users.getPassword()));

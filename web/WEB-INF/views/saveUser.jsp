@@ -8,7 +8,7 @@
 <div class="container">
     <h1>Save User</h1>
     <form:form method="post" action="/admin/allUsers/save/user" commandName="user">
-        <input class="form-control" name="id" path="id" value="${user.id}" type="hidden">
+        <input class="form-control" path="id" value="${user.id}" type="hidden">
 
         <div class="form-group">
             <label>First Name</label>
@@ -31,7 +31,7 @@
         <div class="form-group">
             <label>Role_id</label>
             <input class="form-control" name="role_id" path="role_id" placeholder="User's role id"
-                   value="${user.role}">
+                   value="${user.role_id}">
             <form:errors path="role_id" cssStyle="color: #0002ff;"/>
         </div>
         <div class="form-group">

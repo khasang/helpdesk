@@ -8,17 +8,11 @@ public class Users {
     @Id
     @GeneratedValue
     private long id;
-    @Column
     private String firstName;
-    @Column
     private String secondName;
-    @Column
     private long role_id;
-    @Column
     private String role;
-    @Column
     private String login;
-    @Column
     private String password;
 
     public Users() {
