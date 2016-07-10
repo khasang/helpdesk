@@ -23,7 +23,7 @@
                     <td>${user.firstName}</td>
                     <td>${user.secondName}</td>
                     <td> ${user.role_id}}</td>
-                    <td> ${user.roles}}</td>
+                    <td> ${user.role}}</td>
                     <td> ${user.login}}</td>
                     <td> ${user.password}}</td>
                     <td><a class="btn btn-default btn-xs" href="/admin/allUsers/save/user/${user.id}"

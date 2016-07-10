@@ -2,6 +2,7 @@ package io.khasang.helpdesk.config;
 
 
 import io.khasang.helpdesk.dao.UserDAOImpl;
+import io.khasang.helpdesk.entity.Users;
 import io.khasang.helpdesk.services.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -57,6 +58,11 @@ public class AppContext {
     @Bean
     UserServiceImpl userService() {
         return new UserServiceImpl();
+    }
+
+    @Bean
+    Users users(){
+        return new Users();
     }
 
 }

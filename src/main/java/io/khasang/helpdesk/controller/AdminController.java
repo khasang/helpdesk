@@ -22,6 +22,9 @@ public class AdminController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private Users users;
+
     @RequestMapping("/admin")
     public String adminPage(Model model) {
         model.addAttribute("admin");
@@ -50,13 +53,12 @@ public class AdminController {
 
     @RequestMapping(value = "/admin/allUsers/save/user", method = RequestMethod.POST)
     public String saveUser(ModelMap model) {
-        Users users = new Users();
         if (users.getId() == 0) {
             userService.insert(new Users(0, users.getFirstName(), users.getSecondName(), users.getRole_id(),
-                    users.getRoles(), users.getLogin(), users.getPassword()));
+                    users.getRole(), users.getLogin(), users.getPassword()));
         } else {
             userService.update(new Users(users.getId(), users.getFirstName(), users.getSecondName(), users.getRole_id(),
-                    users.getRoles(), users.getLogin(), users.getPassword()));
+                    users.getRole(), users.getLogin(), users.getPassword()));
         }
         return allUsers(model);
     }

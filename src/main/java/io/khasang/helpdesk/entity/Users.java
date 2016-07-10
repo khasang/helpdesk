@@ -1,33 +1,36 @@
 package io.khasang.helpdesk.entity;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Users {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private long id;
+    @Column
     private String firstName;
+    @Column
     private String secondName;
+    @Column
     private long role_id;
-    private String roles;
+    @Column
+    private String role;
+    @Column
     private String login;
+    @Column
     private String password;
 
     public Users() {
     }
 
-    public Users(long id, String firstName, String secondName, long role_id, String roles, String login,
+    public Users(long id, String firstName, String secondName, long role_id, String role, String login,
                  String password) {
         this.id = id;
         this.firstName = firstName;
         this.secondName = secondName;
         this.role_id = role_id;
-        this.roles = roles;
+        this.role = role;
         this.login = login;
         this.password = password;
     }
@@ -64,12 +67,12 @@ public class Users {
         this.role_id = role_id;
     }
 
-    public String getRoles() {
-        return roles;
+    public String getRole() {
+        return role;
     }
 
-    public void setRoles(String roles) {
-        this.roles = roles;
+    public void setRole(String roles) {
+        this.role = roles;
     }
 
     public String getLogin() {

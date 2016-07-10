@@ -29,7 +29,8 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public void insert(Users users) {
-        sessionFactory.getCurrentSession().save(users);
+        sessionFactory.getCurrentSession().save(new Users(users.getId(), users.getFirstName(), users.getSecondName(),
+                users.getRole_id(), users.getRole(), users.getLogin(), users.getPassword()));
     }
 
     @Override
@@ -39,7 +40,8 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public void update(Users users) {
-        sessionFactory.getCurrentSession().update(users);
+        sessionFactory.getCurrentSession().update(new Users(users.getId(), users.getFirstName(), users.getSecondName(),
+                users.getRole_id(), users.getRole(), users.getLogin(), users.getPassword()));
     }
 
     @Override
