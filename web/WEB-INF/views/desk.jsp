@@ -29,7 +29,7 @@
     </form>
     <p><h2>Table assignments</h2></p>
     <table border="1" width="500" height="100" class="tg">
-        <th>id</th>
+  <%--      <th>id</th>
         <th>user_id</th>
         <th>description</th>
         <th>comment</th>
@@ -48,8 +48,34 @@
             <td>${Tasks.close_date}</td>
             <td>${Tasks.rates_id}</td>
             <td>${Tasks.state}</td>
-        </tr>
+        </tr>--%>
+
+      <tr>
+          <th>id</th>
+          <th>user_id</th>
+          <th>description</th>
+          <th>comment</th>
+          <th>date_created</th>
+          <th>last_change</th>
+          <th>close_date</th>
+          <th>rates_id</th>
+          <th>state</th>
+      </tr>
+      <c:forEach items="${items}" var="deskviewer">
+          <tr>
+              <td><c:out value="${deskviewer.id}"/></td>
+              <%--<td><c:out value="${productorder.user_id}"/></td>
+              <td><c:out value="${productorder.description}"/></td>
+              <td><c:out value="${productorder.comment}"/></td>
+              <td><c:out value="${productorder.date_created}"/></td>
+              <td><c:out value="${productorder.last_change}"/></td>
+              <td><c:out value="${productorder.close_date}"/></td>
+              <td><c:out value="${productorder.rates_id}"/></td>
+              <td><c:out value="${productorder.state}"/></td>--%>
+          </tr>
+      </c:forEach>
     </table>
+
     <form action="#">
         <input type="submit" id="Button4" name="" value="Create a task">
     </form>

@@ -45,6 +45,11 @@ public class AppContext {
     }
 
     @Bean
+    public DeskViewer deskViewer(){
+        return new DeskViewer(jdbcTemplate());
+    }
+
+    @Bean
     public Message message() {
         return new Message();
     }
