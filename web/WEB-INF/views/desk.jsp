@@ -64,14 +64,14 @@
       <c:forEach items="${items}" var="deskviewer">
           <tr>
               <td><c:out value="${deskviewer.id}"/></td>
-              <%--<td><c:out value="${productorder.user_id}"/></td>
-              <td><c:out value="${productorder.description}"/></td>
-              <td><c:out value="${productorder.comment}"/></td>
-              <td><c:out value="${productorder.date_created}"/></td>
-              <td><c:out value="${productorder.last_change}"/></td>
-              <td><c:out value="${productorder.close_date}"/></td>
-              <td><c:out value="${productorder.rates_id}"/></td>
-              <td><c:out value="${productorder.state}"/></td>--%>
+              <td><c:out value="${deskviewer.user_id}"/></td>
+              <td><c:out value="${deskviewer.description}"/></td>
+              <td><c:out value="${deskviewer.comment}"/></td>
+              <td><c:out value="${deskviewer.date_created}"/></td>
+              <td><c:out value="${deskviewer.last_change}"/></td>
+              <td><c:out value="${deskviewer.close_date}"/></td>
+              <td><c:out value="${deskviewer.rates_id}"/></td>
+              <td><c:out value="${deskviewer.state}"/></td>
           </tr>
       </c:forEach>
     </table>

@@ -9,7 +9,6 @@ public class Tasks {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-
     private int user_id;
     private String description;
     private String comment;
