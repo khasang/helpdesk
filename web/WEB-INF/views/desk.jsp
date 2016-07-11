@@ -26,26 +26,30 @@
     <form action="/desk/task">
         <input type="submit" id="Button2" name="" value="Go to Task">
     </form>
-    <p><h1>Table assignments</h1></p>
-    <table border="1" width="500" height="300">
-        <tr height="25%">
-            <td width="15%">artist name</td>
-            <td width="15%">project name</td>
-            <td width="15%">Adopted development</td>
-            <td width="15%">project finish</td>
-        </tr>
-        <tr height="25%">
-            <td>Borisov</td>
-            <td>Create a new technology</td>
-            <td>01.01.2016</td>
-            <td>01.03.2016</td>
-        </tr>
-        <tr height="25%">
-            <td>Ivanov</td>
-            <td>Create a new database</td>
-            <td>01.01.2016</td>
-            <td>01.02.2016</td>
-        </tr>
+    <table border="1" width="500" height="100" class="tg">
+        <caption><h1>Table assignments</h1></caption>
+        <th>id</th>
+        <th>user_id</th>
+        <th>description</th>
+        <th>comment</th>
+        <th>date_created</th>
+        <th>last_change</th>
+        <th>close_date</th>
+        <th>rates_id</th>
+        <th>state</th>
+        <c:forEach items="${items}" var="productorder">
+            <tr>
+                <td><input type="text" description = "id"><c:out value="${Tasks.id}"/></td>
+                <td><input type="text" description = "user_id">${Tasks.user_id}</td>
+                <td><input type="text" description = "description"><c:out value="${Tasks.description}"/></td>
+                <td><input type="text" description = "comment">${Tasks.comment}</td>
+                <td><input type="text" description = "data_created">${Tasks.date_created}</td>
+                <td><input type="text" description = "last_change">${Tasks.last_change}</td>
+                <td><input type="text" description = "close_date">${Tasks.close_date}</td>
+                <td><input type="text" description = "rates_id">${Tasks.rates_id}</td>
+                <td><input type="text" description = "state">${Tasks.state}</td>
+            </tr>
+        </c:forEach>
     </table>
     <form action="#">
         <input type="submit" id="Button4" name="" value="Create a task">

@@ -18,4 +18,14 @@ public class DeskController {
         model.addAttribute("hello", "Task page!");
         return "task";
     }
+
+/*
+    @Autowired
+    Tasks tasks;
+
+    @RequestMapping("/desk")
+    public String items(Model model) throws SQLException {
+        model.addAttribute("items", tasks.selectWholeTable());
+        return "desk";
+    } */
 }
