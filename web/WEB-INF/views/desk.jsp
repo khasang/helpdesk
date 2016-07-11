@@ -21,10 +21,10 @@
 <h2>${index}</h2>
 <div class="left_menu_desk">
     <form action="/">
-        <input type="submit" id="Button1" name="" value="Home page">
+        <input type="submit" id="Button1" description="" value="Home page">
     </form>
     <form action="/desk/task">
-        <input type="submit" id="Button2" name="" value="Go to Task">
+        <input type="submit" id="Button2" description="" value="Go to Task">
     </form>
     <table border="1" width="500" height="100" class="tg">
         <caption><h1>Table assignments</h1></caption>
@@ -39,30 +39,30 @@
         <th>state</th>
         <c:forEach items="${items}" var="productorder">
             <tr>
-                <td><input type="text" description = "id"><c:out value="${Tasks.id}"/></td>
-                <td><input type="text" description = "user_id">${Tasks.user_id}</td>
-                <td><input type="text" description = "description"><c:out value="${Tasks.description}"/></td>
-                <td><input type="text" description = "comment">${Tasks.comment}</td>
-                <td><input type="text" description = "data_created">${Tasks.date_created}</td>
-                <td><input type="text" description = "last_change">${Tasks.last_change}</td>
-                <td><input type="text" description = "close_date">${Tasks.close_date}</td>
-                <td><input type="text" description = "rates_id">${Tasks.rates_id}</td>
-                <td><input type="text" description = "state">${Tasks.state}</td>
+                <td><input type="text" name = "id"><c:out value="${Tasks.id}"/></td>
+                <td><input type="text" name = "user_id">${Tasks.user_id}</td>
+                <td><input type="text" name = "description"><c:out value="${Tasks.description}"/></td>
+                <td><input type="text" name = "comment">${Tasks.comment}</td>
+                <td><input type="text" name = "data_created">${Tasks.date_created}</td>
+                <td><input type="text" name = "last_change">${Tasks.last_change}</td>
+                <td><input type="text" name = "close_date">${Tasks.close_date}</td>
+                <td><input type="text" name = "rates_id">${Tasks.rates_id}</td>
+                <td><input type="text" name = "state">${Tasks.state}</td>
             </tr>
         </c:forEach>
     </table>
     <form action="#">
-        <input type="submit" id="Button4" name="" value="Create a task">
+        <input type="submit" id="Button4" name="Create a task" value="Create a task">
     </form>
     <form>
-        <b>Search: </b><input type="text" value=""/><br/>
+        <b>Search: </b><input type="text" name="Search"/><br/>
         <input type="submit" value="Edit">
     </form>
 </div>
 
 <div class="right_menu">
     <form action="#">
-        <input type="submit" id="Button3" name="" value="Logout">
+        <input type="submit" id="Button3" name="Logout" value="Logout">
     </form>
 </div>
 </body>

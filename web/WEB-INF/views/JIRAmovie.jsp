@@ -18,7 +18,7 @@
 <body>
 <div class="left_menu">
     <form action="/">
-        <input type="submit" id="Button1" name="" value="Home page">
+        <input type="submit" id="Button1" description="" value="Home page">
     </form>
 </div>
 

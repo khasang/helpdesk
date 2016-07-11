@@ -21,10 +21,10 @@
 <div class="left_menu">
     <left>
         <form action="/">
-            <input type="submit" id="Button1" name="" value="Go to Index">
+            <input type="submit" id="Button1" description="" value="Go to Index">
         </form>
         <form action="#">
-            <input type="submit" id="Button8" name="" value="Logout">
+            <input type="submit" id="Button8" description="" value="Logout">
         </form>
     </left>
 
@@ -33,12 +33,12 @@
     <br/>
     <h1><b>Admin menu:</b></h1>
     <form action="#">
-        <input type="submit" id="Button2" name="" value="Users"><br/>
-        <input type="submit" id="Button3" name="" value="Moderators"><br/>
-        <input type="submit" id="Button4" name="" value="Activity"><br/>
-        <input type="submit" id="Button5" name="" value="Questions"><br/>
-        <input type="submit" id="Button6" name="" value="Settings"><br/>
-        <input type="submit" id="Button7" name="" value="Buckup"><br/>
+        <input type="submit" id="Button2" description="" value="Users"><br/>
+        <input type="submit" id="Button3" description="" value="Moderators"><br/>
+        <input type="submit" id="Button4" description="" value="Activity"><br/>
+        <input type="submit" id="Button5" description="" value="Questions"><br/>
+        <input type="submit" id="Button6" description="" value="Settings"><br/>
+        <input type="submit" id="Button7" description="" value="Buckup"><br/>
     </form>
 
     <h1><b>User edit</b></h1>

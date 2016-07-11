@@ -22,10 +22,10 @@
 <body>
 <div class="right_menu">
     <form action="#">
-        <input type="submit" id="Button1" name="" value="Login">
+        <input type="submit" id="Button1" description="" value="Login">
     </form>
     <form action="#">
-        <input type="submit" id="Button2" name="" value="Registration">
+        <input type="submit" id="Button2" description="" value="Registration">
     </form>
 </div>
 
@@ -55,19 +55,19 @@
 
 <div class="left_menu">
     <form action="/admin">
-        <input type="submit" id="Button3" name="" value="Admin page">
+        <input type="submit" id="Button3" description="" value="Admin page">
     </form>
     <form action="/desk">
-        <input type="submit" id="Button4" name="" value="Desk page">
+        <input type="submit" id="Button4" description="" value="Desk page">
     </form>
     <form action="/news">
-        <input type="submit" id="Button5" name="" value="News page">
+        <input type="submit" id="Button5" description="" value="News page">
     </form>
     <form action="/maps">
-        <input type="submit" id="Button6" name="" value="Maps page">
+        <input type="submit" id="Button6" description="" value="Maps page">
     </form>
     <form action="/JIRAmovie">
-        <input type="submit" id="Button7" name="" value="Intro to JIRA portfolio">
+        <input type="submit" id="Button7" description="" value="Intro to JIRA portfolio">
     </form>
 </div>
 <div class="Created_by">

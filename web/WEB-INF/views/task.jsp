@@ -21,10 +21,10 @@
 
 <div class="left_menu">
     <form action="/desk">
-        <input type="submit" id="Button1" name="" value="Desk page">
+        <input type="submit" id="Button1" description="" value="Desk page">
     </form>
     <form action="#">
-        <input type="submit" id="Button3" name="" value="Logout">
+        <input type="submit" id="Button3" description="" value="Logout">
     </form>
 </div>
 
