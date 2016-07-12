@@ -1,13 +1,15 @@
 
 .index{
-    background-image: url('../image/1.gif');
+    background-image: url('image/1.gif');
     alignment: center;
 }
 
-#welcomText{
+#welcomText {
     vertical-align: baseline;
     horiz-align: center;
     alignment: center;
+}
+
 p {
     font-family: Calibri;
     color: darkblue;

@@ -91,10 +91,10 @@ public class AppContoller {
         return model;
     }
 
-    @RequestMapping("/desk")
+    @RequestMapping(value={"/get-data"}, method=RequestMethod.GET)
     public String items(Model model) throws SQLException {
         model.addAttribute("items", tasks.selectWholeTable());
-        return "desk";
+        return "get-data";
     }
 
 

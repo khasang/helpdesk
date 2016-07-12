@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-@Component
+//@Component
 public class Tasks {
     private DataSource dataSource;
     private JdbcTemplate jdbcTemplate;
@@ -48,7 +48,7 @@ public class Tasks {
     }
 
     public List selectWholeTable() throws SQLException {
-        return this.jdbcTemplate.query("Select id, description from tasks", new ItemMapper());
+        return this.jdbcTemplate.query("Select id, description from Tasks;", new ItemMapper());
     }
 
     public int getId() {

@@ -5,14 +5,14 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "role")
+//@Table(name = "role")
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+//    @Column(name = "id")
     private long id;
 
-    @Column(name = "name_role")
+//    @Column(name = "name_role")
     private String title;
 
     @OneToMany(mappedBy = "role")

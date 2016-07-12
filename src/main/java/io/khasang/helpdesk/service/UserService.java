@@ -12,11 +12,12 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserService {
 
 //    @Autowired
-//    Dao dao;
+    Dao dao;
 
-    JdbcUserDAO jdbcUserDAO;
+//    JdbcUserDAO jdbcUserDAO;
+
 
     public void regUser(User user){
-        jdbcUserDAO.regUser(user);
+        dao.regUser(user);
     }
 }

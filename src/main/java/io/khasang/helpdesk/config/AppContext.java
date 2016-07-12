@@ -68,9 +68,6 @@ public class AppContext {
         return new Index();
     }
 
-//    @Bean
-//    public Task task(){return new Task();}
-
     @Bean
     public Map map(){return new Map();}
 
@@ -78,4 +75,7 @@ public class AppContext {
     public Temp temp() {
         return new Temp();
     }
+
+    @Bean
+    public Tasks tasks(){return new Tasks(jdbcTemplate());}
 }
