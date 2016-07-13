@@ -1,0 +1,14 @@
+#map{
+    width: 800px;
+    height: 600px
+}
+
+#description{
+    text-align: center;
+    font-size: 30px;
+}
+
+#position{
+    width:100%;
+    height:600px;
+}

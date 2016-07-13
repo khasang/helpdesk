@@ -39,15 +39,15 @@
         <th>state</th>
         <c:forEach items="${items}" var="productorder">
             <tr>
-                <td><input type="text" name = "id"><c:out value="${Tasks.id}"/></td>
-                <td><input type="text" name = "user_id">${Tasks.user_id}</td>
-                <td><input type="text" name = "description"><c:out value="${Tasks.description}"/></td>
-                <td><input type="text" name = "comment">${Tasks.comment}</td>
-                <td><input type="text" name = "data_created">${Tasks.date_created}</td>
-                <td><input type="text" name = "last_change">${Tasks.last_change}</td>
-                <td><input type="text" name = "close_date">${Tasks.close_date}</td>
-                <td><input type="text" name = "rates_id">${Tasks.rates_id}</td>
-                <td><input type="text" name = "state">${Tasks.state}</td>
+                <td><c:out value="${tasks.id}"/></td>
+                <td><c:out value="${tasks.user_id}"/></td>
+                <td><c:out value="${tasks.description}"/></td>
+                <td><c:out value="${tasks.comment}"/></td>
+                <td><c:out value="${tasks.date_created}"/></td>
+                <td><c:out value="${tasks.last_change}"/></td>
+                <td><c:out value="${tasks.close_date}"/></td>
+                <td><c:out value="${tasks.rates_id}"/></td>
+                <td><c:out value="${tasks.state}"/></td>
             </tr>
         </c:forEach>
     </table>

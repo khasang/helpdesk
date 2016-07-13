@@ -5,7 +5,6 @@ import java.util.Date;
 
 //@Entity
 public class Tasks {
-/*
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -103,5 +102,5 @@ public class Tasks {
 
     public void setState(String state) {
         this.state = state;
-    }*/
+    }
 }
