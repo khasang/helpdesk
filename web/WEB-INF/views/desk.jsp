@@ -76,7 +76,7 @@
       </c:forEach>
     </table>
 
-    <form action="#">
+    <form action="/newtask">
         <input type="submit" id="Button4" name="" value="Create a task">
     </form>
     <form>

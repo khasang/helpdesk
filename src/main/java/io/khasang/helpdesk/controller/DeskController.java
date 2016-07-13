@@ -20,9 +20,9 @@ public class DeskController {
         return "desk";
     }
 
-    @RequestMapping("/desk/task")
+    @RequestMapping("/newtask")
     public String task(Model model) {
         model.addAttribute("hello", "Task page!");
-        return "task";
+        return "newtask";
     }
 }
