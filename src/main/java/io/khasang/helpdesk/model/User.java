@@ -1,14 +1,18 @@
 package io.khasang.helpdesk.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.stereotype.Component;
 
+@Component
 public class User {
     private String name;
-//    private ArrayList<String> username ;
+    //    private ArrayList<String> username ;
     private String login;
     private String password;
     private String role;
+    private String email;
+
+    public User() {
+    }
 
     public String getEmail() {
         return email;
@@ -40,11 +44,6 @@ public class User {
 
     public void setLogin(String login) {
         this.login = login;
-    }
-
-    private String email;
-
-    public User() {
     }
 
 //    public ArrayList<String> addUser(String name){

@@ -17,16 +17,21 @@
     <th>state</th>
     <c:forEach items="${items}" var="tasks">
     <tr>
-        <td><c:out value="${Tasks.id}"/></td>
-        <td><input type="text" description = "user_id"><c:out value="${Tasks.user_id}"/></td>
-        <td><c:out value="${Tasks.description}"/></td>
-        <td><input type="text" description = "comment"><c:out value="${Tasks.comment}"/></td>
-        <td><input type="text" description = "data_created"><c:out value="${Tasks.date_created}"/></td>
-        <td><input type="text" description = "last_change"><c:out value="${Tasks.last_change}"/></td>
-        <td><input type="text" description = "close_date"><c:out value="${Tasks.close_date}"/></td>
-        <td><input type="text" description = "rates_id"><c:out value="${Tasks.rates_id}"/></td>
-        <td><input type="text" description = "state"><c:out value="${Tasks.state}"/></td>
+        <td><c:out value="${tasks.id}"/></td>
+        <td><c:out value="${tasks.user_id}"/></td>
+        <td><c:out value="${tasks.description}"/></td>
+        <td><c:out value="${tasks.comment}"/></td>
+        <td><c:out value="${tasks.date_created}"/></td>
+        <td><c:out value="${tasks.last_change}"/></td>
+        <td><c:out value="${tasks.close_date}"/></td>
+        <td><c:out value="${tasks.rates_id}"/></td>
+        <td><c:out value="${tasks.state}"/></td>
     </tr>
     </c:forEach>
+    <form>
+        <p style="text-align: center">
+            <button onclick="window.location.reload();">
+        <p>Menu</p>
+    </form>
 </body>
 </html>

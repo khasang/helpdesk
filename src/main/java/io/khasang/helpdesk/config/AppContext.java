@@ -68,6 +68,7 @@ public class AppContext {
         return new Index();
     }
 
+
     @Bean
     public Map map(){return new Map();}
 

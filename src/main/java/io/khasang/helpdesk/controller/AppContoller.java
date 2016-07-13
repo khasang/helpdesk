@@ -29,8 +29,6 @@ public class AppContoller {
     @Autowired
     CreateTable createTable;
 
-    @Autowired
-    Tasks tasks;
 
 //    @Autowired
 //    User user;
@@ -90,12 +88,5 @@ public class AppContoller {
         model.addObject("crypt", new BCryptPasswordEncoder().encode(name));
         return model;
     }
-
-    @RequestMapping(value={"/get-data"}, method=RequestMethod.GET)
-    public String items(Model model) throws SQLException {
-        model.addAttribute("items", tasks.selectWholeTable());
-        return "get-data";
-    }
-
 
 }
