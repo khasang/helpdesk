@@ -27,6 +27,10 @@ public class Task {
     public Task() {
     }
 
+    public Task(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
     public DataSource getDataSource() {
         return dataSource;
     }
@@ -122,16 +126,16 @@ public class Task {
 
 final class ItemMapper implements RowMapper<Task> {
     public Task mapRow(ResultSet rs, int rowNum) throws SQLException {
-        Task productorder = new Task();
-        productorder.setId(rs.getInt("id"));
-        productorder.setUser_id(rs.getInt("user_id"));
-        productorder.setDescription(rs.getString("description"));
-        productorder.setComment(rs.getString("comment"));
-        productorder.setDate_created(rs.getDate("date_created"));
-        productorder.setLast_change(rs.getDate("last_change"));
-        productorder.setClose_date(rs.getDate("close_date"));
-        productorder.setRates_id(rs.getInt("rates_id"));
-        productorder.setState(rs.getString("state"));
-        return productorder;
+        Task task = new Task();
+        task.setId(rs.getInt("id"));
+        task.setUser_id(rs.getInt("user_id"));
+        task.setDescription(rs.getString("description"));
+        task.setComment(rs.getString("comment"));
+        task.setDate_created(rs.getDate("date_created"));
+        task.setLast_change(rs.getDate("last_change"));
+        task.setClose_date(rs.getDate("close_date"));
+        task.setRates_id(rs.getInt("rates_id"));
+        task.setState(rs.getString("state"));
+        return task;
     }
 }

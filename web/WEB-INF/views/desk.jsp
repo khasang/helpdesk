@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Alexander-PC
-  Date: 12.06.2016
-  Time: 19:01
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -37,17 +31,17 @@
         <th>close_date</th>
         <th>rates_id</th>
         <th>state</th>
-        <c:forEach items="${items}" var="productorder">
+        <c:forEach items="${items}" var="task">
             <tr>
-                <td><c:out value="${tasks.id}"/></td>
-                <td><c:out value="${tasks.user_id}"/></td>
-                <td><c:out value="${tasks.description}"/></td>
-                <td><c:out value="${tasks.comment}"/></td>
-                <td><c:out value="${tasks.date_created}"/></td>
-                <td><c:out value="${tasks.last_change}"/></td>
-                <td><c:out value="${tasks.close_date}"/></td>
-                <td><c:out value="${tasks.rates_id}"/></td>
-                <td><c:out value="${tasks.state}"/></td>
+                <td><c:out value="${task.id}"/></td>
+                <td><c:out value="${task.user_id}"/></td>
+                <td><c:out value="${task.description}"/></td>
+                <td><c:out value="${task.comment}"/></td>
+                <td><c:out value="${task.date_created}"/></td>
+                <td><c:out value="${task.last_change}"/></td>
+                <td><c:out value="${task.close_date}"/></td>
+                <td><c:out value="${task.rates_id}"/></td>
+                <td><c:out value="${task.state}"/></td>
             </tr>
         </c:forEach>
     </table>

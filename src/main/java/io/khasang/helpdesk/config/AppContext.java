@@ -18,6 +18,9 @@ public class AppContext {
     @Autowired
     Environment environment;
 
+    @Autowired
+    JdbcTemplate jdbcTemplate;
+
     @Bean
     public JdbcTemplate jdbcTemplate() {
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
@@ -74,8 +77,8 @@ public class AppContext {
         return new CreateTable(jdbcTemplate());
     }
 
- /*   @Bean
+    @Bean
     public Task tasks(){
         return new Task(jdbcTemplate());
-    }*/
+    }
 }
