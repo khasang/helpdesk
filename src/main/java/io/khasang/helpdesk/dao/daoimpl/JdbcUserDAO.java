@@ -14,8 +14,6 @@ import java.util.Map;
 @Component
 public class JdbcUserDAO implements Dao{
 
-    private SimpleJdbcInsert jdbcInsert;
-
     @Autowired
     JdbcTemplate jdbcTemplate;
 

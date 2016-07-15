@@ -8,8 +8,17 @@ public class Admin {
     private String title;
     private String user;
     private String testUser;
+    private String role;
 
     public Admin() {
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getMessage() {
@@ -20,12 +29,12 @@ public class Admin {
         this.message = message;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getTitle() {
         return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getUser() {
@@ -36,11 +45,11 @@ public class Admin {
         this.user = user;
     }
 
-    public void setTestUser(String testUser) {
-        this.testUser = testUser;
-    }
-
     public String getTestUser() {
         return testUser;
+    }
+
+    public void setTestUser(String testUser) {
+        this.testUser = testUser;
     }
 }
