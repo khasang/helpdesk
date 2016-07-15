@@ -29,6 +29,12 @@ public class TasksController {
         return "get-data";
     }
 
+    @RequestMapping("/task")
+    public String task(Model model) throws SQLException {
+        model.addAttribute("task", tasks.selectWholeTable());
+        return "task";
+    }
+
 //    @RequestMapping(value ="/desk", method = RequestMethod.GET)
 //    public ModelAndView task(){
 //        return new ModelAndView("task")

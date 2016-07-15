@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class Tasks {
+public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -22,11 +22,11 @@ public class Tasks {
     private int rates_id;
     private String state;
 
-    public Tasks() {
+    public Task() {
     }
 
-    public Tasks(int id, int user_id, String description, String comment,
-                 Date date_created, Date last_change, Date close_date, int rates_id, String state) {
+    public Task(int id, int user_id, String description, String comment,
+                Date date_created, Date last_change, Date close_date, int rates_id, String state) {
         super();
         this.id = id;
         this.user_id = user_id;

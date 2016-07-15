@@ -111,7 +111,7 @@ public class Tasks {
     }
 
     public List selectWholeTable() throws SQLException {
-        return this.jdbcTemplate.query("Select id, description from tasks;", new ItemMapper());
+        return this.jdbcTemplate.query("Select * from tasks;", new ItemMapper());
     }
 
     public int getId() {
@@ -128,13 +128,13 @@ final class ItemMapper implements RowMapper<Tasks> {
         Tasks tasks = new Tasks();
         tasks.setId(rs.getInt("id"));
         tasks.setDescription(rs.getString("description"));
-//        tasks.setUser_id(rs.getInt("user_id"));
-//        tasks.setComment(rs.getString("comment"));
-//        tasks.setDate_created(rs.getDate("date_created"));
-//        tasks.setLast_change(rs.getDate("last_change"));
-//        tasks.setClose_date(rs.getDate("close_date"));
-//        tasks.setRates_id(rs.getInt("rates_id"));
-//        tasks.setState(rs.getString("state"));
+        tasks.setUser_id(rs.getInt("user_id"));
+        tasks.setComment(rs.getString("comment"));
+        tasks.setDate_created(rs.getDate("date_created"));
+        tasks.setLast_change(rs.getDate("last_change"));
+        tasks.setClose_date(rs.getDate("close_date"));
+        tasks.setRates_id(rs.getInt("rates_id"));
+        tasks.setState(rs.getString("state"));
         return tasks;
     }
 }
