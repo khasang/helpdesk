@@ -9,11 +9,7 @@
 <html>
 <head>
     <title>Intro to JIRA portfolio</title>
-    <style>
-        body {
-            background: url("http://www.beliefnet.com/columnists/everydayspirituality/files/2014/02/orange_sunset_1920x1080.jpg");
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 <body>
 <div class="left_menu">

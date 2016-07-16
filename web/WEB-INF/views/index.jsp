@@ -12,11 +12,6 @@
     <title>index</title>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <script type="text/javascript" src="js/welcome.js"></script>
-    <style>
-        body {
-             background: url("http://yourpics.web44.net/Wallpapers/081308_fc2_sunset_1920_1080.jpg");
-         }
-    </style>
 </head>
 
 <body>
@@ -33,15 +28,15 @@
     <span><h2>Welcome to our site! Helpdesk</h2></span>
 </div>
 
-<div class="summury">
+<div class="summary">
     <strong>SUMMARY</strong>
-    <div class="text_black">
+    <div class="text_aqua">
         <br>Responsible for providing technical assistance and support related to computer systems, hardware, or software.
         Responds to queries, runs diagnostic programs, isolates problem, and determines and implements solution.
     </div>
     <br>
     <strong>PRIMARY RESPONSIBILITIES</strong>
-    <div class="text_white">
+    <div class="text_aqua">
         <br>- Provide technical assistance and support for incoming queries and issues related to computer systems, software, and hardware.
         <br>- Respond to queries either in person or over the phone.<br>- Write training manuals.<br>- Train computer users.
         <br>- Maintain daily performance of computer systems.<br>- Respond to email messages for customers seeking help.

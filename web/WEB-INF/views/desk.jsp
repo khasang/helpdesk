@@ -5,11 +5,6 @@
     <meta charset=’UTF-8’>
     <title>desk</title>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <style>
-        body {
-            background: url("http://www.beliefnet.com/columnists/everydayspirituality/files/2014/02/orange_sunset_1920x1080.jpg");
-        }
-    </style>
 </head>
 <body>
 <h2>${index}</h2>

@@ -20,11 +20,6 @@
       myMap.geoObjects.add(myPlacemark);
     }
   </script>
-  <style>
-    body {
-      background: url("http://www.beliefnet.com/columnists/everydayspirituality/files/2014/02/orange_sunset_1920x1080.jpg");
-    }
-  </style>
 </head>
 <body>
 <div id="map">

@@ -12,3 +12,8 @@
     width:100%;
     height:600px;
 }
+
+body{
+    background:url(image/Help-Desk.png) no-repeat;
+    background-size: cover;
+}

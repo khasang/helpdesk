@@ -1,11 +1,11 @@
 body {
     font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
-    background-color: #EEE;
     margin: 0;
     padding: 0;
     color: #000;
     font-size: 13px;
-    height: 100%;
+    background:url(image/Help-Desk.png) no-repeat;
+    background-size: cover;
 }
 
 #container {
@@ -69,7 +69,7 @@ body {
     font-size:13px;
 }
 
-.summury {
+.summary {
     position:absolute;
     left:800px;
     top:200px;
@@ -80,8 +80,8 @@ body {
     font-size:16px;
 }
 
-.text_black{
-    color: black;
+.text_aqua{
+    color: blue;
     font-size:13px;
 }
 

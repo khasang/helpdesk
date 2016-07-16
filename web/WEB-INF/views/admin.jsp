@@ -11,11 +11,6 @@
     <title>admin</title>
     <meta charset=’UTF-8’>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <style>
-        body {
-            background: url("https://i.vimeocdn.com/video/518346687.jpg?mw=1920&mh=1080&q=70");
-        }
-    </style>
 </head>
 <body>
 <div class="left_menu">
