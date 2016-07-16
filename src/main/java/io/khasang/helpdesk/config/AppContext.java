@@ -18,9 +18,6 @@ public class AppContext {
     @Autowired
     Environment environment;
 
-    @Autowired
-    JdbcTemplate jdbcTemplate;
-
     @Bean
     public JdbcTemplate jdbcTemplate() {
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
