@@ -25,7 +25,7 @@
 </div>
 
 <div class="welcome">
-    <span><h2>Welcome to our site! Helpdesk</h2></span>
+    <span><h1>Welcome to our site!</h1></span>
 </div>
 
 <div class="summary">
