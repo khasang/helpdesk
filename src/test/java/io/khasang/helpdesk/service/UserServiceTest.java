@@ -87,6 +87,7 @@ public class UserServiceTest extends AbstractTransactionalJUnit4SpringContextTes
     @Test
     public void testDeleteAllUsers() {
         userService.addUser(generateTestUser());
+        sessionFactory.getCurrentSession().flush();
 
         final int count = countRowsInTable("users");
         assertTrue(count > 0);
@@ -139,10 +140,11 @@ public class UserServiceTest extends AbstractTransactionalJUnit4SpringContextTes
      */
     @Test
     public void testGetUserListOrder() {
-        userService.addUser(generateTestUser());
         User user2 = generateTestUser();
         user2.setLogin("test2");
         userService.addUser(user2);
+        userService.addUser(generateTestUser());
+
 
         final List<User> userList = userService.getUserList();
         for (int i = 0; i < userList.size() - 1; i++) {
