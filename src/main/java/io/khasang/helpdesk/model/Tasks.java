@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 @Component
-public class Task {
+public class Tasks {
     private DataSource dataSource;
     private JdbcTemplate jdbcTemplate;
     private int id;
@@ -24,10 +24,10 @@ public class Task {
     private int rates_id;
     private String state;
 
-    public Task() {
+    public Tasks() {
     }
 
-    public Task(JdbcTemplate jdbcTemplate) {
+    public Tasks(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
@@ -112,7 +112,7 @@ public class Task {
     }
 
     public List selectWholeTable() throws SQLException {
-        return this.jdbcTemplate.query("Select id, user_id, description, comment, date_created, last_change, close_date, rates_id, state from Tasks;", new ItemMapper());
+        return this.jdbcTemplate.query("Select id, user_id, description, comment, date_created, last_change, close_date, rates_id, state from Task;", new ItemMapper());
     }
 
     public int getId() {
@@ -124,18 +124,18 @@ public class Task {
     }
 }
 
-final class ItemMapper implements RowMapper<Task> {
-    public Task mapRow(ResultSet rs, int rowNum) throws SQLException {
-        Task task = new Task();
-        task.setId(rs.getInt("id"));
-        task.setUser_id(rs.getInt("user_id"));
-        task.setDescription(rs.getString("description"));
-        task.setComment(rs.getString("comment"));
-        task.setDate_created(rs.getDate("date_created"));
-        task.setLast_change(rs.getDate("last_change"));
-        task.setClose_date(rs.getDate("close_date"));
-        task.setRates_id(rs.getInt("rates_id"));
-        task.setState(rs.getString("state"));
-        return task;
+final class ItemMapper implements RowMapper<Tasks> {
+    public Tasks mapRow(ResultSet rs, int rowNum) throws SQLException {
+        Tasks tasks = new Tasks();
+        tasks.setId(rs.getInt("id"));
+        tasks.setUser_id(rs.getInt("user_id"));
+        tasks.setDescription(rs.getString("description"));
+        tasks.setComment(rs.getString("comment"));
+        tasks.setDate_created(rs.getDate("date_created"));
+        tasks.setLast_change(rs.getDate("last_change"));
+        tasks.setClose_date(rs.getDate("close_date"));
+        tasks.setRates_id(rs.getInt("rates_id"));
+        tasks.setState(rs.getString("state"));
+        return tasks;
     }
 }

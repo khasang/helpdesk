@@ -3,8 +3,8 @@ package io.khasang.helpdesk.entity;
 import javax.persistence.*;
 import java.util.Date;
 
-//@Entity
-public class Tasks {
+@Entity
+public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -17,11 +17,11 @@ public class Tasks {
     private int rates_id;
     private String state;
 
-    public Tasks() {
+    public Task() {
     }
 
-    public Tasks(int id, int user_id, String description, String comment,
-                 Date date_created, Date last_change, Date close_date, int rates_id, String state) {
+    public Task(int id, int user_id, String description, String comment,
+                Date date_created, Date last_change, Date close_date, int rates_id, String state) {
         super();
         this.id = id;
         this.user_id = user_id;
@@ -103,4 +103,6 @@ public class Tasks {
     public void setState(String state) {
         this.state = state;
     }
+
+
 }

@@ -75,7 +75,7 @@ public class AppContext {
     }
 
     @Bean
-    public Task tasks(){
-        return new Task(jdbcTemplate());
+    public Tasks tasks(){
+        return new Tasks(jdbcTemplate());
     }
 }

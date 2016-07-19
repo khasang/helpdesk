@@ -26,19 +26,7 @@
         <th>close_date</th>
         <th>rates_id</th>
         <th>state</th>
-        <c:forEach items="${items}" var="task">
-            <tr>
-                <td><c:out value="${task.id}"/></td>
-                <td><c:out value="${task.user_id}"/></td>
-                <td><c:out value="${task.description}"/></td>
-                <td><c:out value="${task.comment}"/></td>
-                <td><c:out value="${task.date_created}"/></td>
-                <td><c:out value="${task.last_change}"/></td>
-                <td><c:out value="${task.close_date}"/></td>
-                <td><c:out value="${task.rates_id}"/></td>
-                <td><c:out value="${task.state}"/></td>
-            </tr>
-        </c:forEach>
+
     </table>
     <form action="#">
         <input type="submit" id="Button4" name="Create a task" value="Create a task">
