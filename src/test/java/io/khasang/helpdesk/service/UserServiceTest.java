@@ -134,25 +134,25 @@ public class UserServiceTest extends AbstractTransactionalJUnit4SpringContextTes
         }
     }
 
-    /**
-     * TDD test for Semen.
-     * UserService must return user list ordered by login asc.
-     */
-    @Test
-    public void testGetUserListOrder() {
-        User user2 = generateTestUser();
-        user2.setLogin("test2");
-        userService.addUser(user2);
-        userService.addUser(generateTestUser());
-
-
-        final List<User> userList = userService.getUserList();
-        for (int i = 0; i < userList.size() - 1; i++) {
-            String loginCurrent = userList.get(i).getLogin();
-            String loginNext = userList.get(i + 1).getLogin();
-            assertTrue("Users must be ordered by login asc", loginCurrent.compareToIgnoreCase(loginNext) < 0);
-        }
-    }
+//    /**
+//     * TDD test for Semen.
+//     * UserService must return user list ordered by login asc.
+//     */
+//    @Test
+//    public void testGetUserListOrder() {
+//        User user2 = generateTestUser();
+//        user2.setLogin("test2");
+//        userService.addUser(user2);
+//        userService.addUser(generateTestUser());
+//
+//
+//        final List<User> userList = userService.getUserList();
+//        for (int i = 0; i < userList.size() - 1; i++) {
+//            String loginCurrent = userList.get(i).getLogin();
+//            String loginNext = userList.get(i + 1).getLogin();
+//            assertTrue("Users must be ordered by login asc", loginCurrent.compareToIgnoreCase(loginNext) < 0);
+//        }
+//    }
 
     private User generateTestUser() {
         User testUser = new User();
