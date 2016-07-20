@@ -22,7 +22,7 @@ public class UserController {
 
     @RequestMapping
     public String users(Model model) {
-        model.addAttribute("users", userService.getUsersAsList());
+        model.addAttribute("users", userService.getUserList());
         return "admin/users";
     }
 
@@ -75,7 +75,7 @@ public class UserController {
         try {
             model.addAttribute("users", userService.getUsersByRole(Role.valueOf(filter)));
         } catch (IllegalArgumentException e) {
-            model.addAttribute("users", userService.getUsersAsList());
+            model.addAttribute("users", userService.getUserList());
         }
 
         model.addAttribute("filter", filter);

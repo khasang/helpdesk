@@ -87,6 +87,7 @@ public class UserServiceTest extends AbstractTransactionalJUnit4SpringContextTes
     @Test
     public void testDeleteAllUsers() {
         userService.addUser(generateTestUser());
+        sessionFactory.getCurrentSession().flush();
 
         final int count = countRowsInTable("users");
         assertTrue(count > 0);
@@ -99,12 +100,12 @@ public class UserServiceTest extends AbstractTransactionalJUnit4SpringContextTes
     @Test
     public void testGetUserList() {
         userService.deleteAllUsers();
-        final List<User> userList1 = userService.getUsersAsList();
+        final List<User> userList1 = userService.getUserList();
         assertTrue(userList1.size() == 0);
 
         User testUser = generateTestUser();
         userService.addUser(testUser);
-        final List<User> userList2 = userService.getUsersAsList();
+        final List<User> userList2 = userService.getUserList();
         assertTrue(userList2.size() == 1);
 
         User user = userList2.get(0);
@@ -130,6 +131,26 @@ public class UserServiceTest extends AbstractTransactionalJUnit4SpringContextTes
         final List<User> adminUsers = userService.getUsersByRole(Role.ROLE_ADMIN);
         for (User user : adminUsers) {
             assertEquals(user.getRole(), Role.ROLE_ADMIN);
+        }
+    }
+
+    /**
+     * TDD test for Semen.
+     * UserService must return user list ordered by login asc.
+     */
+    @Test
+    public void testGetUserListOrder() {
+        User user2 = generateTestUser();
+        user2.setLogin("test2");
+        userService.addUser(user2);
+        userService.addUser(generateTestUser());
+
+
+        final List<User> userList = userService.getUserList();
+        for (int i = 0; i < userList.size() - 1; i++) {
+            String loginCurrent = userList.get(i).getLogin();
+            String loginNext = userList.get(i + 1).getLogin();
+            assertTrue("Users must be ordered by login asc", loginCurrent.compareToIgnoreCase(loginNext) < 0);
         }
     }
 
