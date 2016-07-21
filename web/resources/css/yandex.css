@@ -1,0 +1,25 @@
+.ya-news__title {
+    font-size: 100%;
+    font-weight: 700;
+    margin-bottom: .5em
+}
+
+.ya-news__date {
+    font-size: 85%;
+    margin-right: .5em
+}
+
+.ya-news__informer {
+    font-size: 85%;
+    margin-bottom: .3em
+}
+
+.ya-news__description {
+    font-size: 85%;
+    margin-bottom: .5em
+}
+
+.ya-news__all {
+    font-size: 80%;
+    margin-top: .3em
+}
