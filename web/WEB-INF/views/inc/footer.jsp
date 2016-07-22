@@ -3,3 +3,6 @@
 <footer class="container-fluid text-center">
     <p><spring:message code="footer.copyright"/></p>
 </footer>
+</div>
+</body>
+</html>
