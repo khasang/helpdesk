@@ -23,12 +23,12 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 
     /**
      * Required for encoding with support Russian language
-     * */
+     */
     @Override
     protected Filter[] getServletFilters() {
         CharacterEncodingFilter characterEncodingFilter =
                 new CharacterEncodingFilter();
         characterEncodingFilter.setEncoding("utf-8");
-        return new Filter[] { characterEncodingFilter };
+        return new Filter[]{characterEncodingFilter};
     }
 }

@@ -35,18 +35,3 @@
 
     </div>
 </nav>
-
-<%--<c:if test="${pageContext.request.isUserInRole('ADMIN')}">--%>
-<%--<div class="navbar-header">--%>
-<%--<a class="navbar-brand" href="<c:url value="/admin"/>">--%>
-<%--<spring:message code="menu.pages.admin.index"/>--%>
-<%--</a>--%>
-<%--</div>--%>
-<%--</c:if>--%>
-<%--<c:if test="${pageContext.request.isUserInRole('USER')}">--%>
-<%--<div class="navbar-header">--%>
-<%--<a class="navbar-brand" href="<c:url value="/desk"/>">--%>
-<%--<spring:message code="menu.pages.user.desk"/>--%>
-<%--</a>--%>
-<%--</div>--%>
-<%--</c:if>--%>
