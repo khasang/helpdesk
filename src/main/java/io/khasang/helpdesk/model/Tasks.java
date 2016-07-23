@@ -122,6 +122,20 @@ public class Tasks {
     public void setId(int id) {
         this.id = id;
     }
+
+    String result;
+
+    public String foundDescription() {
+        try {
+            if (description.equals(jdbcTemplate.query("Select description from Task;", new ItemMapper2()))) {
+                result = description;
+            } else
+                result = "Not found this task!";
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 }
 
 final class ItemMapper implements RowMapper<Tasks> {
@@ -137,5 +151,13 @@ final class ItemMapper implements RowMapper<Tasks> {
         tasks.setRates_id(rs.getInt("rates_id"));
         tasks.setState(rs.getString("state"));
         return tasks;
+    }
+}
+
+final class ItemMapper2 implements RowMapper<Tasks> {
+    public Tasks mapRow(ResultSet rs, int rowNum) throws SQLException {
+        Tasks tasks2 = new Tasks();
+        tasks2.setDescription(rs.getString("description"));
+        return tasks2;
     }
 }

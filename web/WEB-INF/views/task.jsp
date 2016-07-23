@@ -41,5 +41,26 @@
         </tr>
     </c:forEach>
 </table>
+
+
+
+<form>
+    <label for="password-field">Found description</label>
+    <input type="text" name="password" id="password-field">
+
+    <table border="1" width="500" height="100" class="tg">
+        <caption><h1>Table assignments</h1></caption>
+        <th>description</th>
+        <c:forEach items="${found}" var="task">
+            <tr>
+                <td><c:out value="${task.description}"/></td>
+            </tr>
+        </c:forEach>
+    </table>
+</form>
+
+<form action="/desk/task/foundtask">
+    <input type="submit" id="Button2" value="Found">
+</form>
 </body>
 </html>

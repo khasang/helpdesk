@@ -26,4 +26,10 @@ public class TasksController {
         model.addAttribute("task", tasks.selectWholeTable());
         return "task";
     }
+
+    @RequestMapping("/desk/task/foundtask")
+    public String foundtask(Model model) throws SQLException {
+        model.addAttribute("found", tasks.foundDescription());
+        return "foundtask";
+    }
 }
