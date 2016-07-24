@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Карта</title>
-  <link rel="stylesheet" type="text/css" href="css/map.css">
+  <link rel="stylesheet" type="text/css" href="../css/map.css">
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
   <script name="position" type="text/javascript">
     ymaps.ready(init);

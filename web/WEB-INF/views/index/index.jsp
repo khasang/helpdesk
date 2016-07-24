@@ -10,14 +10,14 @@
 <head>
     <meta charset=’UTF-8’>
     <title>index</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <script type="text/javascript" src="js/welcome.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <script type="text/javascript" src="../js/welcome.js"></script>
 </head>
 
 <body>
 <div class="right_menu">
     <form action="#">
-        <input type="submit" id="Button1" description="" value="Login">
+        <input type="submit" id="Button1" description="" value="LOG IN">
     </form>
     <form action="#">
         <input type="submit" id="Button2" description="" value="Registration">

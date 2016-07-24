@@ -10,6 +10,6 @@ public class NewsController {
     @RequestMapping("/news")
     public String desk(Model model) {
         model.addAttribute("hello", "Desk page!");
-        return "news";
+        return "news/news";
     }
 }

@@ -10,6 +10,6 @@ public class MapsController {
     @RequestMapping("/maps")
     public String desk(Model model) {
         model.addAttribute("hello", "Desk page!");
-        return "maps";
+        return "maps/maps";
     }
 }

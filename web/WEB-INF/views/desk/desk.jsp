@@ -4,7 +4,7 @@
 <head>
     <meta charset=’UTF-8’>
     <title>desk</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
 </head>
 <body>
 <h2>${index}</h2>

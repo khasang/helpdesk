@@ -26,7 +26,7 @@ public class AppContoller {
     @RequestMapping("/")
     public String hello(Model model) {
         model.addAttribute("hello", "Index page!");
-        return "index";
+        return "index/index";
     }
 
     @RequestMapping("/signIn")
@@ -44,7 +44,7 @@ public class AppContoller {
     @RequestMapping("/confidential/secure")
     public String secure(Model model){
         model.addAttribute("secure", "secure page with access encrypted");
-        return "secure";
+        return "secure/secure";
     }
 
     @RequestMapping(value = {"/hello/{name}"}, method = RequestMethod.GET)

@@ -126,6 +126,7 @@ public class Tasks {
     String result;
 
     public String foundDescription() {
+        description = "second";
         try {
             if (description.equals(jdbcTemplate.query("Select description from Task;", new ItemMapper2()))) {
                 result = description;

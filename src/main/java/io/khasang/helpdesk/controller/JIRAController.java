@@ -10,6 +10,6 @@ public class JIRAController {
     @RequestMapping("/JIRAmovie")
     public String jira(Model model) {
         model.addAttribute("hello", "Intro to JIRA portfolio");
-        return "JIRAmovie";
+        return "JIRAmovie/JIRAmovie";
     }
 }

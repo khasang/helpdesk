@@ -2,12 +2,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
     <meta charset=’UTF-8’>
     <title>task</title>
 </head>
-<body>
 
+<body>
 <div class="left_menu">
     <form action="/desk">
         <input type="submit" id="Button1" description="" value="Desk page">
@@ -15,7 +15,7 @@
     <form action="#">
         <input type="submit" id="Button3" description="" value="Logout">
     </form>
-</div>
+
 <table border="1" width="500" height="100" class="tg">
     <caption><h1>Table assignments</h1></caption>
     <th>id</th>
@@ -42,25 +42,12 @@
     </c:forEach>
 </table>
 
-
-
-<form>
-    <label for="password-field">Found description</label>
-    <input type="text" name="password" id="password-field">
-
-    <table border="1" width="500" height="100" class="tg">
-        <caption><h1>Table assignments</h1></caption>
-        <th>description</th>
-        <c:forEach items="${found}" var="task">
-            <tr>
-                <td><c:out value="${task.description}"/></td>
-            </tr>
-        </c:forEach>
-    </table>
-</form>
+<label for="FoundanyTask">Found</label>
+<input type="text" name="total" id="FoundanyTask">
 
 <form action="/desk/task/foundtask">
     <input type="submit" id="Button2" value="Found">
 </form>
+</div>
 </body>
 </html>

@@ -1,6 +1,5 @@
 package io.khasang.helpdesk.controller;
 
-import io.khasang.helpdesk.entity.Task;
 import io.khasang.helpdesk.model.Tasks;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,18 +17,18 @@ public class TasksController {
     @RequestMapping("/desk")
     public String items(Model model) throws SQLException {
         model.addAttribute("items", tasks.selectWholeTable());
-        return "desk";
+        return "desk/desk";
     }
 
     @RequestMapping("/desk/task")
     public String task(Model model) throws SQLException {
         model.addAttribute("task", tasks.selectWholeTable());
-        return "task";
+        return "desk/task";
     }
 
     @RequestMapping("/desk/task/foundtask")
     public String foundtask(Model model) throws SQLException {
         model.addAttribute("found", tasks.foundDescription());
-        return "foundtask";
+        return "desk/foundtask";
     }
 }

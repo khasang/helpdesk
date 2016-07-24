@@ -10,6 +10,6 @@ public class AdminController {
     @RequestMapping("/admin")
     public String admin(Model model) {
         model.addAttribute("hello", "Admin page!");
-        return "admin";
+        return "admin/admin";
     }
 }

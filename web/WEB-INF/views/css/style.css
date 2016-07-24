@@ -4,7 +4,7 @@ body {
     padding: 0;
     color: #000;
     font-size: 13px;
-    background:url(image/Help-Desk.png) no-repeat;
+    background:url(image/Background.jpg) no-repeat;
     background-size: cover;
 }
 
@@ -81,7 +81,7 @@ body {
 }
 
 .text_aqua{
-    color: blue;
+    color: aqua;
     font-size:13px;
 }
 
