@@ -25,4 +25,9 @@ public class AppContoller {
     public String news() {
         return "news";
     }
+
+    @RequestMapping("/rest")
+    public String rest() {
+        return "rest";
+    }
 }

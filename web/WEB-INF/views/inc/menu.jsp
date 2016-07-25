@@ -26,6 +26,11 @@
                         <spring:message code="menu.pages.maps"/>
                     </a>
                 </li>
+                <li>
+                    <a href="<c:url value="/rest"/>">
+                        REST API
+                    </a>
+                </li>
             </ul>
 
             <jsp:include page="menu_login.jsp"/>

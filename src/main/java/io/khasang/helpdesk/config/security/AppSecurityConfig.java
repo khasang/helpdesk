@@ -40,7 +40,8 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin().loginPage("/login")
                 .usernameParameter("login").passwordParameter("password")
-                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/");
+                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/")
+                .and().csrf().ignoringAntMatchers("/api/**");
     }
 
     @Bean
