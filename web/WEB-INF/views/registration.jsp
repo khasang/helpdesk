@@ -11,35 +11,35 @@
 <%--<div>--%>
     <%--<spring:message code = "pages.admin.users.create"/>--%>
 <%--</div>--%>
-<form:form  method="post" commandName="user" action="/registration-result">
+<form:form  method="post" commandName="users" >
 
-    <%--<label for="login">Login:</label>--%>
-    <%--<input type="text" hint="login" id="login" name="login" class="form-control">--%>
+    <label for="login">Login:</label>
+    <input type="text" placeholder="login" id="login" name="login" class="form-control">
 
-    <form:label path="login">Login:</form:label>
-    <form:input path="login"/>
+    <%--<form:label path="login">Login:</form:label>--%>
+    <%--<form:input path="login"/>--%>
 
-    <%--<label for="password">Password:</label>--%>
-    <%--<input type="text" hint="password" id="password" name="password" class="form-control">--%>
+    <label for="password">Password:</label>
+    <input type="text" placeholder="password" id="password" name="password" class="form-control">
 
-    <form:label path="password">password:</form:label>
-    <form:input path="password"/>
+    <%--<form:label path="password">password:</form:label>--%>
+    <%--<form:input path="password"/>--%>
 
-    <%--<label for="email">E-mail:</label>--%>
-    <%--<input type="text" hint="email" id="email" name = "email" class="form-control">--%>
+    <label for="email">E-mail:</label>
+    <input type="text" placeholder="email" id="email" name = "email" class="form-control">
 
-    <form:label path="email">E-mail:</form:label>
-    <form:input path="email"/>
+    <%--<form:label path="email">E-mail:</form:label>--%>
+    <%--<form:input path="email"/>--%>
 
-        <%--<select name="role" id="role" class="form-control">--%>
-            <%--<option value="ROLE_ADMIN">admin</option>--%>
-            <%--<option value="ROLE_USER">user</option>--%>
-        <%--</select>--%>
+        <select name="role" id="role" class="form-control">
+            <option value="ROLE_ADMIN">admin</option>
+            <option value="ROLE_USER">users</option>
+        </select>
 
-    <form:select path="role">
-        <form:option value="ROLE_ADMIN"/>
-        <form:option value="ROLE_USER"/>
-    </form:select>
+    <%--<form:select path="role">--%>
+        <%--<form:option value="ROLE_ADMIN"/>--%>
+        <%--<form:option value="ROLE_USER"/>--%>
+    <%--</form:select>--%>
 
     <input type="submit" value="Sign Up">
 </form:form>

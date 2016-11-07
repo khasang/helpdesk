@@ -1,10 +1,14 @@
 package io.khasang.helpdesk.entity;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 @Entity
 public class Users {
 
@@ -13,18 +17,19 @@ public class Users {
     private long id;
 
     private String name;
-
     private String login;
-
     private String password;
-
-    private int role_id;
-
-    private int departmentId;
-
+    //    private int role_id;
+//    private int departmentId;
     private String role;
+    private String email;
 
-    public Users() {
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getRole() {
@@ -59,21 +64,21 @@ public class Users {
         this.password = password;
     }
 
-    public int getRole_id() {
-        return role_id;
-    }
+//    public int getRole_id() {
+//        return role_id;
+//    }
+//
+//    public void setRole_id(int role_id) {
+//        this.role_id = role_id;
+//    }
 
-    public void setRole_id(int role_id) {
-        this.role_id = role_id;
-    }
-
-    public int getDepartmentId() {
-        return departmentId;
-    }
-
-    public void setDepartmentId(int departmentId) {
-        this.departmentId = departmentId;
-    }
+//    public int getDepartmentId() {
+//        return departmentId;
+//    }
+//
+//    public void setDepartmentId(int departmentId) {
+//        this.departmentId = departmentId;
+//    }
 
     public long getId() {
         return id;

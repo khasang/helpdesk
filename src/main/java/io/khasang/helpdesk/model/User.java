@@ -1,17 +1,38 @@
 package io.khasang.helpdesk.model;
 
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
-@Component
+
 public class User {
+    private JdbcTemplate jdbcTemplate;
+    private int id;
     private String name;
-    //    private ArrayList<String> username ;
     private String login;
     private String password;
     private String role;
     private String email;
 
     public User() {
+    }
+    public User(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+    public JdbcTemplate getJdbcTemplate() {
+        return jdbcTemplate;
+    }
+
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getEmail() {
@@ -45,19 +66,6 @@ public class User {
     public void setLogin(String login) {
         this.login = login;
     }
-
-//    public ArrayList<String> addUser(String name){
-//        username = new ArrayList<>();
-//        username.add(name);
-//        return username;
-//    }
-
-//    public String getUsername(){
-//        for (String s : username) {
-//            this.name = s;
-//        }
-//        return name;
-//    }
 
     public String getName() {
         return name;

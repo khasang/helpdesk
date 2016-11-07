@@ -33,16 +33,15 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Autowired
-
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.inMemoryAuthentication().withUser("user").password("user").roles("USER");
+//        auth.inMemoryAuthentication().withUser("users").password("users").roles("USER");
 //        auth.inMemoryAuthentication().withUser("admin").password("admin").roles("ADMIN");
 //        auth.inMemoryAuthentication().withUser("superadmin").password("superadmin").roles("SUPERADMIN");
 
         auth
                 .jdbcAuthentication().dataSource(dataSource)
 //                .withDefaultSchema()
-//                .withUser("user").password("user").roles("USER").and()
+//                .withUser("users").password("users").roles("USER").and()
 //                .withUser("admin").password("admin").roles("ADMIN").and()
 //                .withUser("superadmin").password("superadmin").roles("SUPERADMIN");
 //                .passwordEncoder(passwordEncoder())

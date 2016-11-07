@@ -1,58 +1,99 @@
 package io.khasang.helpdesk.controller;
 
 
-import io.khasang.helpdesk.dao.daoimpl.JdbcUserDAO;
+import io.khasang.helpdesk.dao.Dao;
+import io.khasang.helpdesk.dao.daoimpl.HibernateUserDao;
+import io.khasang.helpdesk.entity.Users;
 import io.khasang.helpdesk.model.User;
 import io.khasang.helpdesk.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-@Controller
-//@RequestMapping("/signup")
-public class UserController {
-    @Autowired
-    User user;
+import java.sql.SQLException;
 
-    @Autowired
-    JdbcUserDAO jdbcUserDAO;
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
+
+
+@Controller
+public class UserController {
+//    @Autowired
+//    HibernateUserDao hibernateUserDao;
+//    @Autowired
+//    private Dao dao;
 
 //    @Autowired
-//    UserService userService;
+//    private Users users;
+
+//    @Autowired
+//    JdbcUserDAO jdbcUserDAO;
+
+    @Autowired
+    UserService userService;
+
+//    @RequestMapping(value="/registration", method = GET)
+//    public String addUser(Model model){
+//        model.addAttribute("users", new Users());
+//        return "/registration";
+//    }
+//
+//    @RequestMapping(value = "/registration", method = POST)
+//    public String addUser(@ModelAttribute("users") Users users){
+//        try {
+//            userService.regUser(users);
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        return "redirect:/registration-result";
+//    }
+//
+//    @RequestMapping(value="/registration", method=RequestMethod.GET)
+//    public ModelAndView registrationForm() {
+//        return new ModelAndView("registration", "users", new Users());
+//    }
+//
+//    @RequestMapping(value="/registration-result", method = RequestMethod.POST)
+//    public ModelAndView registrationResult(@ModelAttribute("users") Users users){
+//        try {
+//            jdbcUserDAO.regUser(users);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return new ModelAndView("registration-result", "users", users);
+//    }
 
     @RequestMapping(value="/registration", method=RequestMethod.GET)
     public ModelAndView registrationForm() {
-        return new ModelAndView("registration", "user", new User());
-    }
 
-    @RequestMapping(value="/registration-result", method = RequestMethod.POST)
-    public ModelAndView registrationResult(@ModelAttribute("user") User user){
+        return new ModelAndView("registration", "users", new Users());
+}
+
+    @RequestMapping(value="/registration", method = RequestMethod.POST)
+    public ModelAndView registrationResult(@ModelAttribute("users") Users users){
         try {
-            jdbcUserDAO.regUser(user);
+            userService.addUser(users);
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
-        return new ModelAndView("registration-result", "user", user);
+//        ModelAndView model = new ModelAndView();
+//        model.setViewName("registration-result");
+//        model.addObject("users", users);
+//        return model;
+        return new ModelAndView("registration-result", "users", users);
     }
 
-
-//    Спросить Диму Савицкого про redirect и метод get
-//    @RequestMapping(value = "/registration-result", method = RequestMethod.POST)
-//    public String singUp(@ModelAttribute("user") User user,
-//                         RedirectAttributes redirectAttributes) {
-//        String message;
-//
+//    @RequestMapping(value="/registration-result", method = RequestMethod.POST)
+//    public String registrationResult(@ModelAttribute("registration") Users users, RedirectAttributes redirectAttributes){
 //        try {
-//            userService.regUser(user);
-//            message = "User" + user.getLogin() + "successfully registered.";
+//            dao.regUser(users);
 //        } catch (Exception e) {
-//            message = "Register error" + e.getMessage();
+//            e.printStackTrace();
 //        }
-//        redirectAttributes.addFlashAttribute("message", message);
-//        return "redirect:/signup";
+//        return "redirect:/registration-result";
 //    }
+
 }

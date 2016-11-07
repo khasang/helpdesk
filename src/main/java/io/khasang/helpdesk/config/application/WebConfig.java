@@ -12,6 +12,7 @@ import org.springframework.web.servlet.view.JstlView;
 @Configuration
 @EnableWebMvc
 @ComponentScan({"io.khasang.helpdesk.config", "io.khasang.helpdesk.controller"})
+//@ComponentScan({"io.khasang.helpdesk.**"})
 public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public InternalResourceViewResolver viewResolver() {

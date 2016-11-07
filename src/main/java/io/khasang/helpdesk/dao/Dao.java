@@ -1,19 +1,25 @@
 package io.khasang.helpdesk.dao;
 
-import io.khasang.helpdesk.model.User;
+import io.khasang.helpdesk.entity.Users;
 import org.springframework.stereotype.Component;
 
-//@Component
+import java.util.List;
+
+import static org.hibernate.envers.enhanced.SequenceIdRevisionEntity_.id;
+
 public interface Dao {
 
-    void addUser(User user);
+    List<Users> getUserList();
 
-    void updateUser(User user);
+    Users getUserById(long id);
 
-    void deleteUser(User user);
+    void addUser(Users users);
 
-    void createUser();
+    void updateUser(Users users);
 
-    void regUser(User user);
+    void deleteUser(int id);
 
+    void regUser(Users users);
+
+//    Users getUserLoginById(long id);
 }

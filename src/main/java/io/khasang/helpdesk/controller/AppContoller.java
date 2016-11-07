@@ -31,7 +31,7 @@ public class AppContoller {
 
 
 //    @Autowired
-//    User user;
+//    Users users;
 
     @RequestMapping("/")
     public String hello(Model model) {
@@ -52,11 +52,11 @@ public class AppContoller {
         return "desk";
     }
 
-    @RequestMapping("/desk/task")
-    public String taskId(Model model) {
-        model.addAttribute("taskId", "Task number is");
-        return "task";
-    }
+//    @RequestMapping("/desk/task")
+//    public String taskId(Model model) {
+//        model.addAttribute("taskId", "Task number is");
+//        return "task";
+//    }
 
     @RequestMapping("/desk/add-task")
     public String addTask(Model model) {

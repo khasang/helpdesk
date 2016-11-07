@@ -1,5 +1,6 @@
 package io.khasang.helpdesk.config;
 
+import io.khasang.helpdesk.dao.daoimpl.HibernateUserDao;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -18,7 +19,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan({"io.khasang.helpdesk"})
+@ComponentScan({"io.khasang.helpdesk.config, io.khasang.helpdesk.controller, io.khasang.helpdesk.service"})
 @PropertySource(value = {"classpath:hibernate.properties"})
 public class HibernateConfig {
     @Autowired
@@ -64,5 +65,4 @@ public class HibernateConfig {
     public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
         return new PersistenceExceptionTranslationPostProcessor();
     }
-
 }

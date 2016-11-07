@@ -4,6 +4,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import javax.activation.DataSource;
+import javax.persistence.Table;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
@@ -114,6 +115,10 @@ public class Tasks {
         return this.jdbcTemplate.query("Select * from tasks;", new ItemMapper());
     }
 
+    public List selectDescription() throws SQLException{
+        return this.jdbcTemplate.query("Select id, description from tasks;",new DescriptionMapper());
+    }
+
     public int getId() {
         return id;
     }
@@ -135,6 +140,14 @@ final class ItemMapper implements RowMapper<Tasks> {
         tasks.setClose_date(rs.getDate("close_date"));
         tasks.setRates_id(rs.getInt("rates_id"));
         tasks.setState(rs.getString("state"));
+        return tasks;
+    }
+}
+final class DescriptionMapper implements RowMapper<Tasks>{
+    public Tasks mapRow(ResultSet rs, int rowNum) throws SQLException{
+        Tasks tasks = new Tasks();
+        tasks.setId(rs.getInt("id"));
+        tasks.setDescription(rs.getString("description"));
         return tasks;
     }
 }

@@ -24,14 +24,14 @@ public class TasksController {
     JdbcTemplate jdbcTemplate;
 
     @RequestMapping("/get-data")
-    public String items(Model model) throws SQLException {
+    public String select(Model model) throws SQLException {
         model.addAttribute("items", tasks.selectWholeTable());
         return "get-data";
     }
 
-    @RequestMapping("/task")
-    public String task(Model model) throws SQLException {
-        model.addAttribute("task", tasks.selectWholeTable());
+    @RequestMapping("/desk/task")
+    public String description(Model model) throws SQLException {
+        model.addAttribute("description", tasks.selectDescription());
         return "task";
     }
 

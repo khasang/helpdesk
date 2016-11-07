@@ -1,9 +1,9 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+reg<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-    <p>Hello "${user.login}"</p>
+    <p>Hello "${users.login}"</p>
 </body>
 </html>

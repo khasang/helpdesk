@@ -1,5 +1,10 @@
 package io.khasang.helpdesk.config;
 
+
+import io.khasang.helpdesk.controller.RestUserController;
+import io.khasang.helpdesk.dao.Dao;
+import io.khasang.helpdesk.dao.daoimpl.HibernateUserDao;
+import io.khasang.helpdesk.entity.Users;
 import io.khasang.helpdesk.model.*;
 import io.khasang.helpdesk.model.CreateTable;
 //import io.khasang.helpdesk.model.Message;
@@ -14,6 +19,8 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
 
+import javax.persistence.EntityManager;
+
 
 @Configuration
 @PropertySource("classpath:util.properties")
@@ -26,6 +33,9 @@ public class AppContext {
 
     @Autowired
     Environment environment;
+
+//    @Autowired
+//    HibernateConfig hibernateConfig;
 
     @Bean
     public JdbcTemplate jdbcTemplate() {
@@ -79,4 +89,33 @@ public class AppContext {
 
     @Bean
     public Tasks tasks(){return new Tasks(jdbcTemplate());}
+
+//    @Bean
+//    public User user(){return new Users(jdbcTemplate());}
+
+    @Bean
+    public Users users(){
+        return new Users();
+    }
+
+    @Bean
+    public User user(){
+        return new User();
+    }
+
+    @Bean
+    public HibernateUserDao hibernateUserDao(){
+        return new HibernateUserDao();
+    }
+
+    @Bean
+    public Dao dao(){
+        return new HibernateUserDao();
+    }
+
+    @Bean
+    public RestUserController restUserController(){
+        return new RestUserController();
+    }
+
 }

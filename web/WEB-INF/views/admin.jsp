@@ -8,9 +8,9 @@
 </head>
 <body>
 <h1>${title}</h1>
-    <input type="submit" value="add user">
+    <input type="submit" value="add users">
     <br>
-    <input type="submit" value="delete user">
+    <input type="submit" value="delete users">
     <br>
     <input type="submit" value="show logs">
     <br>
